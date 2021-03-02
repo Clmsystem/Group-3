@@ -34,6 +34,6 @@ Route::get('/login2', function () {
     return view('promote.login');
 });
 
-Route::get('/group3', function () {
+Route::get('/g3', function () {
     return view('create3');
 });
