@@ -33,3 +33,7 @@ Route::get('/login1', function () {
 Route::get('/login2', function () {
     return view('promote.login');
 });
+
+Route::get('/group3', function () {
+    return view('create3');
+});
