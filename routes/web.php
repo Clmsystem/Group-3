@@ -29,6 +29,10 @@ Route::post('/index', function () {
     return view('index');
 })->name('/');
 
-Route::get('/p2', function () {
-    return view('part2');
+Route::get('/Ketsamaporn', function () {
+    return view('Ketsamaporn');
+});
+
+Route::get('/Jarupan',function(){
+    return view('Jarupan');
 });

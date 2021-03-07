@@ -29,7 +29,7 @@
       <div class="collapse" id="ui-basic">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Topic 1</a></li>
-          <li class="nav-item"> <a class="nav-link" href="p2">Topic 2</a></li>
+          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Topic 2</a></li>
           <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Topic 3</a></li>
           <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Topic 4</a></li>
         </ul>
