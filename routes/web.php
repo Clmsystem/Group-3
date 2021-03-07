@@ -14,26 +14,21 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('login');
 });
 
 // Route::post('/login', [LoginController::class, 'index'])->name('login');
 
 
-Route::post('/show', [LoginController::class,'index'],function ($log){
+// Route::post('/Valid', [LoginController::class,'index'],function ($argv){
 
-} )->name('show');
+// } )->name('valid');
 
 
+Route::post('/index', function () {
+    return view('index');
+})->name('/');
 
-Route::get('/login1', function () {
-    return view('manage.login');
-});
-
-Route::get('/login2', function () {
-    return view('promote.login');
-});
-
-Route::get('/g3', function () {
-    return view('create3');
+Route::get('/p2', function () {
+    return view('part2');
 });
