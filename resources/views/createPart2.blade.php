@@ -1,37 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@chotiwich 
-Learn Git and GitHub without any code!
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-
-
-Clmsystem
-/
-Group-2
-Private
-0
-00
-Code
-Issues
-Pull requests
-Actions
-Projects
-Security
-Insights
-Group-2/resources/views/CreatePart4.blade.php
-@zmonx
-zmonx Fix bug General
-Latest commit 2c07a8e 5 hours ago
- History
- 2 contributors
-@zmonx@chotiwich
-235 lines (220 sloc)  14.1 KB
   
 @include('header.menu')
 <style>
@@ -94,7 +60,7 @@ Latest commit 2c07a8e 5 hours ago
                                             <option>เลือกผู้รับผิดชอบ</option>
                                             <option>พัชรินทร์  ภาวิกานนท์ </option>
                                             <option>เกษมาพร  ตัญบุญยกิจ</option>
-                                            <option>จารุพันธ์ุ  พรุเพ็ชรแก้ว</option>
+                                            <option>จารุพันธุ์ พรุเพ็ชรแก้ว</option>
                                             <option>ธวัชชัย  ประดู่</option>
                                             <option>ชัชวาล  นาคพันธุ์</option>
                                             <option>ธันฐภัทร์  ดวงจันทร์</option>
@@ -185,7 +151,7 @@ Latest commit 2c07a8e 5 hours ago
                                         <tr class="d-flex">
                                             <td class="col-sm-1"> 3 </td>
                                             <td class="col-sm-5"> ร้อยละของคะแนนประเมิน 5ส </td>
-                                            <td class="col-sm-2"> จารุพันธ์ุ  พรุเพ็ชรแก้ว </td>
+                                            <td class="col-sm-2"> จารุพันธุ์  พรุเพ็ชรแก้ว </td>
                                             <td class="col-sm-1"> 1 </td>
                                             <td class="col-sm-1"> รายปี </td>
                                             <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
@@ -225,7 +191,7 @@ Latest commit 2c07a8e 5 hours ago
                                         <tr class="d-flex">
                                             <td class="col-sm-1"> 7 </td>
                                             <td class="col-sm-5"> การปฏิบัติตามหลักวินัยทางการเงิน </td>
-                                            <td class="col-sm-2"> จารุพันธ์ุ  พรุเพ็ชรแก้ว</td>
+                                            <td class="col-sm-2"> จารุพันธุ์  พรุเพ็ชรแก้ว</td>
                                             <td class="col-sm-1"> 1 </td>
                                             <td class="col-sm-1"> รายเดือน </td>
                                             <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
