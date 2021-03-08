@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CreatePart2Controller;
+use App\Http\Controllers\ContentPart2Controller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,16 +27,10 @@ Route::get('/', function () {
 // Route::post('/Valid', [LoginController::class,'index'],function ($argv){
 
 // } )->name('valid');
+Route::get('/createPart2',[CreatePart2Controller::class,'index']);
 
+Route::get('/contentPart2',[ContentPart2Controller::class,'index']);
 
 Route::post('/index', function () {
     return view('index');
 })->name('/');
-
-Route::get('/Ketsamaporn', function () {
-    return view('Ketsamaporn');
-});
-
-Route::get('/Jarupan',function(){
-    return view('Jarupan');
-});
