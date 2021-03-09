@@ -220,9 +220,14 @@
                             <form class="forms-sample">
                                 <hr><br>
                                 <div class="row">
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-8">
                                         <label class="newFont">หัวข้อ</label>
                                         <input type="text" class="form-control" placeholder="หัวข้อตัวขี้วัด" value="" required>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-2">
+                                        <label class="newFont">คะแนนเต็ม</label>
+                                        <input type="text" class="form-control" placeholder="ตัวเลข" value="" required>
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label class="newFont">ผู้รับผิดชอบ</label>
@@ -237,19 +242,6 @@
                                                 <option>ธันฐภัทร์  ดวงจันทร์</option>
                                                 <option>อมราพร ชุมชนะ</option>
                                                 <option>อาภรณ์ ไชยสุวรรณ</option>
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label class="newFont">คะแนนเต็ม</label>
-                                        <input type="text" class="form-control" placeholder="ตัวเลข" value="" required>
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label class="newFont">ประเภทกการกรอก</label>
-                                        <select class="form-control">
-                                            <optgroup class="newFont">
-                                                <option>รายเดือน</option>
-                                                <option>รายปี</option>
                                             </optgroup>
                                         </select>
                                     </div>
