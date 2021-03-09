@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CreatePart2Controller;
 use App\Http\Controllers\ContentPart2Controller;
+use App\Http\Controllers\SearchPart2Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,8 @@ Route::get('/', function () {
 
 // } )->name('valid');
 Route::get('/createPart2',[CreatePart2Controller::class,'index']);
+
+Route::get('/searchPart2',[SearchPart2Controller::class,'index']);
 
 Route::get('/contentPart2',[ContentPart2Controller::class,'index']);
 
