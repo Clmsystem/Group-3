@@ -49,7 +49,7 @@
                         <hr><br>
                         <form class="forms-sample">
                             <div class="row">
-                                <div class="form-group col-md-8">
+                                <div class="form-group col-md-6">
                                     <label class="newFont">หัวข้อ</label>
                                     <input type="text" class="form-control" placeholder="หัวข้อตัวขี้วัด" required>
                                 </div>
@@ -57,6 +57,16 @@
                                 <div class="form-group col-md-2">
                                     <label class="newFont">คะแนนเต็ม</label>
                                     <input type="text" class="form-control" placeholder="ตัวเลข" value="" required>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label class="newFont">รูปแบบการกรอก</label>
+                                    <select class="form-control">
+                                        <optgroup class="newFont">
+                                            <option>เลือกรูปแบบ</option>
+                                            <option>รายไตรมาส</option>
+                                            <option>รายปี</option>
+                                        </optgroup>
+                                    </select>
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label class="newFont">ผู้รับผิดชอบ</label>
@@ -104,11 +114,14 @@
                                             <th class="col-sm-1" scope="col">
                                                 <h7 class="newFont">ลำดับ</h7>
                                             </th>
-                                            <th class="col-sm-6" scope="col">
+                                            <th class="col-sm-5" scope="col">
                                                 <h7 class="newFont">ตัวชี้วัด</h7>
                                             </th>
                                             <th class="col-sm-1" scope="col">
                                                 <h7 class="newFont">คะแนนเต็ม</h7>
+                                            </th>
+                                            <th class="col-sm-1" scope="col">
+                                                <h7 class="newFont">กรอก</h7>
                                             </th>
                                             <th class="col-sm-2" scope="col">
                                                 <h7 class="newFont">ผู้รับผิดชอบ</h7>
@@ -119,8 +132,9 @@
                                     <tbody>
                                         <tr class="d-flex">
                                             <td class="col-sm-1"> 1 </td>
-                                            <td class="col-sm-6"> ร้อยละผลสำเร็จการใช้งานระบบ DOMS (ตั้งแต่ มค. 64) </td>
+                                            <td class="col-sm-5"> ร้อยละผลสำเร็จการใช้งานระบบ DOMS (ตั้งแต่ มค. 64) </td>
                                             <td class="col-sm-1"> 1 </td>
+                                            <td class="col-sm-1"> รายไตรมาส </td>
                                             <td class="col-sm-2"> พัชรินทร์  ภาวิกานนท์ </td>
                                             <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                                                 <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
@@ -128,8 +142,9 @@
                                         </tr>
                                         <tr class="d-flex">
                                             <td class="col-sm-1"> 2 </td>
-                                            <td class="col-sm-6"> ร้อยละการบันทึกงานประจำวันของพนักงาน </td>
+                                            <td class="col-sm-5"> ร้อยละการบันทึกงานประจำวันของพนักงาน </td>
                                             <td class="col-sm-1"> 1 </td>
+                                            <td class="col-sm-1"> รายไตรมาส </td>
                                             <td class="col-sm-2"> พัชรินทร์  ภาวิกานนท์ </td>
                                             <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                                                 <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
@@ -137,8 +152,9 @@
                                         </tr>
                                         <tr class="d-flex">
                                             <td class="col-sm-1"> 3 </td>
-                                            <td class="col-sm-6"> ร้อยละของคะแนนประเมิน 5ส </td>
+                                            <td class="col-sm-5"> ร้อยละของคะแนนประเมิน 5ส </td>
                                             <td class="col-sm-1"> 1 </td>
+                                            <td class="col-sm-1"> รายปี </td>
                                             <td class="col-sm-2"> จารุพันธุ์  พรุเพ็ชรแก้ว </td>
                                             <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                                                 <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
@@ -146,8 +162,9 @@
                                         </tr>
                                         <tr class="d-flex">
                                             <td class="col-sm-1"> 4 </td>
-                                            <td class="col-sm-6"> ร้อยละของการประหยัดพลังงาน go green </td>
+                                            <td class="col-sm-5"> ร้อยละของการประหยัดพลังงาน go green </td>
                                             <td class="col-sm-1"> 1 </td>
+                                            <td class="col-sm-1"> รายไตรมาส </td>
                                             <td class="col-sm-2"> ธวัชชัย  ประดู่</td>
                                             <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                                                 <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
@@ -155,8 +172,9 @@
                                         </tr>
                                         <tr class="d-flex">
                                             <td class="col-sm-1"> 5 </td>
-                                            <td class="col-sm-6"> เว็บไซต์ หน่วยงานทั้งภาษาไทยและภาษาอังกฤษ </td>
+                                            <td class="col-sm-5"> เว็บไซต์ หน่วยงานทั้งภาษาไทยและภาษาอังกฤษ </td>
                                             <td class="col-sm-1"> 2 </td>
+                                            <td class="col-sm-1"> รายปี </td>
                                             <td class="col-sm-2"> ชัชวาล  นาคพันธุ์</td>
                                             <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                                                 <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
@@ -164,8 +182,9 @@
                                         </tr>
                                         <tr class="d-flex">
                                             <td class="col-sm-1"> 6 </td>
-                                            <td class="col-sm-6"> ร้อยละของการดำเนินงานและการใช้จ่ายงบประมาณตามแผนฯ ประจำปี </td>
+                                            <td class="col-sm-5"> ร้อยละของการดำเนินงานและการใช้จ่ายงบประมาณตามแผนฯ ประจำปี </td>
                                             <td class="col-sm-1"> 1 </td>
+                                            <td class="col-sm-1"> รายไตรมาส </td>
                                             <td class="col-sm-2"> เกษมาพร  ตัญบุญยกิจ</td>
                                             <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                                                 <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
@@ -173,8 +192,9 @@
                                         </tr>
                                         <tr class="d-flex">
                                             <td class="col-sm-1"> 7 </td>
-                                            <td class="col-sm-6"> การปฏิบัติตามหลักวินัยทางการเงิน </td>
+                                            <td class="col-sm-5"> การปฏิบัติตามหลักวินัยทางการเงิน </td>
                                             <td class="col-sm-1"> 1 </td>
+                                            <td class="col-sm-1"> รายปี </td>
                                             <td class="col-sm-2"> จารุพันธุ์  พรุเพ็ชรแก้ว</td>
                                             <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                                                 <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
@@ -182,8 +202,9 @@
                                         </tr>
                                         <tr class="d-flex">
                                             <td class="col-sm-1"> 8 </td>
-                                            <td class="col-sm-6"> การเข้าร่วมกิจกรรมกลางของมหาวิทยาลัย </td>
+                                            <td class="col-sm-5"> การเข้าร่วมกิจกรรมกลางของมหาวิทยาลัย </td>
                                             <td class="col-sm-1"> 1 </td>
+                                            <td class="col-sm-1"> รายไตรมาส </td>
                                             <td class="col-sm-2"> ธันฐภัทร์  ดวงจันทร์</td>
                                             <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                                                 <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
@@ -191,8 +212,9 @@
                                         </tr>
                                         <tr class="d-flex">
                                             <td class="col-sm-1"> 9 </td>
-                                            <td class="col-sm-6"> ผลการประเมินคุณธรรม และความโปร่งใสในการดำเนินงานของหน่วยงาน </td>
+                                            <td class="col-sm-5"> ผลการประเมินคุณธรรม และความโปร่งใสในการดำเนินงานของหน่วยงาน </td>
                                             <td class="col-sm-1"> 1 </td>
+                                            <td class="col-sm-1"> รายปี </td>
                                             <td class="col-sm-2"> </td>
                                             <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                                                 <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
@@ -220,7 +242,7 @@
                             <form class="forms-sample">
                                 <hr><br>
                                 <div class="row">
-                                    <div class="form-group col-md-8">
+                                    <div class="form-group col-md-6">
                                         <label class="newFont">หัวข้อ</label>
                                         <input type="text" class="form-control" placeholder="หัวข้อตัวขี้วัด" value="" required>
                                     </div>
@@ -228,6 +250,16 @@
                                     <div class="form-group col-md-2">
                                         <label class="newFont">คะแนนเต็ม</label>
                                         <input type="text" class="form-control" placeholder="ตัวเลข" value="" required>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                    <label class="newFont">รูปแบบการกรอก</label>
+                                    <select class="form-control">
+                                        <optgroup class="newFont">
+                                            <option>เลือกรูปแบบ</option>
+                                            <option>รายไตรมาส</option>
+                                            <option>รายปี</option>
+                                        </optgroup>
+                                    </select>
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label class="newFont">ผู้รับผิดชอบ</label>
