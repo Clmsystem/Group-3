@@ -10,7 +10,7 @@ use App\Http\Controllers;
 class CreatePart2Controller extends Controller
 {
     public function index(){
-         return view('createPart2');
+         return view('createPart2');    
         
     }
 }
