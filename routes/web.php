@@ -28,12 +28,14 @@ Route::get('/', function () {
 // Route::post('/Valid', [LoginController::class,'index'],function ($argv){
 
 // } )->name('valid');
+Route::post('/index', function () {
+    return view('index');
+})->name('/');
+
+
 Route::get('/createPart2',[CreatePart2Controller::class,'index']);
 
 Route::get('/searchPart2',[SearchPart2Controller::class,'index']);
 
 Route::get('/contentPart2',[ContentPart2Controller::class,'index']);
 
-Route::post('/index', function () {
-    return view('index');
-})->name('/');
