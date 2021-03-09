@@ -106,7 +106,7 @@
                                         
                                     </div>
                                     <div class="button-position">
-                                        <button type="submit" class="btn btn-gradient-primary mr-4 newFont">ดาว์โหลด</button>
+                                        <button type="submit" class="btn btn-gradient-primary mr-4 newFont">ดาวน์โหลด</button>
                                     </div>
                                     <div class="button-position">
                                         <button type="submit" class="btn btn-gradient-primary mr-4 newFont">กราฟ</button>
