@@ -50,7 +50,22 @@
                         <form class="forms-sample">
                             <div class="row">
                                 <div class="form-group col-md-4">
-                                    <label class="newFont">เดือน</label>
+                                <label class="newFont">ปี</label>
+                                    <select class="form-control">
+                                        <optgroup class="newFont">
+                                            <option>ทุกปี</option>
+                                            <option>2558</option>
+                                            <option>2559</option>
+                                            <option>2560</option>
+                                            <option>2562</option>
+                                            <option>2563</option>
+                                            <option>2564</option>
+                                        </optgroup>
+                                    </select>
+                                    
+                                </div>
+                                <div class="form-group col-md-4">
+                                <label class="newFont">เดือน</label>
                                     <select class="form-control">
                                         <optgroup class="newFont">
                                             <option>ทุกเดือน</option>
@@ -66,20 +81,6 @@
                                             <option>ตุลาคม</option>
                                             <option>พฤศจิกายน</option>
                                             <option>ธันวาคม</option>
-                                        </optgroup>
-                                    </select>
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label class="newFont">ปี</label>
-                                    <select class="form-control">
-                                        <optgroup class="newFont">
-                                            <option>ทุกปี</option>
-                                            <option>2558</option>
-                                            <option>2559</option>
-                                            <option>2560</option>
-                                            <option>2562</option>
-                                            <option>2563</option>
-                                            <option>2564</option>
                                         </optgroup>
                                     </select>
                                 </div>
