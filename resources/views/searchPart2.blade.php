@@ -140,7 +140,7 @@
                                             <td class="col-sm-1"> 1 </td>
                                             <td class="col-sm-1">  </td>
                                             <th class="col-sm-2" scope="col">                                 
-                                                    <button type="submit" class="btn btn-gradient-primary mr-4 newFont">กราฟ</button>
+                                                <button type="button" class="Pbtn btn btn-primary"><i class="mdi mdi-chart-bar"></i></button>
                                             </th>
                                         </tr>
                                         <tr class="d-flex">
@@ -149,7 +149,7 @@
                                             <td class="col-sm-1"> 1 </td>
                                             <td class="col-sm-1">  </td>
                                             <td class="col-sm-2">
-                                                <button type="submit" class="btn btn-gradient-primary mr-4 newFont">กราฟ</button>
+                                                <button type="button" class="Pbtn btn btn-primary"><i class="mdi mdi-chart-bar"></i></button>
                                             </td>
                                             
                                         </tr>
@@ -159,7 +159,7 @@
                                             <td class="col-sm-1"> 1 </td>
                                             <td class="col-sm-1">  </td>
                                             <td class="col-sm-2">
-                                                <button type="submit" class="btn btn-gradient-primary mr-4 newFont">กราฟ</button>
+                                                <button type="button" class="Pbtn btn btn-primary"><i class="mdi mdi-chart-bar"></i></button>
                                             </td>
                                            
                                         </tr>
@@ -169,7 +169,7 @@
                                             <td class="col-sm-1"> 1 </td>
                                             <td class="col-sm-1">  </td>
                                             <td class="col-sm-2">
-                                                <button type="submit" class="btn btn-gradient-primary mr-4 newFont">กราฟ</button>
+                                                <button type="button" class="Pbtn btn btn-primary"><i class="mdi mdi-chart-bar"></i></button>
                                             </td>
                                             
                                         </tr>
@@ -179,7 +179,7 @@
                                             <td class="col-sm-1"> 2 </td>
                                             <td class="col-sm-1">  </td>
                                             <td class="col-sm-2">
-                                                <button type="submit" class="btn btn-gradient-primary mr-4 newFont">กราฟ</button>
+                                                <button type="button" class="Pbtn btn btn-primary"><i class="mdi mdi-chart-bar"></i></button>
                                             </td>
                                             
                                         </tr>
@@ -189,7 +189,7 @@
                                             <td class="col-sm-1"> 1 </td>
                                             <td class="col-sm-1">  </td>
                                             <td class="col-sm-2">
-                                                <button type="submit" class="btn btn-gradient-primary mr-4 newFont">กราฟ</button>
+                                                <button type="button" class="Pbtn btn btn-primary"><i class="mdi mdi-chart-bar"></i></button>
                                             </td>
                                             
                                         </tr>
@@ -199,7 +199,7 @@
                                             <td class="col-sm-1"> 1 </td>
                                             <td class="col-sm-1">  </td>
                                             <td class="col-sm-2">
-                                                <button type="submit" class="btn btn-gradient-primary mr-4 newFont">กราฟ</button>
+                                                <button type="button" class="Pbtn btn btn-primary"><i class="mdi mdi-chart-bar"></i></button>
                                             </td>
                                            
                                         </tr>
@@ -209,7 +209,7 @@
                                             <td class="col-sm-1"> 1 </td>
                                             <td class="col-sm-1">  </td>
                                             <td class="col-sm-2">
-                                                <button type="submit" class="btn btn-gradient-primary mr-4 newFont">กราฟ</button>
+                                                <button type="button" class="Pbtn btn btn-primary"><i class="mdi mdi-chart-bar"></i></button>
                                             </td>
                                            
                                         </tr>
@@ -219,7 +219,7 @@
                                             <td class="col-sm-1"> 1 </td>
                                             <td class="col-sm-1">  </td>
                                             <td class="col-sm-2">
-                                                <button type="submit" class="btn btn-gradient-primary mr-4 newFont">กราฟ</button>
+                                                <button type="button" class="Pbtn btn btn-primary"><i class="mdi mdi-chart-bar"></i></button>
                                             </td>
                                             
                                         </tr>
