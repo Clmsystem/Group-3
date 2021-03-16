@@ -53,175 +53,198 @@
                                 </select>
                         </div>
 
-                        
+    
+                                
                         <hr><br>
                         <!-- <p class="card-description"> Basic form elements </p> -->
                         <form class="forms-sample">
-                        <div class="row">
-                            <!-- <div class="col-md-1"></div> -->
-                            <div class="col-md-12">
-                                <table class="table table-bordered newFont">
-                                    <thead>
-                                        <tr class="d-flex">
-                                            <th class="col-sm-6" scope="col">
-                                                <h7 class="newFont">หัวข้อ</h7>
-                                            </th>
-                                            
-                                            <th class="col-sm-1" scope="col">
-                                                <h7 class="newFont">คะแนนเต็ม</h7>
-                                            </th>
-                                            <th class="col-sm-2" scope="col">
-                                                <h7 class="newFont">ผล</h7>
-                                            </th>
-                                            <th class="col-sm-2" scope="col">
-                                                <h7 class="newFont">ร้อยละผลสำเร็จ</h7>
-                                            </th>
-                                            <th class="col-sm-2" scope="col">
-                                            <h7 class="newFont">คะแนนที่ได้</h7>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    
-                                    <tbody>
-                                        <tr class="d-flex">
-                                            <td class="col-sm-6"> ร้อยละผลสำเร็จการใช้งานระบบ DOMS (ตั้งแต่ มค. 64) </td>
-                                            <td class="col-sm-1"> 1 </td>
-                                            <td class="col-sm-2">
-                                                <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                            </td>
-                                            <td class="col-sm-2">
-                                                <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                            </td>
-                                            <td class="col-sm-2">
-                                                <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
-                                            </td>
-                                        </tr>
-                                        <tr class="d-flex">
-                                            <td class="col-sm-6"> ร้อยละการบันทึกงานประจำวันของพนักงาน </td>
-                                            <td class="col-sm-1"> 1 </td>
-                                            <td class="col-sm-2">
-                                                <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                            </td>
-                                            <td class="col-sm-2">
-                                                <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                            </td>
-                                            <td class="col-sm-2">
-                                                <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
-                                            </td>
-                                        </tr>
-
-                                        <tr class="d-flex">
-                                            <td class="col-sm-6"> ร้อยละของคะแนนประเมิน 5ส </td>
-                                            <td class="col-sm-1"> 1 </td>
-                                            <td class="col-sm-2">
-                                                <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                            </td>
-                                            <td class="col-sm-2">
-                                                <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                            </td>
-                                            <td class="col-sm-2">
-                                                <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
-                                            </td>
-                                        </tr>
-
-                                        <tr class="d-flex">
-                                            <td class="col-sm-6"> ร้อยละของการประหยัดพลังงาน go green </td>
-                                            <td class="col-sm-1"> 1 </td>
-                                            <td class="col-sm-2">
-                                                <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                            </td>
-                                            <td class="col-sm-2">
-                                                <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                            </td>
-                                            <td class="col-sm-2">
-                                                <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
-                                            </td>
-                                        </tr>
-                                        
-                                        <tr class="d-flex">
-                                            <td class="col-sm-6"> เว็บไซต์ หน่วยงานทั้งภาษาไทยและภาษาอังกฤษ </td>
-                                            <td class="col-sm-1"> 1 </td>
-                                            <td class="col-sm-2">
-                                                <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                            </td>
-                                            <td class="col-sm-2">
-                                                <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                            </td>
-                                            <td class="col-sm-2">
-                                                <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
-                                            </td>
-                                        </tr>
-
-                                        <tr class="d-flex">
-                                            <td class="col-sm-6"> ร้อยละของการดำเนินงานและการใช้จ่ายงบประมาณตามแผนฯ ประจำปี </td>
-                                            <td class="col-sm-1"> 1 </td>
-                                            <td class="col-sm-2">
-                                                <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                            </td>
-                                            <td class="col-sm-2">
-                                                <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                            </td>
-                                            <td class="col-sm-2">
-                                                <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
-                                            </td>
-                                        </tr>
-
-                                        <tr class="d-flex">
-                                            <td class="col-sm-6"> การปฏิบัติตามหลักวินัยทางการเงิน </td>
-                                            <td class="col-sm-1"> 1 </td>
-                                            <td class="col-sm-2">
-                                                <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                            </td>
-                                            <td class="col-sm-2">
-                                                <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                            </td>
-                                            <td class="col-sm-2">
-                                                <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
-                                            </td>
-                                        </tr>
-
-                                        <tr class="d-flex">
-                                            <td class="col-sm-6"> การเข้าร่วมกิจกรรมกลางของมหาวิทยาลัย </td>
-                                            <td class="col-sm-1"> 1 </td>
-                                            <td class="col-sm-2">
-                                                <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                            </td>
-                                            <td class="col-sm-2">
-                                                <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                            </td>
-                                            <td class="col-sm-2">
-                                                <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
-                                            </td>
-                                        </tr>
-
-                                        <tr class="d-flex">
-                                            <td class="col-sm-6"> ผลการประเมินคุณธรรม และความโปร่งใสในการดำเนินงานของหน่วยงาน </td>
-                                            <td class="col-sm-1"> 1 </td>
-                                            <td class="col-sm-2">
-                                                <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                            </td>
-                                            <td class="col-sm-2">
-                                                <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                            </td>
-                                            <td class="col-sm-2">
-                                                <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="row">
                                 <!-- <div class="col-md-1"></div> -->
+                                <div class="col-md-12">
+                                    <table class="table table-bordered newFont">
+                                        <thead>
+                                            <tr class="d-flex">
+                                                <th class="col-sm-4" scope="col">
+                                                    <h7 class="newFont">หัวข้อ</h7>
+                                                </th>
+                                                
+                                                <th class="col-sm-1" scope="col">
+                                                    <h7 class="newFont">คะแนนเต็ม</h7>
+                                                </th>
+                                                <th class="col-sm-1" scope="col">
+                                                    <h7 class="newFont">ผล</h7>
+                                                </th>
+                                                <th class="col-sm-2" scope="col">
+                                                    <h7 class="newFont">ร้อยละผลสำเร็จ</h7>
+                                                </th>
+                                                <th class="col-sm-2" scope="col">
+                                                <h7 class="newFont">คะแนนที่ได้</h7>
+                                                </th>
+                                                <th class="col-sm-2" scope="col">
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="d-flex">
+                                                <td class="col-sm-4"> ร้อยละผลสำเร็จการใช้งานระบบ DOMS (ตั้งแต่ มค. 64) </td>
+                                                <td class="col-sm-1"> 1 </td>
+                                                <td class="col-sm-1">
+                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                </td>
+                                                <td class="col-sm-2">
+                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                </td>
+                                                <td class="col-sm-2">
+                                                </td>
+                                                <td class="col-sm-2">
+                                                    <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="d-flex">
+                                                <td class="col-sm-4"> ร้อยละการบันทึกงานประจำวันของพนักงาน </td>
+                                                <td class="col-sm-1"> 1 </td>
+                                                <td class="col-sm-1">
+                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                </td>
+                                                <td class="col-sm-2">
+                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                </td>
+                                                <td class="col-sm-2">
+                                                </td>
+                                                <td class="col-sm-2">
+                                                    <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="d-flex">
+                                                <td class="col-sm-4"> ร้อยละของคะแนนประเมิน 5ส </td>
+                                                <td class="col-sm-1"> 1 </td>
+                                                <td class="col-sm-1">
+                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                </td>
+                                                <td class="col-sm-2">
+                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                </td>
+                                                <td class="col-sm-2">
+                                                </td>
+                                                <td class="col-sm-2">
+                                                    <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="d-flex">
+                                                <td class="col-sm-4"> ร้อยละของการประหยัดพลังงาน go green </td>
+                                                <td class="col-sm-1"> 1 </td>
+                                                <td class="col-sm-1">
+                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                </td>
+                                                <td class="col-sm-2">
+                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                </td>
+                                                <td class="col-sm-2">
+                                                </td>
+                                                <td class="col-sm-2">
+                                                    <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="d-flex">
+                                                <td class="col-sm-4"> เว็บไซต์ หน่วยงานทั้งภาษาไทยและภาษาอังกฤษ</td>
+                                                <td class="col-sm-1"> 1 </td>
+                                                <td class="col-sm-1">
+                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                </td>
+                                                <td class="col-sm-2">
+                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                </td>
+                                                <td class="col-sm-2">
+                                                </td>
+                                                <td class="col-sm-2">
+                                                    <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="d-flex">
+                                                <td class="col-sm-4"> ร้อยละของการดำเนินงานและการใช้จ่ายงบประมาณตามแผนฯ ประจำปี</td>
+                                                <td class="col-sm-1"> 1 </td>
+                                                <td class="col-sm-1">
+                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                </td>
+                                                <td class="col-sm-2">
+                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                </td>
+                                                <td class="col-sm-2">
+                                                </td>
+                                                <td class="col-sm-2">
+                                                    <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="d-flex">
+                                                <td class="col-sm-4">การปฏิบัติตามหลักวินัยทางการเงิน</td>
+                                                <td class="col-sm-1"> 1 </td>
+                                                <td class="col-sm-1">
+                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                </td>
+                                                <td class="col-sm-2">
+                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                </td>
+                                                <td class="col-sm-2">
+                                                </td>
+                                                <td class="col-sm-2">
+                                                    <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="d-flex">
+                                                <td class="col-sm-4">การเข้าร่วมกิจกรรมกลางของมหาวิทยาลัย</td>
+                                                <td class="col-sm-1"> 1 </td>
+                                                <td class="col-sm-1">
+                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                </td>
+                                                <td class="col-sm-2">
+                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                </td>
+                                                <td class="col-sm-2">
+                                                </td>
+                                                <td class="col-sm-2">
+                                                    <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="d-flex">
+                                                <td class="col-sm-4">ผลการประเมินคุณธรรม และความโปร่งใสในการดำเนินงานของหน่วยงาน</td>
+                                                <td class="col-sm-1"> 1 </td>
+                                                <td class="col-sm-1">
+                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                </td>
+                                                <td class="col-sm-2">
+                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                </td>
+                                                <td class="col-sm-2">
+                                                </td>
+                                                <td class="col-sm-2">
+                                                    <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
+                                                </td>
+                                            </tr>
+                                        
+                                        </tbody>
+                                    </table>
+                                    <!-- <div class="col-md-1"></div> -->
+                                </div>
                             </div>
-                        </div>
+
+                            <div class="form-group col-md-12"></div>
+                            <div class="form-group col-md-8"></div>
+                            <div class="form-group col-md-4">
+                                <div class="button-position">
+                                    <button type="submit" class="btn btn-gradient-primary mr-2 newFont" >บันทึก</button>
+                                    <button type="submit" class="btn btn-light mr-2 newFont">ยกเลิก</button>
+                               </div>
+                            </div>
                         
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                    <h7 class="newFont">ยกเลิก</ย>
-                                </button>
-                                <button type="button" class="btn btn-primary">
-                                    <h7 class="newFont">บันทึก</h7>
-                                </button>
-                            </div>
-                            </div>
+                            
                         </form>
                     </div>
                 </div>
