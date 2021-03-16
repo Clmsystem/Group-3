@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CreatePart2Controller;
 use App\Http\Controllers\ContentPart2Controller;
 use App\Http\Controllers\SearchPart2Controller;
+use App\Http\Controllers\ConfirmPart2Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +39,6 @@ Route::get('/createPart2',[CreatePart2Controller::class,'index']);
 Route::get('/searchPart2',[SearchPart2Controller::class,'index']);
 
 Route::get('/contentPart2',[ContentPart2Controller::class,'index']);
+
+Route::get('/confirmPart2',[ConfirmPart2Controller::class,'index']);
 
