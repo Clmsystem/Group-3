@@ -49,14 +49,14 @@
                                         <option>กันยายน</option>
                                         <option>ตุลาคม</option>
                                         <option>พฤศจิกายน</option>
-                                        <option>ธันวาคม</option>
+                                        <option>ธันวาคม</option>   
                                     </optgroup>
                                 </select>
                         </div>
                                
                         <hr><br>
                         <!-- <p class="card-description"> Basic form elements </p> -->
-                        <form class="forms-sample">
+                        
                             <div class="row">
                                 <!-- <div class="col-md-1"></div> -->
                                 <div class="col-md-12">
@@ -84,150 +84,48 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach($indicator2  as $i => $value)
                                             <tr class="d-flex">
-                                                <td class="col-sm-5"> ร้อยละผลสำเร็จการใช้งานระบบ DOMS (ตั้งแต่ มค. 64) </td>
-                                                <td class="col-sm-1"> 1 </td>
+                                             <form method="post" action="{{route('update')}}">
+                                             @csrf
+                                                <td class="col-sm-5"> {{$value->indicator_name}} </td>
+                                                <td class="col-sm-1"> {{$value->fullscore}} </td>
                                                 <td class="col-sm-1">
-                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                    <input type="text" name="result" value="{{$value->result}}" class="form-control" placeholder="ตัวเลข"  required>
                                                 </td>
                                                 <td class="col-sm-2">
-                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                    <input type="text"  name="percent" value="{{$value->percent}}" class="form-control" placeholder="ตัวเลข" required>
+                                                    <input type="hidden" name="key" value="{{$value->indicator_month_id}}" class="form-control" placeholder="ตัวเลข">
                                                 </td>
-                                                <td class="col-sm-1">
+                                                <td class="col-sm-1">{{$value->score}}
                                                 </td>
                                                 <td class="col-sm-2">
-                                                    <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
+                                                    <button type="submit" class="btn btn-warning mr-2 newFont" >แก้ไข</button>
                                                 </td>
+                                                </form>
                                             </tr>
-
+                                        @endforeach
+                                        @foreach($indicator  as $i => $value)
                                             <tr class="d-flex">
-                                                <td class="col-sm-5"> ร้อยละการบันทึกงานประจำวันของพนักงาน </td>
-                                                <td class="col-sm-1"> 1 </td>
+                                            <form method="post" action="{{route('update2')}}">
+                                             @csrf
+                                                <td class="col-sm-5"> {{$value->indicator_name}} </td>
+                                                <td class="col-sm-1"> {{$value->fullscore}} </td>
                                                 <td class="col-sm-1">
-                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                    <input type="text" name="result" value="{{$value->result}}" class="form-control" placeholder="ตัวเลข" required>
                                                 </td>
                                                 <td class="col-sm-2">
-                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
+                                                    <input type="text" name="percent" value="{{$value->percent}}" class="form-control" placeholder="ตัวเลข" required>
+                                                    <input type="hidden" name="key" value="{{$value->indicator_year_id}}" class="form-control" placeholder="ตัวเลข">
                                                 </td>
-                                                <td class="col-sm-1">
+                                                <td class="col-sm-1">{{$value->score}}
                                                 </td>
                                                 <td class="col-sm-2">
-                                                    <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
+                                                    <button type="submit" class="btn btn-warning mr-2 newFont" >แก้ไข</button>
                                                 </td>
+                                                </form>
                                             </tr>
-
-                                            <tr class="d-flex">
-                                                <td class="col-sm-5"> ร้อยละของคะแนนประเมิน 5ส </td>
-                                                <td class="col-sm-1"> 1 </td>
-                                                <td class="col-sm-1">
-                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                                </td>
-                                                <td class="col-sm-2">
-                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                                </td>
-                                                <td class="col-sm-1">
-                                                </td>
-                                                <td class="col-sm-2">
-                                                    <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
-                                                </td>
-                                            </tr>
-
-                                            <tr class="d-flex">
-                                                <td class="col-sm-5"> ร้อยละของการประหยัดพลังงาน go green </td>
-                                                <td class="col-sm-1"> 1 </td>
-                                                <td class="col-sm-1">
-                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                                </td>
-                                                <td class="col-sm-2">
-                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                                </td>
-                                                <td class="col-sm-1">
-                                                </td>
-                                                <td class="col-sm-2">
-                                                    <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
-                                                </td>
-                                            </tr>
-
-                                            <tr class="d-flex">
-                                                <td class="col-sm-5"> เว็บไซต์ หน่วยงานทั้งภาษาไทยและภาษาอังกฤษ</td>
-                                                <td class="col-sm-1"> 1 </td>
-                                                <td class="col-sm-1">
-                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                                </td>
-                                                <td class="col-sm-2">
-                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                                </td>
-                                                <td class="col-sm-1">
-                                                </td>
-                                                <td class="col-sm-2">
-                                                    <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
-                                                </td>
-                                            </tr>
-
-                                            <tr class="d-flex">
-                                                <td class="col-sm-5"> ร้อยละของการดำเนินงานและการใช้จ่ายงบประมาณตามแผนฯ ประจำปี</td>
-                                                <td class="col-sm-1"> 1 </td>
-                                                <td class="col-sm-1">
-                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                                </td>
-                                                <td class="col-sm-2">
-                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                                </td>
-                                                <td class="col-sm-1">
-                                                </td>
-                                                <td class="col-sm-2">
-                                                    <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
-                                                </td>
-                                            </tr>
-
-                                            <tr class="d-flex">
-                                                <td class="col-sm-5">การปฏิบัติตามหลักวินัยทางการเงิน</td>
-                                                <td class="col-sm-1"> 1 </td>
-                                                <td class="col-sm-1">
-                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                                </td>
-                                                <td class="col-sm-2">
-                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                                </td>
-                                                <td class="col-sm-1">
-                                                </td>
-                                                <td class="col-sm-2">
-                                                    <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
-                                                </td>
-                                            </tr>
-
-                                            <tr class="d-flex">
-                                                <td class="col-sm-5">การเข้าร่วมกิจกรรมกลางของมหาวิทยาลัย</td>
-                                                <td class="col-sm-1"> 1 </td>
-                                                <td class="col-sm-1">
-                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                                </td>
-                                                <td class="col-sm-2">
-                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                                </td>
-                                                <td class="col-sm-1">
-                                                </td>
-                                                <td class="col-sm-2">
-                                                    <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
-                                                </td>
-                                            </tr>
-
-                                            <tr class="d-flex">
-                                                <td class="col-sm-5">ผลการประเมินคุณธรรม และความโปร่งใสในการดำเนินงานของหน่วยงาน</td>
-                                                <td class="col-sm-1"> 1 </td>
-                                                <td class="col-sm-1">
-                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                                </td>
-                                                <td class="col-sm-2">
-                                                    <input type="text" class="form-control" placeholder="ตัวเลข" required>
-                                                </td>
-                                                <td class="col-sm-1">
-                                                </td>
-                                                <td class="col-sm-2">
-                                                    <button type="submit" class="btn btn-warning mr-2 newFont" data-toggle="modal" data-target="#modalAction">แก้ไข</button>
-                                                </td>
-                                            </tr>
-                                        
+                                        @endforeach
                                         </tbody>
                                     </table>
                                     <!-- <div class="col-md-1"></div> -->
@@ -236,13 +134,13 @@
 
                             <div class="form-group col-md-12"></div>
                             <div class="form-group col-md-8"></div>
-                            <div class="form-group col-md-12">
+                            <!-- <div class="form-group col-md-12">
                                 <div class="button-position">
                                     <button type="submit" class="btn btn-gradient-primary mr-2 newFont" >บันทึก</button>
                                     <button type="submit" class="btn btn-light mr-2 newFont">ยกเลิก</button>
                                </div>
-                            </div> 
-                        </form>
+                            </div>  -->
+                        
                     </div>
                 </div>
             </div>
