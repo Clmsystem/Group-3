@@ -130,88 +130,30 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($shindicator_year  as $i => $value)
                                         <tr class="d-flex">
                                             
-                                            <td class="col-sm-4"> ร้อยละผลสำเร็จการใช้งานระบบ DOMS (ตั้งแต่ มค. 64) </td>
-                                            <td class="col-sm-2"> 1 </td>
-                                            <td class="col-sm-2"> รายเดือน </td>
-                                            <td class="col-sm-2"> พัชรินทร์  ภาวิกานนท์ </td>
+                                            <td class="col-sm-4"> {{$value->indicator_name}} </td>
+                                            <td class="col-sm-2"> {{$value->fullscore}} </td>
+                                            <td class="col-sm-2"> {{$value->indicator_type}} </td>
+                                            <td class="col-sm-2"> {{$value->name_employee}} </td>
                                             <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                                                 <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
                                             </td>
                                         </tr>
+                                    @endforeach
+                                    @foreach($shindicator_month  as $i => $value)
                                         <tr class="d-flex">
-                                            <td class="col-sm-4"> ร้อยละการบันทึกงานประจำวันของพนักงาน </td>
-                                            <td class="col-sm-2"> 1 </td>
-                                            <td class="col-sm-2"> รายเดือน </td>
-                                            <td class="col-sm-2"> พัชรินทร์  ภาวิกานนท์ </td>
+                                            
+                                            <td class="col-sm-4"> {{$value->indicator_name}} </td>
+                                            <td class="col-sm-2"> {{$value->fullscore}} </td>
+                                            <td class="col-sm-2"> {{$value->indicator_type}} </td>
+                                            <td class="col-sm-2"> {{$value->name_employee}} </td>
                                             <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                                                 <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
                                             </td>
                                         </tr>
-                                        <tr class="d-flex">
-                                            <td class="col-sm-4"> ร้อยละของคะแนนประเมิน 5ส </td>
-                                            <td class="col-sm-2"> 1 </td>
-                                            <td class="col-sm-2"> รายเดือน </td>
-                                            <td class="col-sm-2"> จารุพันธุ์  พรุเพ็ชรแก้ว </td>
-                                            <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
-                                                <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr class="d-flex">
-                                            <td class="col-sm-4"> ร้อยละของการประหยัดพลังงาน go green </td>
-                                            <td class="col-sm-2"> 1 </td>
-                                            <td class="col-sm-2"> รายเดือน </td>
-                                            <td class="col-sm-2"> ธวัชชัย  ประดู่</td>
-                                            <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
-                                                <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr class="d-flex">
-                                            <td class="col-sm-4"> เว็บไซต์ หน่วยงานทั้งภาษาไทยและภาษาอังกฤษ </td>
-                                            <td class="col-sm-2"> 2 </td>
-                                            <td class="col-sm-2"> รายเดือน </td>
-                                            <td class="col-sm-2"> ชัชวาล  นาคพันธุ์</td>
-                                            <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
-                                                <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr class="d-flex">
-                                            <td class="col-sm-4"> ร้อยละของการดำเนินงานและการใช้จ่ายงบประมาณตามแผนฯ ประจำปี </td>
-                                            <td class="col-sm-2"> 1 </td>
-                                            <td class="col-sm-2"> รายเดือน </td>
-                                            <td class="col-sm-2"> เกษมาพร  ตัญบุญยกิจ</td>
-                                            <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
-                                                <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr class="d-flex">
-                                            <td class="col-sm-4"> การปฏิบัติตามหลักวินัยทางการเงิน </td>
-                                            <td class="col-sm-2"> 1 </td>
-                                            <td class="col-sm-2"> รายเดือน </td>
-                                            <td class="col-sm-2"> จารุพันธุ์  พรุเพ็ชรแก้ว</td>
-                                            <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
-                                                <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr class="d-flex">
-                                            <td class="col-sm-4"> การเข้าร่วมกิจกรรมกลางของมหาวิทยาลัย </td>
-                                            <td class="col-sm-2"> 1 </td>
-                                            <td class="col-sm-2"> รายเดือน </td>
-                                            <td class="col-sm-2"> ธันฐภัทร์  ดวงจันทร์</td>
-                                            <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
-                                                <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr class="d-flex">
-                                            <td class="col-sm-4"> ผลการประเมินคุณธรรม และความโปร่งใสในการดำเนินงานของหน่วยงาน </td>
-                                            <td class="col-sm-2"> 1 </td>
-                                            <td class="col-sm-2"> รายเดือน </td>
-                                            <td class="col-sm-2"> </td>
-                                            <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
-                                                <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
-                                            </td>
-                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                                 <!-- <div class="col-md-1"></div> -->
