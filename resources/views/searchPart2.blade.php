@@ -20,8 +20,21 @@
     td {
         text-align: center;
     }
+    .tdleft {
+        text-align: left;
+    }
     th {
         text-align: center;
+    }
+    td.break {
+        word-wrap: break-word;
+        word-break: break-all;
+        white-space: normal;
+    }
+    th.break {
+        word-wrap: break-word;
+        word-break: break-all;
+        white-space: normal;
     }
     
 </style>
@@ -90,10 +103,10 @@
                                         <button type="submit" class="btn btn-gradient-primary mr-4 newFont">ค้นหา</button>
                                         
                                     </div>
-                                    <div class="button-position">
+                                    <!-- <div class="button-position">
                                         <button type="submit" class="btn btn-gradient-primary mr-4 newFont">ดาวน์โหลด</button>
                                     </div>
-                                    
+                                     -->
                                 </div>
                                 
                             </div>
@@ -108,10 +121,19 @@
              <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="newFont">ตัวชี้วัดปัจจุบัน</h3><br>
-                        <hr><br>
+                    <div class="form-group col-md-12">
+                                     
+                        </div>
+                        <div class="form-group col-md-12">
+                            <h3 class="newFont">ตัวชี้วัดปัจจุบัน</h3><br>
+                            <div class="button-position">
+                                        <button type="submit" class="btn btn-gradient-primary mr-2 newFont">ดาวน์โหลด</button>
+                                    </div>
+                            <br>
+                        </div>
+
                         <div class="row">
-                            <!-- <div class="col-md-1"></div> -->
+                        <div class="form-group col-md-12"></div>
                             <div class="col-md-12">
                                 <table class="table table-bordered newFont">
                                     <thead>
@@ -135,24 +157,24 @@
                                     <tbody>
                                     @foreach($showindicator_year  as $i => $value)
                                         <tr class="d-flex">
-                                            <td class="col-sm-6">{{$value->indicator_name}}</td>
-                                            <td class="col-sm-1">{{$value->fullscore}}</td>
-                                            <td class="col-sm-1">{{$value->score}}</td>
-                                            <td class="col-sm-2"> {{$value->name_employee}}</td>
-                                            <th class="col-sm-2" scope="col">                                 
-                                                <button type="button" class="Pbtn btn btn-primary"><i class="mdi mdi-chart-bar"></i></button>
+                                            <td class="col-sm-6 tdleft break">{{$value->indicator_name}}</td>
+                                            <td class="col-sm-1 break">{{$value->fullscore}}</td>
+                                            <td class="col-sm-1 break">{{$value->score}}</td>
+                                            <td class="col-sm-2 tdleft break"> {{$value->name_employee}}</td>
+                                            <th class="col-sm-2 break" scope="col">                                 
+                                                <button type="button" class="Pbtn btn btn-primary btn-sm"><i class="mdi mdi-chart-bar"></i></button>
                                             </th>
                                         </tr>
                                         @endforeach
                                         
                                         @foreach($showindicator_month  as $i => $value)
                                         <tr class="d-flex">
-                                            <td class="col-sm-6">{{$value->indicator_name}}</td>
-                                            <td class="col-sm-1">{{$value->fullscore}}</td>
-                                            <td class="col-sm-1">{{$value->score}}</td>
-                                            <td class="col-sm-2"> {{$value->name_employee}}</td>
-                                            <th class="col-sm-2" scope="col">                                 
-                                                <button type="button" class="Pbtn btn btn-primary"><i class="mdi mdi-chart-bar"></i></button>
+                                            <td class="col-sm-6 tdleft break">{{$value->indicator_name}}</td>
+                                            <td class="col-sm-1 break">{{$value->fullscore}}</td>
+                                            <td class="col-sm-1 break">{{$value->score}}</td>
+                                            <td class="col-sm-2 tdleft break"> {{$value->name_employee}}</td>
+                                            <th class="col-sm-2 break" scope="col">                                 
+                                                <button type="button" class="Pbtn btn btn-primary btn-sm"><i class="mdi mdi-chart-bar"></i></button>
                                             </th>
                                         </tr>
                                         @endforeach

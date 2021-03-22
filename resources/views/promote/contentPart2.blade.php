@@ -5,13 +5,34 @@
     .newFont {
         font-family: 'Mitr', sans-serif;
     }
-
+    .btns {
+        padding: 0.9rem 2em;
+        font-size: 0.875rem;
+    }
+    td {
+        text-align: center;
+    }
+    .tdleft {
+        text-align: left;
+    }
+    th {
+        text-align: center;
+    }
     .button-position {
         float: right;
         margin: -8px;
     }
+    td.break {
+        word-wrap: break-word;
+        word-break: break-all;
+        white-space: normal;
+    }
+    th.break {
+        word-wrap: break-word;
+        word-break: break-all;
+        white-space: normal;
+    }
 </style>
-
 
 
 
@@ -32,8 +53,9 @@
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="newFont">ส่วนที่ 2 ตัวชี้วัดตามเกณฑ์การประเมินหน่วยงาน (9 ข้อ) จาก ทมอ.</h3><br>
-                        <div class="form-group col-md-6">
+                        <h3 class="newFont">ส่วนที่ 2 ตัวชี้วัดตามเกณฑ์การประเมินหน่วยงาน (9 ข้อ) จาก ทมอ.</h3>
+                        <br>
+                        <div class="form-group col-md-4">
                             <label class="newFont">เดือน</label>
                                 <select class="form-control">
                                     <optgroup class="newFont">
@@ -63,23 +85,23 @@
                                     <table class="table table-bordered newFont">
                                         <thead>
                                             <tr class="d-flex">
-                                                <th class="col-sm-5" scope="col">
+                                                <th class="col-sm-5 break" scope="col">
                                                     <h7 class="newFont">หัวข้อ</h7>
                                                 </th>
                                                 
-                                                <th class="col-sm-1" scope="col">
+                                                <th class="col-sm-1 " scope="col">
                                                     <h7 class="newFont">คะแนนเต็ม</h7>
                                                 </th>
-                                                <th class="col-sm-1" scope="col">
+                                                <th class="col-sm-1 break" scope="col">
                                                     <h7 class="newFont">ผล</h7>
                                                 </th>
-                                                <th class="col-sm-2" scope="col">
+                                                <th class="col-sm-2 break" scope="col">
                                                     <h7 class="newFont">ร้อยละผลสำเร็จ</h7>
                                                 </th>
-                                                <th class="col-sm-1" scope="col">
+                                                <th class="col-sm-1 " scope="col">
                                                 <h7 class="newFont">คะแนนที่ได้</h7>
                                                 </th>
-                                                <th class="col-sm-2" scope="col">
+                                                <th class="col-sm-2 break" scope="col">
                                                 </th>
                                             </tr>
                                         </thead>
@@ -88,19 +110,20 @@
                                             <tr class="d-flex">
                                              <form method="post" action="{{route('update')}}">
                                              @csrf
-                                                <td class="col-sm-5"> {{$value->indicator_name}} </td>
-                                                <td class="col-sm-1"> {{$value->fullscore}} </td>
-                                                <td class="col-sm-1">
+                                                <td class="col-sm-5 tdleft break"> {{$value->indicator_name}} </td>
+                                                <td class="col-sm-1 break"> {{$value->fullscore}} </td>
+                                                <td class="col-sm-1 break">
                                                     <input type="text" name="result" value="{{$value->result}}" class="form-control" placeholder="ตัวเลข"  required>
                                                 </td>
-                                                <td class="col-sm-2">
+                                                <td class="col-sm-2 break">
                                                     <input type="text"  name="percent" value="{{$value->percent}}" class="form-control" placeholder="ตัวเลข" required>
                                                     <input type="hidden" name="key" value="{{$value->indicator_month_id}}" class="form-control" placeholder="ตัวเลข">
                                                 </td>
-                                                <td class="col-sm-1">{{$value->score}}
+                                                <td class="col-sm-1 break">{{$value->score}}
                                                 </td>
-                                                <td class="col-sm-2">
-                                                    <button type="submit" class="btn btn-warning mr-2 newFont" >แก้ไข</button>
+                                                <td class="col-sm-2 break">
+                                                    <button type="submit"class="btn btn-success btn-sm newFont" data-toggle="modal" data-target="#modalAction" ><i class="mdi mdi-content-save"></i></button>
+                                                    <button type="submit"class="btn btn-warning btn-sm newFont" data-toggle="modal" data-target="#modalAction" ><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                                                 </td>
                                                 </form>
                                             </tr>
@@ -109,9 +132,9 @@
                                             <tr class="d-flex">
                                             <form method="post" action="{{route('update2')}}">
                                              @csrf
-                                                <td class="col-sm-5"> {{$value->indicator_name}} </td>
-                                                <td class="col-sm-1"> {{$value->fullscore}} </td>
-                                                <td class="col-sm-1">
+                                                <td class="col-sm-5 tdleft break"> {{$value->indicator_name}} </td>
+                                                <td class="col-sm-1 break"> {{$value->fullscore}} </td>
+                                                <td class="col-sm-1 break">
                                                     <input type="text" name="result" value="{{$value->result}}" class="form-control" placeholder="ตัวเลข" required>
                                                 </td>
                                                 <td class="col-sm-2">
@@ -121,7 +144,8 @@
                                                 <td class="col-sm-1">{{$value->score}}
                                                 </td>
                                                 <td class="col-sm-2">
-                                                    <button type="submit" class="btn btn-warning mr-2 newFont" >แก้ไข</button>
+                                                    <button type="submit"class="btn btn-success btn-sm newFont" data-toggle="modal" data-target="#modalAction" ><i class="mdi mdi-content-save"></i></button>
+                                                    <button type="submit"class="btn btn-warning btn-sm newFont" data-toggle="modal" data-target="#modalAction" ><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                                                 </td>
                                                 </form>
                                             </tr>

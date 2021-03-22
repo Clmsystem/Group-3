@@ -20,8 +20,21 @@
     td {
         text-align: center;
     }
+    .tdleft {
+        text-align: left;
+    }
     th {
         text-align: center;
+    }
+    td.break {
+        word-wrap: break-word;
+        word-break: break-all;
+        white-space: normal;
+    }
+    th.break {
+        word-wrap: break-word;
+        word-break: break-all;
+        white-space: normal;
     }
     
 </style>
@@ -65,7 +78,6 @@
                                             <option>เลือกประเภทการกรอก</option>
                                             <option>รายเดือน</option>
                                             <option>รายปี</option>
-                                            
                                         </optgroup>
                                     </select>
                                 </div>
@@ -109,48 +121,46 @@
                         <div class="row">
                             <!-- <div class="col-md-1"></div> -->
                             <div class="col-md-12">
-                                <table class="table table-bordered newFont">
+                                <table class="table table-bordered newFont break ">
                                     <thead>
                                         <tr class="d-flex">
                                             
-                                            <th class="col-sm-4" scope="col">
+                                            <th class="col-sm-5 break" scope="col">
                                                 <h7 class="newFont">ตัวชี้วัด</h7>
                                             </th>
                                             
-                                            <th class="col-sm-2" scope="col">
+                                            <th class="col-sm-2 break" scope="col">
                                                 <h7 class="newFont">คะแนนเต็ม</h7>
                                             </th>
-                                            <th class="col-sm-2" scope="col">
+                                            <th class="col-sm-2 break" scope="col">
                                                 <h7 class="newFont">ประเภทการกรอก</h7>
                                             </th>
-                                            <th class="col-sm-2" scope="col">
+                                            <th class="col-sm-2 break" scope="col">
                                                 <h7 class="newFont">ผู้รับผิดชอบ</h7>
                                             </th>
-                                            <th class="col-sm-2" scope="col"></th>
+                                            <th class="col-sm-1 break" scope="col"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($shindicator_year  as $i => $value)
                                         <tr class="d-flex">
                                             
-                                            <td class="col-sm-4"> {{$value->indicator_name}} </td>
-                                            <td class="col-sm-2"> {{$value->fullscore}} </td>
-                                            <td class="col-sm-2"> {{$value->indicator_type}} </td>
-                                            <td class="col-sm-2"> {{$value->name_employee}} </td>
-                                            <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
-                                                <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
+                                            <td class="col-sm-5 tdleft break"> {{$value->indicator_name}} </td>
+                                            <td class="col-sm-2 break"> {{$value->fullscore}} </td>
+                                            <td class="col-sm-2 break"> {{$value->indicator_type}} </td>
+                                            <td class="col-sm-2 tdleft break"> {{$value->name_employee}} </td>
+                                            <td class="col-sm-1 break"><button class="btn btn-warning  btn-sm" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>                       
                                             </td>
                                         </tr>
                                     @endforeach
                                     @foreach($shindicator_month  as $i => $value)
                                         <tr class="d-flex">
                                             
-                                            <td class="col-sm-4"> {{$value->indicator_name}} </td>
-                                            <td class="col-sm-2"> {{$value->fullscore}} </td>
-                                            <td class="col-sm-2"> {{$value->indicator_type}} </td>
-                                            <td class="col-sm-2"> {{$value->name_employee}} </td>
-                                            <td class="col-sm-2"><button class="btn btn-success btns" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
-                                                <button class="btn  btn-danger btns"><i class="mdi mdi-delete"></i></button>
+                                            <td class="col-sm-5 tdleft break"> {{$value->indicator_name}} </td>
+                                            <td class="col-sm-2 break"> {{$value->fullscore}} </td>
+                                            <td class="col-sm-2 break"> {{$value->indicator_type}} </td>
+                                            <td class="col-sm-2 tdleft break"> {{$value->name_employee}} </td>
+                                            <td class="col-sm-1 break"><button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -176,7 +186,7 @@
                             <form class="forms-sample">
                                 <hr><br>
                                 <div class="row">
-                                    <div class="form-group col-md-8">
+                                    <div class="form-group col-md-6">
                                         <label class="newFont">หัวข้อ</label>
                                         <input type="text" class="form-control" placeholder="หัวข้อตัวขี้วัด" value="" required>
                                     </div>
@@ -184,6 +194,16 @@
                                         <label class="newFont">คะแนนเต็ม</label>
                                         <input type="text" class="form-control" placeholder="ตัวเลข" value="" required>
                                     </div>
+                                    <div class="form-group col-md-2">
+                                    <label class="newFont">ประเภทการกรอก</label>
+                                    <select class="form-control">
+                                        <optgroup class="newFont">
+                                            <option>เลือกประเภทการกรอก</option>
+                                            <option>รายเดือน</option>
+                                            <option>รายปี</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
                                     <div class="form-group col-md-2">
                                         <label class="newFont">ผู้รับผิดชอบ</label>
                                         <select class="form-control">
