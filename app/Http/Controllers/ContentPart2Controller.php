@@ -11,14 +11,14 @@ class ContentPart2Controller extends Controller
 {
         public function index()
            {
-            $indicator = DB::table('indicator')
+            $indicator_year = DB::table('indicator')
             ->rightjoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
             ->get();
-            $indicator2 = DB::table('indicator')
+            $indicator_month = DB::table('indicator')
             ->rightjoin('indicator_month', 'indicator.indicator_id', '=', 'indicator_month.indicator_id')
             ->get();
 
-            return view('promote.contentPart2',compact('indicator','indicator2'));
+            return view('promote.contentPart2',compact('indicator_year','indicator_month'));
            }
 
            public function update(Request $request)

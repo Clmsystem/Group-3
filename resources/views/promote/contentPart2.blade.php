@@ -106,7 +106,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($indicator2  as $i => $value)
+                                        @foreach($indicator_month  as $i => $value)
                                             <tr class="d-flex">
                                              <form method="post" action="{{route('update')}}">
                                              @csrf
@@ -128,7 +128,7 @@
                                                 </form>
                                             </tr>
                                         @endforeach
-                                        @foreach($indicator  as $i => $value)
+                                        @foreach($indicator_year  as $i => $value)
                                             <tr class="d-flex">
                                             <form method="post" action="{{route('update2')}}">
                                              @csrf
