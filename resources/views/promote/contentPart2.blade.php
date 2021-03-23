@@ -124,7 +124,6 @@
                                                 </td>
                                                 <td class="col-sm-2 break">
                                                     <button type="submit"class="btn btn-success btn-sm newFont" data-toggle="modal" data-target="#modalAction" ><i class="mdi mdi-content-save"></i></button>
-                                                    <button type="submit"class="btn btn-warning btn-sm newFont" data-toggle="modal" data-target="#modalAction" ><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                                                 </td>
                                                 </form>
                                             </tr>
@@ -146,7 +145,6 @@
                                                 </td>
                                                 <td class="col-sm-2">
                                                     <button type="submit"class="btn btn-success btn-sm newFont" data-toggle="modal" data-target="#modalAction" ><i class="mdi mdi-content-save"></i></button>
-                                                    <button type="submit"class="btn btn-warning btn-sm newFont" data-toggle="modal" data-target="#modalAction" ><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                                                 </td>
                                                 </form>
                                             </tr>
