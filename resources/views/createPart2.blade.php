@@ -143,11 +143,17 @@
                                     </thead>
                                     <tbody>
                                     @foreach($shindicator_month  as $i => $value)
+                                   
                                         <tr class="d-flex">
                                             
                                             <td class="col-sm-5 tdleft break"> {{$value->indicator_name}} </td>
                                             <td class="col-sm-2 break"> {{$value->fullscore}} </td>
-                                            <td class="col-sm-2 break"> {{$value->indicator_type}} </td>
+
+                                            @if ($value->indicator_type == 0)
+                                            <td class="col-sm-2 break">รายปี</td>
+                                            @elseif ($value->indicator_type ==1 )
+                                            <td class="col-sm-2 break">รายเดือน</td>
+                                            @endif
                                             <td class="col-sm-2 tdleft break"> {{$value->name_employee}} </td>
                                             <td class="col-sm-1 break"><button class="btn btn-warning  btn-sm" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>                       
                                             </td>
@@ -158,7 +164,11 @@
                                             
                                             <td class="col-sm-5 tdleft break"> {{$value->indicator_name}} </td>
                                             <td class="col-sm-2 break"> {{$value->fullscore}} </td>
-                                            <td class="col-sm-2 break"> {{$value->indicator_type}} </td>
+                                            @if ($value->indicator_type == 0)
+                                            <td class="col-sm-2 break">รายปี</td>
+                                            @elseif ($value->indicator_type ==1 )
+                                            <td class="col-sm-2 break">รายเดือน</td>
+                                            @endif
                                             <td class="col-sm-2 tdleft break"> {{$value->name_employee}} </td>
                                             <td class="col-sm-1 break"><button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                                             </td>
