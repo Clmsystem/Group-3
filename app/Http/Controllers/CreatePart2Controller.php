@@ -17,6 +17,7 @@ class CreatePart2Controller extends Controller
         ->join('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
         ->select('employee.*', 'assign.*', 'indicator.*', 'indicator_year.*')
         ->get();
+    
 
         $shindicator_month = DB::table('employee')
         ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')

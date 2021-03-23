@@ -142,7 +142,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($shindicator_year  as $i => $value)
+                                    @foreach($shindicator_month  as $i => $value)
                                         <tr class="d-flex">
                                             
                                             <td class="col-sm-5 tdleft break"> {{$value->indicator_name}} </td>
@@ -153,7 +153,7 @@
                                             </td>
                                         </tr>
                                     @endforeach
-                                    @foreach($shindicator_month  as $i => $value)
+                                    @foreach($shindicator_year  as $i => $value)
                                         <tr class="d-flex">
                                             
                                             <td class="col-sm-5 tdleft break"> {{$value->indicator_name}} </td>
