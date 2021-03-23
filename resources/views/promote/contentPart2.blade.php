@@ -93,7 +93,8 @@
                                                     <h7 class="newFont">คะแนนเต็ม</h7>
                                                 </th>
                                                 <th class="col-sm-1 break" scope="col">
-                                                    <h7 class="newFont">ผล</h7>
+                                                    <h7 class="newFont">ผล</h7><br>
+                                                    <h9 class="newFont" style="color:red">*กรอกผลที่คำนวณแล้ว</h9>
                                                 </th>
                                                 <th class="col-sm-2 break" scope="col">
                                                     <h7 class="newFont">ร้อยละผลสำเร็จ</h7>
@@ -177,3 +178,11 @@
     </div>
     </div>
 </body>
+<!-- <script>
+    function myfuction($fullscore,$result){
+        return $fullscore*$result
+    }
+
+
+
+</script> -->
