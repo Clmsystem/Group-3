@@ -102,69 +102,24 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($month as $i => $item)
                                         <tr class="d-flex">
-                                            <td  class="col-sm-6 tdleft break"> ร้อยละผลสำเร็จการใช้งานระบบ DOMS (ตั้งแต่ มค. 64) </td>
-                                            <td class="col-sm-1"> 1 </td>
-                                            <td class="col-sm-1">  </td>
-                                            <td class="col-sm-2 tdleft"> พัชรินทร์  ภาวิกานนท์ </td>
+                                            <td  class="col-sm-6 tdleft break"> {{$item->indicator_name}} </td>
+                                            <td class="col-sm-1"> {{$item->fullscore}} </td>
+                                            <td class="col-sm-1"> {{$item->score}} </td>
+                                            <td class="col-sm-2 tdleft"> {{$item->name_employee}} </td>
                                             <td class="col-sm-2"><button type="submit" class="btn btn-gradient-primary  mr-4 newFont">ยืนยัน</button></td>
                                         </tr>
+                                    @endforeach
+                                    @foreach($year as $i => $item)
                                         <tr class="d-flex">
-                                            <td class="col-sm-6 tdleft break"> ร้อยละการบันทึกงานประจำวันของพนักงาน </td>
-                                            <td class="col-sm-1"> 1 </td>
-                                            <td class="col-sm-1">  </td> 
-                                            <td class="col-sm-2 tdleft"> พัชรินทร์  ภาวิกานนท์ </td>
-                                            <td class="col-sm-2"><button type="submit" class="btn btn-gradient-primary mr-4 newFont">ยืนยัน</button></td>
+                                            <td  class="col-sm-6 tdleft break"> {{$item->indicator_name}} </td>
+                                            <td class="col-sm-1"> {{$item->fullscore}} </td>
+                                            <td class="col-sm-1"> {{$item->score}} </td>
+                                            <td class="col-sm-2 tdleft"> {{$item->name_employee}} </td>
+                                            <td class="col-sm-2"><button type="submit" class="btn btn-gradient-primary  mr-4 newFont">ยืนยัน</button></td>
                                         </tr>
-                                        <tr class="d-flex">
-                                            <td class="col-sm-6 tdleft break"> ร้อยละของคะแนนประเมิน 5ส </td>
-                                            <td class="col-sm-1"> 1 </td>
-                                            <td class="col-sm-1">  </td>
-                                            <td class="col-sm-2 tdleft"> จารุพันธุ์  พรุเพ็ชรแก้ว </td>
-                                            <td class="col-sm-2"><button type="submit" class="btn btn-gradient-primary mr-4 newFont">ยืนยัน</button></td>
-                                        </tr>
-                                        <tr class="d-flex">
-                                            <td class="col-sm-6 tdleft break"> ร้อยละของการประหยัดพลังงาน go green </td>
-                                            <td class="col-sm-1"> 1 </td>
-                                            <td class="col-sm-1">  </td>
-                                            <td class="col-sm-2 tdleft"> ธวัชชัย  ประดู่</td>
-                                            <td class="col-sm-2"><button type="submit" class="btn btn-gradient-primary mr-4 newFont">ยืนยัน</button></td>
-                                        </tr>
-                                        <tr class="d-flex">
-                                            <td class="col-sm-6 tdleft break"> เว็บไซต์ หน่วยงานทั้งภาษาไทยและภาษาอังกฤษ </td>
-                                            <td class="col-sm-1"> 2 </td>
-                                            <td class="col-sm-1">  </td>
-                                            <td class="col-sm-2 tdleft"> ชัชวาล  นาคพันธุ์</td>
-                                            <td class="col-sm-2"><button type="submit" class="btn btn-gradient-primary mr-4 newFont">ยืนยัน</button></td>
-                                        </tr>
-                                        <tr class="d-flex">
-                                            <td class="col-sm-6 tdleft break"> ร้อยละของการดำเนินงานและการใช้จ่ายงบประมาณตามแผนฯ ประจำปี </td>
-                                            <td class="col-sm-1"> 1 </td>
-                                            <td class="col-sm-1">  </td>
-                                            <td class="col-sm-2 tdleft"> เกษมาพร  ตัญบุญยกิจ</td>
-                                            <td class="col-sm-2"><button type="submit" class="btn btn-gradient-primary mr-4 newFont">ยืนยัน</button></td>
-                                        </tr>
-                                        <tr class="d-flex">
-                                            <td class="col-sm-6 tdleft break"> การปฏิบัติตามหลักวินัยทางการเงิน </td>
-                                            <td class="col-sm-1"> 1 </td>
-                                            <td class="col-sm-1">  </td>
-                                            <td class="col-sm-2 tdleft"> จารุพันธุ์  พรุเพ็ชรแก้ว</td>
-                                            <td class="col-sm-2"><button type="submit" class="btn btn-gradient-primary mr-4 newFont">ยืนยัน</button></td>
-                                        </tr>
-                                        <tr class="d-flex">
-                                            <td class="col-sm-6 tdleft break"> การเข้าร่วมกิจกรรมกลางของมหาวิทยาลัย </td>
-                                            <td class="col-sm-1"> 1 </td>
-                                            <td class="col-sm-1">  </td>
-                                            <td class="col-sm-2 tdleft"> ธันฐภัทร์  ดวงจันทร์</td>
-                                            <td class="col-sm-2"><button type="submit" class="btn btn-gradient-primary mr-4 newFont">ยืนยัน</button></td>
-                                        </tr>
-                                        <tr class="d-flex">
-                                            <td class="col-sm-6 tdleft break"> ผลการประเมินคุณธรรม และความโปร่งใสในการดำเนินงานของหน่วยงาน </td>
-                                            <td class="col-sm-1"> 1 </td>
-                                            <td class="col-sm-1">  </td>
-                                            <td class="col-sm-2 tdleft"> </td>
-                                            <td class="col-sm-2"><button type="submit" class="btn btn-gradient-primary mr-4 newFont">ยืนยัน</button></td>
-                                        </tr>
+                                    @endforeach    
                                     </tbody>
                                 </table>
                                 <!-- <div class="col-md-1"></div> -->
