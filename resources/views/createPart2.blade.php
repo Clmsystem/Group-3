@@ -166,25 +166,86 @@
                                               <td class="col-sm-2 break">รายเดือน</td>
                                               @endif
                                               <td class="col-sm-2 tdleft break"> {{$value->name_employee}} </td>
-                                              <td class="col-sm-1 break"><button class="btn btn-warning  btn-sm" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
-                                              </td>
-                                          </tr>
-                                          @endforeach
-                                          <!-- @foreach($shindicator_year as $i => $value)
-                                          <tr class="d-flex">
+                                              <!-- <td class="col-sm-1 break"><button class="btn btn-warning  btn-sm" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
+                                              </td> -->
+                                              <td class="col-sm-1 break">
+                                                  <button class="btn btn-warning  btn-sm" data-toggle="modal" data-target="#modalAction1{{$i}}"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
 
-                                              <td class="col-sm-5 tdleft break"> {{$value->indicator_name}} </td>
-                                              <td class="col-sm-2 break"> {{$value->full_score}} </td>
-                                              @if ($value->indicator_type == 0)
-                                              <td class="col-sm-2 break">รายปี</td>
-                                              @elseif ($value->indicator_type ==1 )
-                                              <td class="col-sm-2 break">รายเดือน</td>
-                                              @endif
-                                              <td class="col-sm-2 tdleft break"> {{$value->name_employee}} </td>
-                                              <td class="col-sm-1 break"><button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
+
+                                                  <div class="modal fade" id="modalAction1{{ $i }}" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                                                      <div class="modal-dialog modal-xl" role="document">
+                                                          <div class="modal-content">
+                                                              <div class="modal-body">
+                                                                  <br>
+                                                                  <h2 class="modal-title newFont" id="exampleModalLabel">แก้ไขตัวชี้วัด</h2>
+                                                                  <!-- -------------------- FROM ------------------------- -->
+                                                                  <form action="{{ route('updateCreate') }}" method="post">
+                                                                      @csrf
+                                                                      <!-- @method('PUT') -->
+                                                                      <hr><br>
+                                                                      <div class="row">
+                                                                          <div class="form-group col-md-5">
+                                                                              <label class="newFont">หัวข้อ</label>
+                                                                              <input type="text" class="form-control" id="indicator_name" name="indicator_name" value="{{$value->indicator_name}}" required>
+                                                                              <input type="hidden" name="key" value="1" class="form-control" placeholder="ตัวเลข">
+                                                                          </div>
+                                                                          <div class="form-group col-md-2">
+                                                                              <label class="newFont">คะแนนเต็ม</label>
+                                                                              <input type="text" class="form-control" id="fullscore" name="fullscore" value="{{$value->full_score}}" required>
+                                                                          </div>
+                                                                          <div class="form-group col-md-2">
+                                                                              <label class="newFont">ประเภทการกรอก</label>
+                                                                              <select name="indicator_type" id="indicator_type" class="form-control newFont " style="color:black">
+                                                                                  <optgroup class="newFont" label="เลือกประเภทการกรอก">
+
+                                                                                      <option value="{{$value->indicator_type}}">@if ($value->indicator_type == 0)
+                                                                                          รายปี
+                                                                                          @elseif ($value->indicator_type ==1 )
+                                                                                          รายเดือน
+                                                                                          @endif</option>
+                                                                                      <option value="1">รายเดือน</option>
+                                                                                      <option value="0">รายปี</option>
+                                                                                  </optgroup>
+                                                                              </select>
+                                                                          </div>
+                                                                          <div class="form-group col-md-3 ">
+                                                                              <label class="newFont">ผู้รับผิดชอบ</label>
+                                                                              <select name="name_employee" id="indicator_id" class="form-control newFont " style="color:black">
+                                                                                  <optgroup class="newFont" label="เลือกผู้รับผิดชอบ">
+                                                                                      <option value="{{$value->name_employee}}">{{$value->name_employee}}</option>
+                                                                                      <option value="1">พัชรินทร์ ภาวิกานนท์ </option>
+                                                                                      <option value="2">จารุพันธุ์ พรุเพ็ชรแก้ว</option>
+                                                                                      <option value="3">ธวัชชัย ประดู่</option>
+                                                                                      <option value="4">ชัชวาล นาคพันธุ์</option>
+                                                                                      <option value="5">เกษมาพร ตัญบุญยกิจ</option>
+                                                                                      <option value="6">ธันฐภัทร์ ดวงจันทร์</option>
+                                                                                      <option value="8">อมราพร ชุมชนะ</option>
+                                                                                      <option value="9">อาภรณ์ ไชยสุวรรณ</option>
+                                                                                  </optgroup>
+                                                                              </select>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="modal-footer">
+                                                                          <button type="submit" class="btn btn-secondary" data-dismiss="modal">
+                                                                              <h7 class="newFont">ยกเลิก</ย>
+                                                                          </button>
+                                                                          <button type="submit" class="btn btn-primary">
+                                                                              <h7 class="newFont">บันทึก</h7>
+                                                                          </button>
+                                                                      </div>
+                                                                  </form>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+
                                               </td>
+
                                           </tr>
-                                          @endforeach -->
+
+                                          @endforeach
+
                                       </tbody>
                                   </table>
                                   <!-- <div class="col-md-1"></div> -->
@@ -198,67 +259,7 @@
 
               <!--------------------------------------------  แก้ไขตัวชี้วัด Start ---------------------------------------------------->
 
-              <div class="modal fade" id="modalAction" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-xl" role="document">
-                      <div class="modal-content">
-                          <div class="modal-body">
-                              <br>
-                              <h2 class="modal-title newFont" id="exampleModalLabel">แก้ไขตัวชี้วัด</h2>
-                              <form class="forms-sample">
-                                  <hr><br>
-                                  <div class="row">
-                                      <div class="form-group col-md-6">
-                                          <label class="newFont">หัวข้อ</label>
-                                          <input type="text" class="form-control" placeholder="หัวข้อตัวขี้วัด" value="" required>
-                                      </div>
-                                      <div class="form-group col-md-2">
-                                          <label class="newFont">คะแนนเต็ม</label>
-                                          <input type="text" class="form-control" placeholder="ตัวเลข" value="" required>
-                                      </div>
-                                      <div class="form-group col-md-2">
-                                          <label class="newFont">ประเภทการกรอก</label>
-                                          <select class="form-control">
-                                              <optgroup class="newFont">
-                                                  <option>เลือกประเภทการกรอก</option>
-                                                  <option>รายเดือน</option>
-                                                  <option>รายปี</option>
-                                              </optgroup>
-                                          </select>
-                                      </div>
-                                      <div class="form-group col-md-2">
-                                          <label class="newFont">ผู้รับผิดชอบ</label>
-                                          <select class="form-control">
-                                              <optgroup class="newFont">
-                                                  <option>เลือกผู้รับผิดชอบ</option>
-                                                  <option>พัชรินทร์ ภาวิกานนท์ </option>
-                                                  <option>เกษมาพร ตัญบุญยกิจ</option>
-                                                  <option>จารุพันธ์ุ พรุเพ็ชรแก้ว</option>
-                                                  <option>ธวัชชัย ประดู่</option>
-                                                  <option>ชัชวาล นาคพันธุ์</option>
-                                                  <option>ธันฐภัทร์ ดวงจันทร์</option>
-                                                  <option>อมราพร ชุมชนะ</option>
-                                                  <option>อาภรณ์ ไชยสุวรรณ</option>
-                                              </optgroup>
-                                          </select>
-                                      </div>
-                                  </div>
-                              </form>
-                          </div>
-                          <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                  <h7 class="newFont">ยกเลิก</ย>
-                              </button>
-                              <button type="button" class="btn btn-primary">
-                                  <h7 class="newFont">บันทึก</h7>
-                              </button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
           </div>
-          @include('partials.footer')
-      </div>
-      <!-- Div nav & side -->
       </div>
       </div>
       </div>

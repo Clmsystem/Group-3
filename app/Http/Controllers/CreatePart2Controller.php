@@ -47,6 +47,7 @@ class CreatePart2Controller extends Controller
         $data["year_id"] = 1;
         $data["year1_year_id"] = 0;
         $data["indicator_type"] = $request->type;
+        $data["full_score"] = $request->fullscore;
         DB::table('indicator')->insert($data);
         $max = DB::table('indicator')->max('indicator_id');
 
@@ -56,17 +57,12 @@ class CreatePart2Controller extends Controller
         $asign["Employee_id_employee"] = $request->input('employ');;
         DB::table('assign')->insert($asign);
 
-
-
-
-
-
         if ($checktype == 1) {
             $data = array();
             $max = DB::table('indicator')->max('indicator_id');
             for ($i = 1; $i <= 12; $i++) {
                 $data["result"] = 0;
-                $data["fullscore"] = $request->fullscore;
+                // $data["fullscore"] = $request->fullscore;
                 $data["score"] = 0;
                 $data["percent"] = 0;
                 $data["indicator_id"] = $max;
@@ -82,7 +78,7 @@ class CreatePart2Controller extends Controller
             $data["indicator_id"] = $max;
             $data["year_id"] = 1;
             $data["result"] = 0;
-            $data["fullscore"] = $request->fullscore;
+            // $data["fullscore"] = $request->fullscore;
             $data["score"] = 0;
             $data["percent"] = 0;
             $data["status"] = 0;
@@ -92,35 +88,33 @@ class CreatePart2Controller extends Controller
         }
         return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
 
+    }
+    public function updateCreate(Request $request){
+        
+        // var_dump($request);
+        // die();
 
+        DB::table('indicator')
+            ->where('indicator_id', $request->key)
+            ->update(['indicator_name' => $request->indicator_name]);
 
+        DB::table('indicator')
+            ->where('indicator_id', $request->key)
+            ->update(['indicator_type' => $request->indicator_type]);
 
-        // $data = array();
-        // $data["indicator_id"] = $id+1;
-        // $data["indicator_name"] = $request->indicator_name;
-        // $data["year_id"] = 1;
-        // $data["year1_year_id"] = 0;
-        // $data["indicator_type"] = $id+1;
+        DB::table('indicator_month')
+            ->where('indicator_month_id', $request->key)
+            ->update(['fullscore' => $request->fullscore]);
 
-        // DB::table('indicator')->insert($data);
+        DB::table('indicator_month')
+            ->where('indicator_month_id', $request->key)
+            ->update(['fullscore' => $request->fullscore]);
 
-
-        // $values = array('name_item' => $request->indicator_list, 'unit_id_unit' => $request->unit, 'year_id' => '1');
-
-        // DB::table('list_item')->insert($values);
-
-        // return redirect()->route('createpart4.index')->with('success', 'created success');
-
-
-
-
-
-
-
-
-
-
-
-        // return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
+        DB::table('assign')
+            ->where('assign_id', $request->key)
+            ->update(['Employee_id_employee' => $request->Employee_id_employee]);
+        
+            
+        return redirect()->back()->with('sucess','บันทึกข้อมูลเรียบร้อย');   
     }
 }
