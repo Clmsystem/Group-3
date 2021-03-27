@@ -87,34 +87,53 @@ class CreatePart2Controller extends Controller
             DB::table('indicator_year')->insert($data);
         }
         return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
-
     }
-    public function updateCreate(Request $request){
-        
+    public function updateCreate(Request $request)
+    {
+
         // var_dump($request);
         // die();
 
-        DB::table('indicator')
-            ->where('indicator_id', $request->key)
-            ->update(['indicator_name' => $request->indicator_name]);
+        // DB::table('indicator')
+        //     ->where('indicator_id', $request->key)
+        //     ->update(['indicator_name' => $request->indicator_name]);
 
-        DB::table('indicator')
-            ->where('indicator_id', $request->key)
-            ->update(['indicator_type' => $request->indicator_type]);
+        // DB::table('indicator')
+        //     ->where('indicator_id', $request->key)
+        //     ->update(['indicator_type' => $request->indicator_type]);
 
-        DB::table('indicator_month')
-            ->where('indicator_month_id', $request->key)
-            ->update(['fullscore' => $request->fullscore]);
+        // DB::table('indicator_month')
+        //     ->where('indicator_month_id', $request->key)
+        //     ->update(['fullscore' => $request->fullscore]);
 
-        DB::table('indicator_month')
-            ->where('indicator_month_id', $request->key)
-            ->update(['fullscore' => $request->fullscore]);
+        // DB::table('indicator_month')
+        //     ->where('indicator_month_id', $request->key)
+        //     ->update(['fullscore' => $request->fullscore]);
+
+
+        // $id_assign = DB::table('assign')
+        //     ->select('assign')
+        //     ->where('indicator_id', '=', 'edit_indicator_id')
+        //     ->get();
+
+
+
+
 
         DB::table('assign')
-            ->where('assign_id', $request->key)
-            ->update(['Employee_id_employee' => $request->Employee_id_employee]);
-        
-            
-        return redirect()->back()->with('sucess','บันทึกข้อมูลเรียบร้อย');   
+            ->where('indicator_id', $request->edit_indicator_id)
+            ->update(['Employee_id_employee' => $request->input('edit_employ')]);
+
+
+        DB::table('indicator')
+            ->where('indicator_id', $request->edit_indicator_id)
+            ->update([
+                'indicator_name' => $request->edit_indicator_name,
+                'indicator_type' => $request->input('edit_indicator_type'),
+                'full_score' => $request->edit_fullscore,
+            ]);
+        // return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
+        return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
+        // return dd(request()->all());
     }
 }

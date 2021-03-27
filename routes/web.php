@@ -35,8 +35,8 @@ Route::post('/index', function () {
 
 
 // Route::resource('createPart2', CreatePart2Controller::class);
-Route::get('/createPart2',[CreatePart2Controller::class,'index']);
-Route::post('/createPart2/update',[ContentPart2Controller::class,'update',])->name('updateCreate');
+Route::get('/createPart2', [CreatePart2Controller::class, 'index']);
+Route::post('/createPart2/update', [CreatePart2Controller::class, 'updateCreate',])->name('updateCreate');
 
 Route::get('/searchPart2', [SearchPart2Controller::class, 'index']);
 //join table indicator
