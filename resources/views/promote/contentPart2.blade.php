@@ -92,8 +92,8 @@
                                                 <th class="col-sm-1 " scope="col">
                                                     <h7 class="newFont">คะแนนเต็ม</h7>
                                                 </th>
-                                                <th class="col-sm-1 break" scope="col">
-                                                    <h7 class="newFont">ผล</h7><br>
+                                                <th class="col-sm-2 break" scope="col">
+                                                    <h7 class="newFont">ผล</h7><br><br>
                                                     <h9 class="newFont" style="color:red">*กรอกผลที่คำนวณแล้ว</h9>
                                                 </th>
                                                 <th class="col-sm-2 break" scope="col">
@@ -102,7 +102,7 @@
                                                 <th class="col-sm-1 " scope="col">
                                                 <h7 class="newFont">คะแนนที่ได้</h7>
                                                 </th>
-                                                <th class="col-sm-2 break" scope="col">
+                                                <th class="col-sm-1 break" scope="col">
                                                 </th>
                                             </tr>
                                         </thead>
@@ -113,7 +113,7 @@
                                              @csrf
                                                 <td class="col-sm-5 tdleft break"> {{$value->indicator_name}} </td>
                                                 <td class="col-sm-1 break"> {{$value->full_score}} </td>
-                                                <td class="col-sm-1 break">
+                                                <td class="col-sm-2 break">
                                                     <input type="text" name="result" value="{{$value->result}}" class="form-control" placeholder="ตัวเลข"  required>
                                                 </td>
                                                 <td class="col-sm-2 break">
@@ -122,7 +122,7 @@
                                                 </td>
                                                 <td class="col-sm-1 break">{{$value->score}}
                                                 </td>
-                                                <td class="col-sm-2 break">
+                                                <td class="col-sm-1 break">
                                                     <button type="submit"class="btn btn-success btn-sm newFont" data-toggle="modal" data-target="#modalAction" ><i class="mdi mdi-content-save"></i></button>
                                                 </td>
                                                 </form>
@@ -134,7 +134,7 @@
                                              @csrf
                                                 <td class="col-sm-5 tdleft break"> {{$value->indicator_name}} </td>
                                                 <td class="col-sm-1 break"> {{$value->full_score}} </td>
-                                                <td class="col-sm-1 break">
+                                                <td class="col-sm-2 break">
                                                     <input type="text" name="result" value="{{$value->result}}" class="form-control" placeholder="ตัวเลข" required>
                                                 </td>
                                                 <td class="col-sm-2">
@@ -143,7 +143,7 @@
                                                 </td>
                                                 <td class="col-sm-1">{{$value->score}}
                                                 </td>
-                                                <td class="col-sm-2">
+                                                <td class="col-sm-1">
                                                     <button type="submit"class="btn btn-success btn-sm newFont" data-toggle="modal" data-target="#modalAction" ><i class="mdi mdi-content-save"></i></button>
                                                 </td>
                                                 </form>
