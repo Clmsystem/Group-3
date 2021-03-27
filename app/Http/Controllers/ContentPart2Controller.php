@@ -12,7 +12,7 @@ class ContentPart2Controller extends Controller
         public function index()
            {
             $indicator_year = DB::table('indicator')
-            ->rightjoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
+            ->leftjoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
             ->get();
             $indicator_month = DB::table('indicator')
             ->rightjoin('indicator_month', 'indicator.indicator_id', '=', 'indicator_month.indicator_id')

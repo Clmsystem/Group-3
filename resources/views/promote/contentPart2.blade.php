@@ -112,7 +112,7 @@
                                              <form method="post" action="{{route('update')}}">
                                              @csrf
                                                 <td class="col-sm-5 tdleft break"> {{$value->indicator_name}} </td>
-                                                <td class="col-sm-1 break"> {{$value->fullscore}} </td>
+                                                <td class="col-sm-1 break"> {{$value->full_score}} </td>
                                                 <td class="col-sm-1 break">
                                                     <input type="text" name="result" value="{{$value->result}}" class="form-control" placeholder="ตัวเลข"  required>
                                                 </td>
@@ -133,7 +133,7 @@
                                             <form method="post" action="{{route('update2')}}">
                                              @csrf
                                                 <td class="col-sm-5 tdleft break"> {{$value->indicator_name}} </td>
-                                                <td class="col-sm-1 break"> {{$value->fullscore}} </td>
+                                                <td class="col-sm-1 break"> {{$value->full_score}} </td>
                                                 <td class="col-sm-1 break">
                                                     <input type="text" name="result" value="{{$value->result}}" class="form-control" placeholder="ตัวเลข" required>
                                                 </td>
