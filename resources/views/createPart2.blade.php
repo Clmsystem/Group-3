@@ -198,7 +198,11 @@
                                                                             <label class="newFont">ประเภทการกรอก</label>
                                                                             <select name="edit_indicator_type" id="edit_indicator_type" class="form-control newFont " style="color:black">
                                                                                 <optgroup class="newFont" label="เลือกประเภทการกรอก">
-                                                                                    <!-- <option disabled>เลือกประเภทการกรอก</option> -->
+                                                                                    <option >@if ($value->indicator_type == 0)
+                                                                                             รายปี
+                                                                                             @elseif ($value->indicator_type ==1 )
+                                                                                             รายเดือน
+                                                                                             @endif</option>
                                                                                     <option value="1">รายเดือน</option>
                                                                                     <option value="0">รายปี</option>
                                                                                 </optgroup>
@@ -206,8 +210,9 @@
                                                                         </div>
                                                                         <div class="form-group col-md-3 ">
                                                                             <label class="newFont">ผู้รับผิดชอบ</label>
-                                                                            <select name="edit_employ" id="edit_employ" class="form-control newFont " style="color:black">
+                                                                            <select name="edit_employ" id="edit_employ" class="form-control newFont" style="color:black">
                                                                                 <optgroup class="newFont" label="เลือกผู้รับผิดชอบ">
+                                                                                    <option value="{{$value->id_employee}}">{{$value->name_employee}}</option>
                                                                                     @foreach($getEmployee as $i => $value)
                                                                                     <option value="{{$value->id_employee}}">{{$value->name_employee}}</option>
                                                                                     <!-- <input type="hidden" name="edit_employid" id="edit_employid" value="{{$value->id_employee}}"> -->
