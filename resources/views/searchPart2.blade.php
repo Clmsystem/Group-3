@@ -158,7 +158,7 @@
                                     @foreach($showindicator_month  as $i => $value)
                                         <tr class="d-flex">
                                             <td class="col-sm-6 tdleft break">{{$value->indicator_name}}</td>
-                                            <td class="col-sm-1 break">{{$value->fullscore}}</td>
+                                            <td class="col-sm-1 break">{{$value->full_score}}</td>
                                             <td class="col-sm-1 break">{{$value->score}}</td>
                                             <td class="col-sm-2 tdleft break"> {{$value->name_employee}}</td>
                                             <th class="col-sm-2 break" scope="col">                                 
@@ -170,7 +170,7 @@
                                         @foreach($showindicator_year  as $i => $value)
                                         <tr class="d-flex">
                                             <td class="col-sm-6 tdleft break">{{$value->indicator_name}}</td>
-                                            <td class="col-sm-1 break">{{$value->fullscore}}</td>
+                                            <td class="col-sm-1 break">{{$value->full_score}}</td>
                                             <td class="col-sm-1 break">{{$value->score}}</td>
                                             <td class="col-sm-2 tdleft break"> {{$value->name_employee}}</td>
                                             <th class="col-sm-2 break" scope="col">                                 
