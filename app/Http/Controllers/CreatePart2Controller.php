@@ -61,10 +61,10 @@ class CreatePart2Controller extends Controller
             $data = array();
             $max = DB::table('indicator')->max('indicator_id');
             for ($i = 1; $i <= 12; $i++) {
-                $data["result"] = 0;
+                $data["result"] = null;
                 // $data["fullscore"] = $request->fullscore;
                 $data["score"] = 0;
-                $data["percent"] = 0;
+                $data["percent"] = null;
                 $data["indicator_id"] = $max;
                 $data["year_year_id"] = 0;
                 $data["month"] = $i;
@@ -77,10 +77,10 @@ class CreatePart2Controller extends Controller
             $max = DB::table('indicator')->max('indicator_id');
             $data["indicator_id"] = $max;
             $data["year_id"] = 1;
-            $data["result"] = 0;
+            $data["result"] = null;
             // $data["fullscore"] = $request->fullscore;
             $data["score"] = 0;
-            $data["percent"] = 0;
+            $data["percent"] = null;
             $data["status"] = 0;
             // $data["id_employee"] = $request->input('employ');
 

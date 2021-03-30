@@ -105,7 +105,7 @@
                                     @foreach($month as $i => $item)
                                         <tr class="d-flex">
                                             <td  class="col-sm-6 tdleft break"> {{$item->indicator_name}} </td>
-                                            <td class="col-sm-1"> {{$item->fullscore}} </td>
+                                            <td class="col-sm-1"> {{$item->full_score}} </td>
                                             <td class="col-sm-1"> {{$item->score}} </td>
                                             <td class="col-sm-2 tdleft"> {{$item->name_employee}} </td>
                                             <td class="col-sm-2"><button type="submit" class="btn btn-gradient-primary  mr-4 newFont">ยืนยัน</button></td>
@@ -114,7 +114,7 @@
                                     @foreach($year as $i => $item)
                                         <tr class="d-flex">
                                             <td  class="col-sm-6 tdleft break"> {{$item->indicator_name}} </td>
-                                            <td class="col-sm-1"> {{$item->fullscore}} </td>
+                                            <td class="col-sm-1"> {{$item->full_score}} </td>
                                             <td class="col-sm-1"> {{$item->score}} </td>
                                             <td class="col-sm-2 tdleft"> {{$item->name_employee}} </td>
                                             <td class="col-sm-2"><button type="submit" class="btn btn-gradient-primary  mr-4 newFont">ยืนยัน</button></td>
