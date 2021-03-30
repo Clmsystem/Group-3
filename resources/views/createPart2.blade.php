@@ -69,7 +69,7 @@
                         <form method="post" action="{{route('insert_indicator')}}">
                             @csrf
                             <div class="row">
-                                <div class="form-group col-md-5">
+                                <div class="form-group col-md-4">
                                     <label class="newFont">หัวข้อ</label>
                                     <input type="text" name="indtcator_name" id="indtcator_name" class="form-control" placeholder="หัวข้อตัวขี้วัด" required>
                                 </div>
@@ -82,7 +82,7 @@
                                     <label class="newFont" name="month">ประเภทการกรอก</label>
                                     <select class="form-control" name="type" id="type">
                                         <optgroup class="newFont" label="เลือกประเภทการกรอก">
-                                            <option disabled>เลือกประเภทการกรอก</option>
+                                            <option disabled selected hidden>เลือกประเภทการกรอก</option>
                                             <option value="1">รายเดือน</option>
                                             <option value="0">รายปี</option>
                                         </optgroup>
@@ -90,12 +90,12 @@
                                 </div>
 
 
-                                <div class="form-group col-md-2">
+                                <div class="form-group col-md-3">
                                     <label class="newFont">ผู้รับผิดชอบ</label>
                                     <select class="form-control" name="employ" id="employ">
 
                                         <optgroup class="newFont" label="เลือกผู้รับผิดชอบ">
-                                            <option disabled>เลือกประเภทการกรอก</option>
+                                            <option disabled selected hidden>เลือกประเภทการกรอก</option>
                                             @foreach($getEmployee as $i => $value)
                                             <option class="newFont" value="{{$value->id_employee}}">{{$value->name_employee}}</option>
                                             <!-- <option value="1">พัชรินทร์  ภาวิกานนท์ </option>
