@@ -82,7 +82,6 @@
                                     <label class="newFont" name="month">ประเภทการกรอก</label>
                                     <select class="form-control" name="type" id="type">
                                         <optgroup class="newFont" label="เลือกประเภทการกรอก">
-                                            <option disabled>เลือกประเภทการกรอก</option>
                                             <option value="1">รายเดือน</option>
                                             <option value="0">รายปี</option>
                                         </optgroup>
@@ -95,7 +94,6 @@
                                     <select class="form-control" name="employ" id="employ">
 
                                         <optgroup class="newFont" label="เลือกผู้รับผิดชอบ">
-                                            <option disabled>เลือกประเภทการกรอก</option>
                                             @foreach($getEmployee as $i => $value)
                                             <option class="newFont" value="{{$value->id_employee}}">{{$value->name_employee}}</option>
                                             <!-- <option value="1">พัชรินทร์  ภาวิกานนท์ </option>
