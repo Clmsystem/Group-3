@@ -81,7 +81,7 @@
                                 <div class="form-group col-md-3">
                                     <label class="newFont" name="month">ประเภทการกรอก</label>
                                     <select class="form-control" name="type" id="type">
-                                        <optgroup class="newFont">
+                                        <optgroup class="newFont" label="เลือกประเภทการกรอก">
                                             <option disabled>เลือกประเภทการกรอก</option>
                                             <option value="1">รายเดือน</option>
                                             <option value="0">รายปี</option>
@@ -94,7 +94,7 @@
                                     <label class="newFont">ผู้รับผิดชอบ</label>
                                     <select class="form-control" name="employ" id="employ">
 
-                                        <optgroup class="newFont">
+                                        <optgroup class="newFont" label="เลือกผู้รับผิดชอบ">
                                             <option disabled>เลือกประเภทการกรอก</option>
                                             @foreach($getEmployee as $i => $value)
                                             <option class="newFont" value="{{$value->id_employee}}">{{$value->name_employee}}</option>
