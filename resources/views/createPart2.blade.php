@@ -76,7 +76,7 @@
 
                                 <div class="form-group col-md-2">
                                     <label class="newFont">คะแนนเต็ม</label>
-                                    <input type="text" name="fullscore" id="fullscore" class="form-control" placeholder="ตัวเลข" value="" required>
+                                    <input type="textnumber" name="fullscore" id="fullscore" class="form-control" placeholder="ตัวเลข" value="" required>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label class="newFont" name="month">ประเภทการกรอก</label>
@@ -93,9 +93,11 @@
                                 <div class="form-group col-md-2">
                                     <label class="newFont">ผู้รับผิดชอบ</label>
                                     <select class="form-control" name="employ" id="employ">
-                                        @foreach($getEmployee as $i => $value)
+
                                         <optgroup class="newFont">
-                                            <option value="{{$value->id_employee}}">{{$value->name_employee}}</option>
+                                            <option disabled>เลือกประเภทการกรอก</option>
+                                            @foreach($getEmployee as $i => $value)
+                                            <option class="newFont" value="{{$value->id_employee}}">{{$value->name_employee}}</option>
                                             <!-- <option value="1">พัชรินทร์  ภาวิกานนท์ </option>
                                             <option value="5">เกษมาพร  ตัญบุญยกิจ</option>
                                             <option value="">จารุพันธุ์ พรุเพ็ชรแก้ว</option>
@@ -104,8 +106,9 @@
                                             <option value="">ธันฐภัทร์  ดวงจันทร์</option>
                                             <option value="">อมราพร ชุมชนะ</option>
                                             <option value="">อาภรณ์ ไชยสุวรรณ</option> -->
+                                            @endforeach
                                         </optgroup>
-                                        @endforeach
+
                                     </select>
                                 </div>
                                 <div class="form-group col-md-9"></div>
@@ -185,30 +188,30 @@
                                                                     <!-- @method('PUT') -->
                                                                     <hr><br>
                                                                     <div class="row">
-                                                                        <div class="form-group col-md-5">
+                                                                        <div class="form-group col-md-5 tdleft ">
                                                                             <label class="newFont">หัวข้อ</label>
                                                                             <input type="text" class="form-control" id="edit_indicator_name" name="edit_indicator_name" value="{{$value->indicator_name}}" required>
                                                                             <input type="hidden" name="edit_indicator_id" id="edit_indicator_id" value="{{$value->indicator_id}}">
                                                                         </div>
-                                                                        <div class="form-group col-md-2">
+                                                                        <div class="form-group col-md-2 tdleft">
                                                                             <label class="newFont">คะแนนเต็ม</label>
                                                                             <input type="text" class="form-control" id="edit_fullscore" name="edit_fullscore" value="{{$value->full_score}}" required>
                                                                         </div>
-                                                                        <div class="form-group col-md-2">
+                                                                        <div class="form-group col-md-2 tdleft">
                                                                             <label class="newFont">ประเภทการกรอก</label>
                                                                             <select name="edit_indicator_type" id="edit_indicator_type" class="form-control newFont " style="color:black">
                                                                                 <optgroup class="newFont" label="เลือกประเภทการกรอก">
-                                                                                    <option value="{{$value->indicator_type}}" >@if ($value->indicator_type == 0)
-                                                                                             รายปี
-                                                                                             @elseif ($value->indicator_type ==1 )
-                                                                                             รายเดือน
-                                                                                             @endif</option>
+                                                                                    <option value="{{$value->indicator_type}}">@if ($value->indicator_type == 0)
+                                                                                        รายปี
+                                                                                        @elseif ($value->indicator_type ==1 )
+                                                                                        รายเดือน
+                                                                                        @endif</option>
                                                                                     <option value="1">รายเดือน</option>
                                                                                     <option value="0">รายปี</option>
                                                                                 </optgroup>
                                                                             </select>
                                                                         </div>
-                                                                        <div class="form-group col-md-3 ">
+                                                                        <div class="form-group col-md-3 tdleft ">
                                                                             <label class="newFont">ผู้รับผิดชอบ</label>
                                                                             <select name="edit_employ" id="edit_employ" class="form-control newFont" style="color:black">
                                                                                 <optgroup class="newFont" label="เลือกผู้รับผิดชอบ">
