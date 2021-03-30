@@ -198,7 +198,7 @@
                                                                             <label class="newFont">ประเภทการกรอก</label>
                                                                             <select name="edit_indicator_type" id="edit_indicator_type" class="form-control newFont " style="color:black">
                                                                                 <optgroup class="newFont" label="เลือกประเภทการกรอก">
-                                                                                    <option >@if ($value->indicator_type == 0)
+                                                                                    <option value="{{$value->indicator_type}}" >@if ($value->indicator_type == 0)
                                                                                              รายปี
                                                                                              @elseif ($value->indicator_type ==1 )
                                                                                              รายเดือน
