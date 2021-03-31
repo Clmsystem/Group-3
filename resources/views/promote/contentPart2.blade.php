@@ -64,7 +64,7 @@
                         <br>
                         <div class="form-group col-md-4">
                             <label class="newFont">เดือน</label>
-                            <form action="{{route('search')}}" method="POST" enctype="multipart/form-data">
+                            <form action="{{route('search_month')}}" method="POST" enctype="multipart/form-data">
                                 <select id="client_id" type="dropdown-toggle" class="form-control" name="month">
                                     <optgroup class="newFont">
                                         <option value="0">ทุกเดือน</option>
