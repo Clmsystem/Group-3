@@ -67,7 +67,7 @@ class ContentPart2Controller extends Controller
         return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
     }
 
-    public function search(Request $request)
+    public function searchmonth(Request $request)
     {
         $month = $request->input('month');
         $year = (int)date("Y") + 543;

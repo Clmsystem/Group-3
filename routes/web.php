@@ -41,12 +41,14 @@ Route::post('/createPart2/update', [ContentPart2Controller::class, 'update',])->
 
 
 Route::get('/searchPart2', [SearchPart2Controller::class, 'index']);
+Route::post('/searchPart2', [SearchPart2Controller::class, 'search',])->name('search');
+
 //join table indicator
 Route::get('/contentPart2', [ContentPart2Controller::class, 'index']);
 //update
 Route::post('/contentPart2/update', [ContentPart2Controller::class, 'update',])->name('update');
 Route::post('/contentPart2/update2', [ContentPart2Controller::class, 'update2',])->name('update2');
-Route::post('/contentPart2', [ContentPart2Controller::class, 'search',])->name('search');
+Route::post('/contentPart2', [ContentPart2Controller::class, 'searchmonth',])->name('searchmonth');
 
 Route::get('/confirmPart2', [ConfirmPart2Controller::class, 'index']);
 

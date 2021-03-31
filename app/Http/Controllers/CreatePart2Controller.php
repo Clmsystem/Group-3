@@ -45,7 +45,7 @@ class CreatePart2Controller extends Controller
         $data = array();
         $data["indicator_name"] = $request->indtcator_name;
         $data["year_id"] = 1;
-        $data["year1_year_id"] = 0;
+      
         $data["indicator_type"] = $request->type;
         $data["full_score"] = $request->fullscore;
         DB::table('indicator')->insert($data);
@@ -66,7 +66,7 @@ class CreatePart2Controller extends Controller
                 $data["score"] = 0;
                 $data["percent"] = null;
                 $data["indicator_id"] = $max;
-                $data["year_year_id"] = 0;
+                $data["year_id"] = 1;
                 $data["month"] = $i;
                 $data["status"] = 0;
                 // $data["id_employee"] = $request->input('employ');

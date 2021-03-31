@@ -60,53 +60,54 @@
                     <div class="card-body">
                         <h3 class="newFont">ค้นหาข้อมูล</h3><br>
                         <hr><br>
-                        <form class="forms-sample">
+                        <form class="forms-sample" action="{{route('search')}}" method="post" enctype="multipart/form-data">
+                        @csrf
                             <div class="row">
                                 <div class="form-group col-md-6">
                                 <label class="newFont">ปี</label>
-                                    <select class="form-control">
+                                <select class="form-control" id="year" name="year">
                                         <optgroup class="newFont">
-                                            <option>ทุกปี</option>
-                                            <option>2558</option>
-                                            <option>2559</option>
-                                            <option>2560</option>
-                                            <option>2562</option>
-                                            <option>2563</option>
-                                            <option>2564</option>
+                                            <!-- <option>ทุกปี</option> -->
+                                            <option value="0" {{ $year == 0 ? 'selected' : '' }}>เลือกปี</option>
+                                            <option value="1" {{ $year == 1 ? 'selected' : '' }}>2564</option>
+                                            <option value="2" {{ $year == 2 ? 'selected' : '' }}>2565</option>
+                                            <option {{ $year == 3 ? 'selected' : '' }}>2566</option>
+                                            <option {{ $year == 4 ? 'selected' : '' }}>2567</option>
+                                            <option {{ $year == 5 ? 'selected' : '' }}>2568</option>
+                                            <option {{ $year == 6 ? 'selected' : '' }}>2569</option>
+                                            <option {{ $year == 7 ? 'selected' : '' }}>2570</option>
+                                            <option {{ $year == 8 ? 'selected' : '' }}>2571</option>
+                                            <option {{ $year == 9 ? 'selected' : '' }}>2572</option>
+                                            <option {{ $year == 10 ? 'selected' : '' }}>2573</option>
                                         </optgroup>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-6">
                                 <label class="newFont">เดือน</label>
-                                    <select class="form-control">
+                                    <select class="form-control"id="month" name="month">
                                         <optgroup class="newFont">
-                                            <option>ทุกเดือน</option>
-                                            <option>มกราคม</option>
-                                            <option>กุมภาพันธ์</option>
-                                            <option>มีนาคม</option>
-                                            <option>เมษายน</option>
-                                            <option>พฤษภาคม</option>
-                                            <option>มิถุนายน</option>
-                                            <option>กรกฎาคม</option>
-                                            <option>สิงหาคม</option>
-                                            <option>กันยายน</option>
-                                            <option>ตุลาคม</option>
-                                            <option>พฤศจิกายน</option>
-                                            <option>ธันวาคม</option>
+                                            <!-- <option>ทุกเดือน</option> -->
+                                            <option value="0" {{ $month == 0 ? 'selected' : '' }}>เลือกเดือน</option>
+                                            <option value="1" {{ $month == 1 ? 'selected' : '' }}>มกราคม</option>
+                                            <option value="2" {{ $month == 2 ? 'selected' : '' }}>กุมภาพันธ์</option>
+                                            <option value="3" {{ $month == 3 ? 'selected' : '' }}>มีนาคม</option>
+                                            <option value="4" {{ $month == 4 ? 'selected' : '' }}>เมษายน</option>
+                                            <option value="5" {{ $month == 5 ? 'selected' : '' }}>พฤษภาคม</option>
+                                            <option value="6" {{ $month == 6 ? 'selected' : '' }}>มิถุนายน</option>
+                                            <option value="7" {{ $month == 7 ? 'selected' : '' }}>กรกฎาคม</option>
+                                            <option value="8" {{ $month == 8 ? 'selected' : '' }}>สิงหาคม</option>
+                                            <option value="9" {{ $month == 9 ? 'selected' : '' }}>กันยายน</option>
+                                            <option value="10" {{ $month == 10 ? 'selected' : '' }}>ตุลาคม</option>
+                                            <option value="11" {{ $month == 11 ? 'selected' : '' }}>พฤศจิกายน</option>
+                                            <option value="12" {{ $month == 12 ? 'selected' : '' }}>ธันวาคม</option>
                                         </optgroup>
                                     </select>
                                 </div>
 
-                                <div class="form-group col-md-12"></div>
                                 <div class="form-group col-md-12">
                                     <div class="button-position">
                                         <button type="submit" class="btn btn-gradient-primary mr-4 newFont">ค้นหา</button>
-                                        
                                     </div>
-                                    <!-- <div class="button-position">
-                                        <button type="submit" class="btn btn-gradient-primary mr-4 newFont">ดาวน์โหลด</button>
-                                    </div>
-                                     -->
                                 </div>
                                 
                             </div>
@@ -126,6 +127,7 @@
                         </div>
                         <div class="form-group col-md-12">
                             <h3 class="newFont">ตัวชี้วัดปัจจุบัน</h3><br>
+                            
                             <div class="button-position">
                                         <button type="submit" class="btn btn-gradient-primary mr-2 newFont">ดาวน์โหลด</button>
                                     </div>
@@ -155,17 +157,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($showindicator_month  as $i => $value)
-                                        <tr class="d-flex">
-                                            <td class="col-sm-6 tdleft break">{{$value->indicator_name}}</td>
-                                            <td class="col-sm-1 break">{{$value->full_score}}</td>
-                                            <td class="col-sm-1 break">{{$value->score}}</td>
-                                            <td class="col-sm-2 tdleft break"> {{$value->name_employee}}</td>
-                                            <th class="col-sm-2 break" scope="col">                                 
-                                                <button type="button" class="Pbtn btn btn-primary btn-sm"><i class="mdi mdi-chart-bar"></i></button>
-                                            </th>
-                                        </tr>
-                                        @endforeach
+                                   
                                         
                                         @foreach($showindicator_year  as $i => $value)
                                         <tr class="d-flex">
@@ -198,6 +190,7 @@
     </div>
     </div>
     </div>
+    
 
 </body>
 © 2021 GitHub, Inc.
