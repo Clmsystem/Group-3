@@ -64,15 +64,27 @@ class ContentPart2Controller extends Controller
 
     public function search(Request $request)
     {
-        $month = $request->month;
+        $month = $request->input('month');
         $year = (int)date("Y") + 543;
-        $indicator_month = DB::table('employee')
-            ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
-            ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
-            ->join('indicator_month', 'indicator_month.month', '=', 'indicator_month.month')
-            // ->where('assign.Employee_id_employee', '=', $assign)
-            ->where('indicator_month.month', '=', $month)
-            ->get();
+
+        // ดึง data ทุกเดือน ไม่ where คนรับผิดชอบที เพื่อให้ กด ุทุกเดือน จะโชว์หมด 
+        if ($month == 0) {
+            $indicator_month = DB::table('employee')
+                ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
+                ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
+                ->join('indicator_month', 'indicator_month.month', '=', 'indicator_month.month')
+                // ->where('assign.Employee_id_employee', '=', $assign)
+                // ->where('indicator_month.month', '=', $month)
+                ->get();
+        } else
+            $indicator_month = DB::table('employee')
+                ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
+                ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
+                ->join('indicator_month', 'indicator_month.month', '=', 'indicator_month.month')
+                // ->where('assign.Employee_id_employee', '=', $assign)
+
+                ->where('indicator_month.month', '=', $month)
+                ->get();
 
         $indicator_year = DB::table('employee')
             ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')

@@ -67,7 +67,7 @@
                             <form action="{{route('search')}}" method="POST" enctype="multipart/form-data">
                                 <select id="client_id" type="dropdown-toggle" class="form-control" name="month">
                                     <optgroup class="newFont">
-                                        <option>ทุกเดือน</option>
+                                        <option value="0">ทุกเดือน</option>
                                         <option value="1" {{ $month == 1 ? 'selected' : '' }}>มกราคม</option>
                                         <option value="2" {{ $month == 2 ? 'selected' : '' }}>กุมภาพันธ์</option>
                                         <option value="3" {{ $month == 3 ? 'selected' : '' }}>มีนาคม</option>
