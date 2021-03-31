@@ -136,7 +136,7 @@
                                             </form>
                                         </tr>
                                         @endforeach
-                                        @foreach($indicator_year as $i => $value)
+                                        <!-- @foreach($indicator_year as $i => $value)
                                         <tr class="d-flex">
                                             <form method="post" action="{{route('update2')}}">
                                                 @csrf
@@ -156,7 +156,7 @@
                                                 </td>
                                             </form>
                                         </tr>
-                                        @endforeach
+                                        @endforeach -->
                                     </tbody>
                                 </table>
                                 <!-- <div class="col-md-1"></div> -->
