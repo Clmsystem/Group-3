@@ -44,7 +44,7 @@ class ContentPart2Controller extends Controller
             ->update([
                 'result' => $request->result,
                 'percent' => $request->percent
-            ]);
+                ]);
 
         // DB::table('indicator_month')
         //     ->where('indicator_month_id', $request->key)
@@ -56,10 +56,9 @@ class ContentPart2Controller extends Controller
     {
         DB::table('indicator_year')
             ->where('indicator_year_id', $request->key)
-            ->update([
-                'result' => $request->result,
-                'percent' => $request->percent
-            ]);
+            ->update(['result' => $request->result,
+                      'percent' => $request->percent
+                    ]);
 
         DB::table('indicator_year')
             ->where('indicator_year_id', $request->key)
@@ -72,53 +71,37 @@ class ContentPart2Controller extends Controller
     {
         $month = $request->input('month');
         $year = (int)date("Y") + 543;
-        // dd($request->month);
-        // ดึง data ทุกเดือน ไม่ where คนรับผิดชอบที เพื่อให้ กด ุทุกเดือน จะโชว์หมด 
+       // dd($request->month);
+
         if ($month == 0) {
             $indicator_month = DB::table('employee')
-
-                ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
-                ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
-                ->leftJoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
-                ->leftJoin('indicator_month', 'indicator.indicator_id', '=', 'indicator_month.indicator_id')
-                ->leftJoin('year', 'indicator_year.year_id', '=', 'year.year_id')
-
-
-                // ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
-                // ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
-                // ->join('indicator_month', 'indicator.indicator_id', '=', 'indicator_month.indicator_id')
-                // ->where('assign.Employee_id_employee', '=', $assign)
-                // ->where('indicator_month.month', '=', $month)
-                ->get();
+            ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
+            ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
+            ->leftJoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
+            ->leftJoin('indicator_month', 'indicator.indicator_id', '=', 'indicator_month.indicator_id')
+            ->leftJoin('year','indicator_year.year_id','=','year.year_id')
+            ->get();
         } else
             $indicator_month = DB::table('employee')
+            ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
+            ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
+            ->leftJoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
+            ->leftJoin('indicator_month', 'indicator.indicator_id', '=', 'indicator_month.indicator_id')
+            ->leftJoin('year','indicator_year.year_id','=','year.year_id')
+            ->where('indicator_month.month', '=', $month )
+            ->get();
 
-                ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
-                ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
-                ->leftJoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
-                ->leftJoin('indicator_month', 'indicator.indicator_id', '=', 'indicator_month.indicator_id')
-                ->leftJoin('year', 'indicator_year.year_id', '=', 'year.year_id')
-                // ->where('year.year', '=', $year)
-                //->where('indicator.year_id', '=', $year )
-                ->where('indicator_month.month', '=', $month)
-                // ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
-                // ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
-                // ->join('indicator_month', 'indicator.indicator_id', '=', 'indicator_month.indicator_id')
-                //     // ->where('assign.Employee_id_employee', '=', $assign)
-                // ->where('indicator_month.month', '=', $month)
-                ->get();
-
-        // $indicator_year = DB::table('employee')
-        // >join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
-        // ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
-        // ->leftJoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
-        // ->leftJoin('indicator_month', 'indicator.indicator_id', '=', 'indicator_month.indicator_id')
-        // ->leftJoin('year','indicator_year.year_id','=','year.year_id')
-        // // ->where('assign.Employee_id_employee', '=', $assign)
-        // ->where('year.year_id', '=', $year)
-        // ->get();
+            $indicator_year = DB::table('employee')
+            ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
+            ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
+            ->leftJoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
+            ->leftJoin('indicator_month', 'indicator.indicator_id', '=', 'indicator_month.indicator_id')
+            ->leftJoin('year','indicator_year.year_id','=','year.year_id')
+            // ->where('assign.Employee_id_employee', '=', $assign)
+            ->where('year.year_id', '=', $year)
+            ->get();
 
         // dd($indicator_month, $indicator_year, $year, $month);
-        return view('promote.contentPart2', compact('indicator_month', 'month'));
+        return view('promote.contentPart2', compact( 'indicator_year','indicator_month', 'month'));
     }
 }
