@@ -12,32 +12,30 @@ class SearchPart2Controller extends Controller
 {
     public function index(){
 
-       
         $year = (int)date('Y')+543;
-
         $month = (int)date('m');
        
-        $showindicator_year = DB::table('employee')
+        $showindicator = DB::table('employee')
         ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
         ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
-        ->join('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
-        ->join('year','indicator_year.year_id','=','year.year_id')
-        ->where('year.year', '=', $year)
+        ->leftJoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
+        ->leftJoin('indicator_month', 'indicator.indicator_id', '=', 'indicator_month.indicator_id')
+        ->leftJoin('year','indicator_year.year_id','=','year.year_id')
+        // ->where('year.year', '=', $year)
+        ->where('indicator.year_id', '=', $year )
+        ->orwhere('indicator_month.month', '=', $month )
         ->get();
-      
 
-        $showindicator_month = DB::table('employee')
-        ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
-        ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
-        ->join('indicator_month', 'indicator.indicator_id', '=', 'indicator_month.indicator_id')
-        ->where('indicator_month.month', '=', $month )
+        $showyear = DB::table('indicator')
+        ->where('indicator.year_id', '=', $year )
         ->get();
+
         $year=0;
         $month=0;
        
-        // dd($showindicator_year,$showindicator_month,$year,$month);
+        // dd($showindicator,$year,$month);
 
-        return view('searchPart2',compact('showindicator_year','showindicator_month','month','year'));
+        return view('searchPart2',compact('showindicator','month','year'));
       
                
     } 
@@ -45,9 +43,10 @@ class SearchPart2Controller extends Controller
     {
         $year = (int)date('Y')+543;
         $month= $request->month;
-
+        
         if($request->year==0 && $request->month==0){
-            $showindicator_year = DB::table('employee')
+
+            $showindicator = DB::table('employee')
             ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
             ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
             ->leftJoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
@@ -58,7 +57,7 @@ class SearchPart2Controller extends Controller
           
         }
         else if($request->year==0){
-            $showindicator_year = DB::table('employee')
+            $showindicator = DB::table('employee')
             ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
             ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
             ->leftJoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
@@ -70,7 +69,7 @@ class SearchPart2Controller extends Controller
         
             // query เดือน
         }else if($request->month==0){
-            $showindicator_year = DB::table('employee')
+            $showindicator = DB::table('employee')
             ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
             ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
             ->leftJoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
@@ -83,7 +82,7 @@ class SearchPart2Controller extends Controller
            // query ปี
         }else
 
-        $showindicator_year = DB::table('employee')
+        $showindicator = DB::table('employee')
         ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
         ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
         ->leftJoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
@@ -102,7 +101,7 @@ class SearchPart2Controller extends Controller
       //dd($request->year,$request->month);
 
         //return view('searchPart2',compact('showindicator_year','showindicator_month','month','year','showyear'));
-        return view('searchPart2',compact('showindicator_year','month','year','showyear'));
+        return view('searchPart2',compact('showindicator','month','year','showyear'));
 
     }
 }

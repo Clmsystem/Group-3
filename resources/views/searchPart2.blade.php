@@ -159,7 +159,7 @@
                                     <tbody>
                                    
                                         
-                                        @foreach($showindicator_year  as $i => $value)
+                                        @foreach($showindicator  as $i => $value)
                                         <tr class="d-flex">
                                             <td class="col-sm-6 tdleft break">{{$value->indicator_name}}</td>
                                             <td class="col-sm-1 break">{{$value->full_score}}</td>
