@@ -64,7 +64,7 @@ class SearchPart2Controller extends Controller
             ->leftJoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
             ->leftJoin('indicator_month', 'indicator.indicator_id', '=', 'indicator_month.indicator_id')
             ->leftJoin('year','indicator_year.year_id','=','year.year_id')
-            ->where('indicator_month.month', '=', $month )
+            ->orwhere('indicator_month.month', '=', $month )
             //->where('year.year', '=', $year)
             ->get();
         
@@ -76,8 +76,8 @@ class SearchPart2Controller extends Controller
             ->leftJoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
             ->leftJoin('indicator_month', 'indicator.indicator_id', '=', 'indicator_month.indicator_id')
             ->leftJoin('year','indicator_year.year_id','=','year.year_id')
-            // ->where('year.year', '=', $year)
-            ->where('indicator.year_id', '=', $year )
+            //->where('year.year', '=', $year)
+            ->orwhere('indicator.year_id', '=', $year )
             ->get();
        
            // query ปี

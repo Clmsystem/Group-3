@@ -68,7 +68,7 @@
                                 <select class="form-control" id="year" name="year">
                                         <optgroup class="newFont">
                                             <!-- <option>ทุกปี</option> -->
-                                            <option value="0" {{ $year == 0 ? 'selected' : '' }}>เลือกปี</option>
+                                            <option value="0" {{ $year == 0 ? 'selected' : '' }}>ทุกปี</option>
                                             <option value="1" {{ $year == 1 ? 'selected' : '' }}>2564</option>
                                             <option value="2" {{ $year == 2 ? 'selected' : '' }}>2565</option>
                                             <option {{ $year == 3 ? 'selected' : '' }}>2566</option>
@@ -87,7 +87,7 @@
                                     <select class="form-control"id="month" name="month">
                                         <optgroup class="newFont">
                                             <!-- <option>ทุกเดือน</option> -->
-                                            <option value="0" {{ $month == 0 ? 'selected' : '' }}>เลือกเดือน</option>
+                                            <option value="0" {{ $month == 0 ? 'selected' : '' }}>ทุกเดือน</option>
                                             <option value="1" {{ $month == 1 ? 'selected' : '' }}>มกราคม</option>
                                             <option value="2" {{ $month == 2 ? 'selected' : '' }}>กุมภาพันธ์</option>
                                             <option value="3" {{ $month == 3 ? 'selected' : '' }}>มีนาคม</option>
