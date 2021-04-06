@@ -64,10 +64,11 @@
               <div class="col-12 grid-margin stretch-card">
                   <div class="card">
                       <div class="card-body">
-                          <h3 class="newFont">ยืนยันข้อมูล</h3>
+                          <h3 class="newFont">ยืนยันข้อมูล ประจำปี พ.ศ.
+                              <?php echo date("Y") + 543; ?></h3>
                           <div class="row">
-                              <div class="form-group col-md-4">
-                                  <label class="newFont">เดือน</label>
+                              <div class="form-group col-md-3">
+                                  <!-- <label class="newFont">เดือน</label> -->
                                   <form action="{{route('confirm_month')}}" method="post" enctype="multipart/form-data">
                                       @csrf
                                       <select id="client_id" type="dropdown-toggle" class="form-control" name="month">
@@ -88,13 +89,16 @@
                                           </optgroup>
                                       </select>
                               </div>
-                              <div class="form-group col-md-4">
-                                  <div class="button-position">
+                              <div class="form-group col-md-3">
+                                  <div>
                                       <button type="submit" data-toggle="modal" class="btn btn-gradient-primary mr-4 newFont">ค้นหา</button>
                                   </div>
                               </div>
 
+                              <hr>
+
                               <div class="col-md-12">
+                                  <hr>
                                   <table class="table table-bordered newFont">
                                       <thead>
                                           <tr class="d-flex">
