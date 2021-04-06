@@ -90,14 +90,13 @@
                                   </div>
                                   <div class="form-group col-md-4">
                                       <label class="newFont">ไตรมาส</label>
-                                      <select class="form-control" id="year" name="year">
+                                      <select class="form-control" >
                                           <optgroup class="newFont">
                                               <!-- <option>ทุกปี</option> -->
                                               <option value="0" {{ $year == 0 ? 'selected' : '' }}>ทุกไตรมาส</option>
-                                              <option value="1" {{ $year == 1 ? 'selected' : '' }}>ไตรมาส1</option>
-                                              <option value="2" {{ $year == 2 ? 'selected' : '' }}>ไตรมาส2</option>
-                                              <option value="3" {{ $year == 3 ? 'selected' : '' }}>ไตรมาส3</option>
-                                              <option value="4" {{ $year == 4 ? 'selected' : '' }}>ไตรมาส4</option>
+                                              <option value="1" {{ $year == 1 ? 'selected' : '' }}>1</option>
+                                              <option value="2" {{ $year == 2 ? 'selected' : '' }}>2</option>
+                                              <option value="3" {{ $year == 3 ? 'selected' : '' }}>3</option>
                                           </optgroup>
                                       </select>
                                   </div>
@@ -175,9 +174,8 @@
                                               </th>
                                           </tr>
                                       </thead>
+                                
                                       <tbody>
-
-
                                           @foreach($showindicator as $i => $value)
                                           <tr class="d-flex">
                                               <td class="col-sm-6 tdleft break">{{$value->indicator_name}}</td>
