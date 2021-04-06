@@ -51,6 +51,8 @@ Route::post('/contentPart2/update2', [ContentPart2Controller::class, 'update2',]
 Route::post('/contentPart2', [ContentPart2Controller::class, 'search_month',])->name('search_month');
 
 Route::get('/confirmPart2', [ConfirmPart2Controller::class, 'index']);
+Route::post('/confirmPart2', [ConfirmPart2Controller::class, 'confirm_month'])->name('confirm_month');
+
 
 // Route::post('/createPart2/insert_indicator',[CreatePart2Controller::class,'insert_indicator'])->name('insert_indicator');
 Route::post('/createPart2/insert_indicator', [CreatePart2Controller::class, 'insert_indicator'])->name('insert_indicator');
