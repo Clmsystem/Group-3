@@ -69,7 +69,7 @@
                           <form class="forms-sample" action="{{route('search')}}" method="post" enctype="multipart/form-data">
                               @csrf
                               <div class="row">
-                                  <div class="form-group col-md-6">
+                                  <div class="form-group col-md-4">
                                       <label class="newFont">ปี</label>
                                       <select class="form-control" id="year" name="year">
                                           <optgroup class="newFont">
@@ -88,7 +88,20 @@
                                           </optgroup>
                                       </select>
                                   </div>
-                                  <div class="form-group col-md-6">
+                                  <div class="form-group col-md-4">
+                                      <label class="newFont">ไตรมาส</label>
+                                      <select class="form-control" id="year" name="year">
+                                          <optgroup class="newFont">
+                                              <!-- <option>ทุกปี</option> -->
+                                              <option value="0" {{ $year == 0 ? 'selected' : '' }}>ทุกไตรมาส</option>
+                                              <option value="1" {{ $year == 1 ? 'selected' : '' }}>ไตรมาส1</option>
+                                              <option value="2" {{ $year == 2 ? 'selected' : '' }}>ไตรมาส2</option>
+                                              <option value="3" {{ $year == 3 ? 'selected' : '' }}>ไตรมาส3</option>
+                                              <option value="4" {{ $year == 4 ? 'selected' : '' }}>ไตรมาส4</option>
+                                          </optgroup>
+                                      </select>
+                                  </div>
+                                  <div class="form-group col-md-4">
                                       <label class="newFont">เดือน</label>
                                       <select class="form-control" id="month" name="month">
                                           <optgroup class="newFont">
