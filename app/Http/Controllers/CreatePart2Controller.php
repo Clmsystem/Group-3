@@ -45,7 +45,6 @@ class CreatePart2Controller extends Controller
         $data = array();
         $data["indicator_name"] = $request->indtcator_name;
         $data["year_id"] = 1;
-      
         $data["indicator_type"] = $request->type;
         $data["full_score"] = $request->fullscore;
         DB::table('indicator')->insert($data);
@@ -88,6 +87,7 @@ class CreatePart2Controller extends Controller
         }
         return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
     }
+    
     public function updateCreate(Request $request)
     {
 
