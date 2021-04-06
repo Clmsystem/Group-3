@@ -1,44 +1,44 @@
 @include('header.menu')
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
 
-    .newFont {
-        font-family: 'Mitr', sans-serif;
-    }
+.newFont {
+    font-family: 'Mitr', sans-serif;
+}
 
-    .btns {
-        padding: 0.9rem 2em;
-        font-size: 0.875rem;
-    }
+.btns {
+    padding: 0.9rem 2em;
+    font-size: 0.875rem;
+}
 
-    td {
-        text-align: center;
-    }
+td {
+    text-align: center;
+}
 
-    .tdleft {
-        text-align: left;
-    }
+.tdleft {
+    text-align: left;
+}
 
-    th {
-        text-align: center;
-    }
+th {
+    text-align: center;
+}
 
-    .button-position {
-        float: right;
-        margin: -8px;
-    }
+.button-position {
+    float: right;
+    margin: -8px;
+}
 
-    td.break {
-        word-wrap: break-word;
-        word-break: break-all;
-        white-space: normal;
-    }
+td.break {
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+}
 
-    th.break {
-        word-wrap: break-word;
-        word-break: break-all;
-        white-space: normal;
-    }
+th.break {
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+}
 </style>
 
 
@@ -60,32 +60,37 @@
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="newFont">ส่วนที่ 2 ตัวชี้วัดตามเกณฑ์การประเมินหน่วยงาน (9 ข้อ) จาก ทมอ.</h3>
+                        <h3 class="newFont">ส่วนที่ 2 ตัวชี้วัดตามเกณฑ์การประเมินหน่วยงาน (9 ข้อ) จาก ทมอ. ประจำปี พ.ศ.
+                            <?php echo date("Y") + 543; ?> </h3>
                         <br>
-                        <div class="form-group col-md-4">
-                            <label class="newFont">เดือน</label>
-                            <form action="{{route('search_month')}}" method="post" enctype="multipart/form-data">
-                            @csrf
-                                <select id="client_id" type="dropdown-toggle" class="form-control" name="month">
-                                    <optgroup class="newFont">
-                                        <option value="0">ทุกเดือน</option>
-                                        <option value="1" {{ $month == 1 ? 'selected' : '' }}>มกราคม</option>
-                                        <option value="2" {{ $month == 2 ? 'selected' : '' }}>กุมภาพันธ์</option>
-                                        <option value="3" {{ $month == 3 ? 'selected' : '' }}>มีนาคม</option>
-                                        <option value="4" {{ $month == 4 ? 'selected' : '' }}>เมษายน</option>
-                                        <option value="5" {{ $month == 5 ? 'selected' : '' }}>พฤษภาคม</option>
-                                        <option value="6" {{ $month == 6 ? 'selected' : '' }}>มิถุนายน</option>
-                                        <option value="7" {{ $month == 7 ? 'selected' : '' }}>กรกฎาคม</option>
-                                        <option value="8" {{ $month == 8 ? 'selected' : '' }}>สิงหาคม</option>
-                                        <option value="9" {{ $month == 9 ? 'selected' : '' }}>กันยายน</option>
-                                        <option value="10" {{ $month == 10 ? 'selected' : '' }}>ตุลาคม</option>
-                                        <option value="11" {{ $month == 11 ? 'selected' : '' }}>พฤศจิกายน</option>
-                                        <option value="12" {{ $month == 12 ? 'selected' : '' }}>ธันวาคม</option>
-                                    </optgroup>
-                                </select>
+
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="newFont">เดือน</label>
+                                <form action="{{route('search_month')}}" method="post" enctype="multipart/form-data">
+                                    @csrf
+                                    <select id="client_id" type="dropdown-toggle" class="form-control" name="month">
+                                        <optgroup class="newFont">
+                                            <option value="0">ทุกเดือน</option>
+                                            <option value="1" {{ $month == 1 ? 'selected' : '' }}>มกราคม</option>
+                                            <option value="2" {{ $month == 2 ? 'selected' : '' }}>กุมภาพันธ์</option>
+                                            <option value="3" {{ $month == 3 ? 'selected' : '' }}>มีนาคม</option>
+                                            <option value="4" {{ $month == 4 ? 'selected' : '' }}>เมษายน</option>
+                                            <option value="5" {{ $month == 5 ? 'selected' : '' }}>พฤษภาคม</option>
+                                            <option value="6" {{ $month == 6 ? 'selected' : '' }}>มิถุนายน</option>
+                                            <option value="7" {{ $month == 7 ? 'selected' : '' }}>กรกฎาคม</option>
+                                            <option value="8" {{ $month == 8 ? 'selected' : '' }}>สิงหาคม</option>
+                                            <option value="9" {{ $month == 9 ? 'selected' : '' }}>กันยายน</option>
+                                            <option value="10" {{ $month == 10 ? 'selected' : '' }}>ตุลาคม</option>
+                                            <option value="11" {{ $month == 11 ? 'selected' : '' }}>พฤศจิกายน</option>
+                                            <option value="12" {{ $month == 12 ? 'selected' : '' }}>ธันวาคม</option>
+                                        </optgroup>
+                                    </select>
+                            </div>
+
                         </div>
 
-                        <hr><br>
+                        <hr>
                         <!-- <p class="card-description"> Basic form elements </p> -->
 
                         <div class="row">
@@ -123,16 +128,22 @@
                                                 <td class="col-sm-5 tdleft break"> {{$value->indicator_name}} </td>
                                                 <td class="col-sm-1 break"> {{$value->full_score}} </td>
                                                 <td class="col-sm-2 break">
-                                                    <input type="text" name="result" value="{{$value->result}}" class="form-control" placeholder="ตัวเลข" required>
+                                                    <input type="text" name="result" value="{{$value->result}}"
+                                                        class="form-control" placeholder="ตัวเลข" required>
                                                 </td>
                                                 <td class="col-sm-2 break">
-                                                    <input type="text" name="percent" value="{{$value->percent}}" class="form-control" placeholder="ตัวเลข" required>
-                                                    <input type="hidden" name="key" value="{{$value->indicator_month_id}}" class="form-control" placeholder="ตัวเลข">
+                                                    <input type="text" name="percent" value="{{$value->percent}}"
+                                                        class="form-control" placeholder="ตัวเลข" required>
+                                                    <input type="hidden" name="key"
+                                                        value="{{$value->indicator_month_id}}" class="form-control"
+                                                        placeholder="ตัวเลข">
                                                 </td>
                                                 <td class="col-sm-1 break">{{$value->score}}
                                                 </td>
                                                 <td class="col-sm-1 break">
-                                                    <button type="submit" class="btn btn-success btn-sm newFont" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-content-save"></i></button>
+                                                    <button type="submit" class="btn btn-success btn-sm newFont"
+                                                        data-toggle="modal" data-target="#modalAction"><i
+                                                            class="mdi mdi-content-save"></i></button>
                                                 </td>
                                             </form>
                                         </tr>
@@ -186,13 +197,13 @@
     </div>
 </body>
 <script>
-    // function myfuction($fullscore,$result){
-    //     return $fullscore*$result
-    // }
-    var select = document.getElementById('client_id');
-    select.addEventListener('change', function() {
-        this.form.submit();
-    }, false);
+// function myfuction($fullscore,$result){
+//     return $fullscore*$result
+// }
+var select = document.getElementById('client_id');
+select.addEventListener('change', function() {
+    this.form.submit();
+}, false);
 </script>
 
 
