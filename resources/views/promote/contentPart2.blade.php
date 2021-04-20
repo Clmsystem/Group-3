@@ -193,27 +193,6 @@
 
                                         </tr>
                                         @endforeach
-                                        <!-- @foreach($indicator_year as $i => $value)
-                                        <tr class="d-flex">
-                                            <form method="post" action="{{route('update2')}}">
-                                                @csrf
-                                                <td class="col-sm-5 tdleft break"> {{$value->indicator_name}} </td>
-                                                <td class="col-sm-1 break"> {{$value->full_score}} </td>
-                                                <td class="col-sm-2 break">
-                                                    <input type="text" name="result" value="{{$value->result}}" class="form-control" placeholder="ตัวเลข" required>
-                                                </td>
-                                                <td class="col-sm-2">
-                                                    <input type="text" name="percent" value="{{$value->percent}}" class="form-control" placeholder="ตัวเลข" required>
-                                                    <input type="hidden" name="key" value="{{$value->indicator_year_id}}" class="form-control" placeholder="ตัวเลข">
-                                                </td>
-                                                <td class="col-sm-1">{{$value->score}}
-                                                </td>
-                                                <td class="col-sm-1">
-                                                    <button type="submit" class="btn btn-success btn-sm newFont" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-content-save"></i></button>
-                                                </td>
-                                            </form>
-                                        </tr>
-                                        @endforeach -->
                                     </tbody>
                                 </table>
                                 <!-- <div class="col-md-1"></div> -->
