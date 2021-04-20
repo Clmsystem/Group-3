@@ -40,32 +40,42 @@
     <!-- ------------------------------------------  include  --------------------------------------------->
     
     <div class="main-panel">
-        <div class="content-wrapper">
-            <div class="page-header">
-                <h3 class="newFont"> กราฟตัวชี้วัด </h3>
-            </div>
-            <!-- chart-year -->
-            <div class="row">
-              <div class="col">
-                <div id="chart-year">
+      <div class="content-wrapper">
+          <div class="page-header">
+                <h3 class="newFont"> ร้อยละผลสำเร็จการใช้งานระบบ DOMS (เริ่มตั้งแต่ มค.64) ปี 2564</h3>
+          </div>
+
+          <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+
+                  <div class="page-header">
+                      <h4 class="newFont"> ผู้รับผิดชอบ  : พัชรินทร์ ภาวิกานนท์</h4>
+                  </div>
+                  <!-- chart-year -->
+                  <div class="row">
+                    <div class="col">
+                      <div id="chart-year">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- chart-quarter -->
+                  <!-- <div class="row">
+                    <div class="col">
+                      <div id="chart-quarter">
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- chart-month -->
+                  <div class="row">
+                    <div class="col">
+                      <div id="chart-month">
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <!-- chart-quarter -->
-            <!-- <div class="row">
-              <div class="col">
-                <div id="chart-quarter">
-                </div>
-              </div>
-            </div> -->
-            <!-- chart-month -->
-            <div class="row">
-              <div class="col">
-                <div id="chart-month">
-                </div>
-              </div>
-            </div>
-        </div>
+          </div>
+      </div>
     </div>
 </body>
 <!-- chart-year -->
@@ -73,16 +83,8 @@
     $('select').selectpicker();
     var optionsYear = {
           series: [{
-          name: 'Q1',
-          data: [30,40,50]
-        },
-        {
-          name: 'Q2',
-          data: [54,85,40]
-        },
-        {
-          name: 'Q3',
-          data: [43,63,50]
+          name: 'คะแนนที่ได้',
+          data: [0.75,1,0.5]
         }],
           chart: {
           type: 'bar',
@@ -104,7 +106,7 @@
           colors: ['transparent']
         },
         xaxis: {
-          categories: ['2562','2563','2564'],
+          categories: ['ไตรมาส 1','ไตรมาส 2','ไตรมาส 3'],
         },
         // yaxis: {
         //   title: {
@@ -152,7 +154,7 @@
           colors: ['transparent']
         },
         xaxis: {
-          categories: ['Q1','Q2','Q3'],
+          categories: ['Q1'],
         },
         fill: {
           opacity: 1
@@ -165,8 +167,8 @@
 <script>
     var optionsMonth = {
           series: [{
-          name: 'Value',
-          data: [44, 55, 57, 56, 61, 58, 63, 60, 66,47,58,62]
+          name: 'คะแนนที่ได้',
+          data: [1, 1, 0.5, 0.75, 1, 1, 1, 1, 0.9,0.25,1,1]
         },],
           chart: {
           type: 'bar',
