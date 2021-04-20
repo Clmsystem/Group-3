@@ -88,18 +88,7 @@
                                           </optgroup>
                                       </select>
                                   </div>
-                                  <div class="form-group col-md-4">
-                                      <label class="newFont">ไตรมาส</label>
-                                      <select class="form-control" >
-                                          <optgroup class="newFont">
-                                              <!-- <option>ทุกปี</option> -->
-                                              <option value="0" {{ $year == 0 ? 'selected' : '' }}>ทุกไตรมาส</option>
-                                              <option value="1" {{ $year == 1 ? 'selected' : '' }}>1</option>
-                                              <option value="2" {{ $year == 2 ? 'selected' : '' }}>2</option>
-                                              <option value="3" {{ $year == 3 ? 'selected' : '' }}>3</option>
-                                          </optgroup>
-                                      </select>
-                                  </div>
+                                  
                                   <div class="form-group col-md-4">
                                       <label class="newFont">เดือน</label>
                                       <select class="form-control" id="month" name="month">
