@@ -59,22 +59,6 @@ class ContentPart2Controller extends Controller
         // DB::table('indicator_month')
         //     ->where('indicator_month_id', $request->key)
         //     ->update(['percent' => $request->percent]);
-
-        return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
-    }
-    public function update2(Request $request)
-    {
-        DB::table('indicator_year')
-            ->where('indicator_year_id', $request->key)
-            ->update([
-                'result' => $request->result,
-                'percent' => $request->percent
-            ]);
-
-        DB::table('indicator_year')
-            ->where('indicator_year_id', $request->key)
-            ->update(['percent' => $request->percent]);
-
         return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
     }
 

@@ -149,8 +149,8 @@
                                     </thead>
 
                                     <!-- ---------------------------------------------------------------------------------------------------------------------
-                --------------------------------------------- เดือน ------------------------------------------------------------------
-                --------------------------------------------------------------------------------------------------------------------- -->
+                                    --------------------------------------------- เดือน ------------------------------------------------------------------
+                                    --------------------------------------------------------------------------------------------------------------------- -->
 
                                     <tbody>
                                         @foreach($shindicator_month as $i => $value)
@@ -166,7 +166,7 @@
                                             @endif
                                             <td class="col-sm-2 tdleft break"> {{$value->name_employee}} </td>
                                             <!-- <td class="col-sm-1 break"><button class="btn btn-warning  btn-sm" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
-                                              </td> -->
+                                            </td> -->
                                             <td class="col-sm-1 break">
                                                 <button class="btn btn-warning  btn-sm" data-toggle="modal" data-target="#modalAction1{{$i}}"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
 

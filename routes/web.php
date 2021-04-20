@@ -47,7 +47,6 @@ Route::post('/searchPart2', [SearchPart2Controller::class, 'search',])->name('se
 Route::get('/contentPart2', [ContentPart2Controller::class, 'index']);
 //update
 Route::post('/contentPart2/update', [ContentPart2Controller::class, 'update',])->name('update');
-Route::post('/contentPart2/update2', [ContentPart2Controller::class, 'update2',])->name('update2');
 Route::post('/contentPart2', [ContentPart2Controller::class, 'search_month',])->name('search_month');
 
 Route::get('/confirmPart2', [ConfirmPart2Controller::class, 'index']);
