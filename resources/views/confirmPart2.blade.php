@@ -1,48 +1,48 @@
   @include('header.menu')
   <style>
-      @import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
 
-      /* adjust font this page */
-      .newFont {
-          font-family: 'Mitr', sans-serif;
-      }
+/* adjust font this page */
+.newFont {
+    font-family: 'Mitr', sans-serif;
+}
 
-      /* adjust btn position */
-      .button-position {
-          float: right;
-          margin: -8px;
-      }
+/* adjust btn position */
+.button-position {
+    float: right;
+    margin: -8px;
+}
 
-      /* adjust btn size */
-      .btns {
-          padding: 0.9rem 2em;
-          font-size: 0.875rem;
-      }
+/* adjust btn size */
+.btns {
+    padding: 0.9rem 2em;
+    font-size: 0.875rem;
+}
 
-      /* adjust text position */
-      td {
-          text-align: center;
-      }
+/* adjust text position */
+td {
+    text-align: center;
+}
 
-      th {
-          text-align: center;
-      }
+th {
+    text-align: center;
+}
 
-      .tdleft {
-          text-align: left;
-      }
+.tdleft {
+    text-align: left;
+}
 
-      td.break {
-          word-wrap: break-word;
-          word-break: break-all;
-          white-space: normal;
-      }
+td.break {
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+}
 
-      th.break {
-          word-wrap: break-word;
-          word-break: break-all;
-          white-space: normal;
-      }
+th.break {
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+}
   </style>
 
 
@@ -64,7 +64,7 @@
               <div class="col-12 grid-margin stretch-card">
                   <div class="card">
                       <div class="card-body">
-                          <h3 class="newFont">ยืนยันข้อมูล ประจำปี พ.ศ.
+                          <h3 class="newFont">ยืนยันข้อมูล ประจำปีงบประมาณ พ.ศ.
                               <?php echo date("Y") + 543; ?></h3>
                           <div class="row">
                               <div class="form-group col-md-3">
@@ -73,7 +73,10 @@
                                       @csrf
                                       <select id="client_id" type="dropdown-toggle" class="form-control" name="month">
                                           <optgroup class="newFont">
-                                              <option value="0">ทุกเดือน</option>
+                                              <option disabled selected hidden>เลือกเดือน</option>
+                                              <option value="10" {{ $month == 10 ? 'selected' : '' }}>ตุลาคม</option>
+                                              <option value="11" {{ $month == 11 ? 'selected' : '' }}>พฤศจิกายน</option>
+                                              <option value="12" {{ $month == 12 ? 'selected' : '' }}>ธันวาคม</option>
                                               <option value="1" {{ $month == 1 ? 'selected' : '' }}>มกราคม</option>
                                               <option value="2" {{ $month == 2 ? 'selected' : '' }}>กุมภาพันธ์</option>
                                               <option value="3" {{ $month == 3 ? 'selected' : '' }}>มีนาคม</option>
@@ -83,15 +86,13 @@
                                               <option value="7" {{ $month == 7 ? 'selected' : '' }}>กรกฎาคม</option>
                                               <option value="8" {{ $month == 8 ? 'selected' : '' }}>สิงหาคม</option>
                                               <option value="9" {{ $month == 9 ? 'selected' : '' }}>กันยายน</option>
-                                              <option value="10" {{ $month == 10 ? 'selected' : '' }}>ตุลาคม</option>
-                                              <option value="11" {{ $month == 11 ? 'selected' : '' }}>พฤศจิกายน</option>
-                                              <option value="12" {{ $month == 12 ? 'selected' : '' }}>ธันวาคม</option>
                                           </optgroup>
                                       </select>
                               </div>
                               <div class="form-group col-md-3">
                                   <div>
-                                      <button type="submit" data-toggle="modal" class="btn btn-gradient-primary mr-4 newFont">ค้นหา</button>
+                                      <button type="submit" data-toggle="modal"
+                                          class="btn btn-gradient-primary mr-4 newFont">ค้นหา</button>
                                   </div>
                               </div>
 
@@ -153,10 +154,12 @@
                               <div class="form-group col-md-12"></div>
                               <div class="form-group col-md-12">
                                   <div class="button-position">
-                                      <button type="submit" data-toggle="modal" class="btn btn-secondary mr-4 newFont">ยกเลิก</button>
+                                      <button type="submit" data-toggle="modal"
+                                          class="btn btn-secondary mr-4 newFont">ยกเลิก</button>
                                   </div>
                                   <div class="button-position">
-                                      <button type="submit" data-toggle="modal" class="btn btn-gradient-primary mr-4 newFont">ยืนยันข้อมูล</button>
+                                      <button type="submit" data-toggle="modal"
+                                          class="btn btn-gradient-primary mr-4 newFont">ยืนยันข้อมูล</button>
                                   </div>
                               </div>
                               </form>

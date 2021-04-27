@@ -41,7 +41,6 @@ class ConfirmPart2Controller extends Controller
             ->where('indicator.year_id', '=', $year)
             ->get();
 
-        $month = 0;
 
         // dd($indicator_month, $indicator_year, $year, $month);
         return view('confirmPart2', compact('indicator_year', 'indicator_month', 'month'));
