@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CreatePart2Controller;
 use App\Http\Controllers\ContentPart2Controller;
+use App\Http\Controllers\ContentPart2YearController;
 use App\Http\Controllers\SearchPart2Controller;
 use App\Http\Controllers\ConfirmPart2Controller;
 use App\Http\Controllers\GraphPart2Controller;
@@ -48,6 +49,12 @@ Route::get('/contentPart2', [ContentPart2Controller::class, 'index']);
 //update
 Route::post('/contentPart2/update', [ContentPart2Controller::class, 'update',])->name('update');
 Route::post('/contentPart2', [ContentPart2Controller::class, 'search_month',])->name('search_month');
+
+//join table indicator
+Route::get('/contentPart2Year', [ContentPart2YearController::class, 'index']);
+//update
+Route::post('/contentPart2Year/update', [ContentPart2YearController::class, 'update',])->name('update');
+Route::post('/contentPart2Year', [ContentPart2YearController::class, 'search_year',])->name('search_year');
 
 Route::get('/confirmPart2', [ConfirmPart2Controller::class, 'index']);
 Route::post('/confirmPart2', [ConfirmPart2Controller::class, 'confirm_month'])->name('confirm_month');
