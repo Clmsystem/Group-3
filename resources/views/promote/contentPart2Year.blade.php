@@ -1,44 +1,44 @@
 @include('header.menu')
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
 
-    .newFont {
-        font-family: 'Mitr', sans-serif;
-    }
+.newFont {
+    font-family: 'Mitr', sans-serif;
+}
 
-    .btns {
-        padding: 0.9rem 2em;
-        font-size: 0.875rem;
-    }
+.btns {
+    padding: 0.9rem 2em;
+    font-size: 0.875rem;
+}
 
-    td {
-        text-align: center;
-    }
+td {
+    text-align: center;
+}
 
-    .tdleft {
-        text-align: left;
-    }
+.tdleft {
+    text-align: left;
+}
 
-    th {
-        text-align: center;
-    }
+th {
+    text-align: center;
+}
 
-    .button-position {
-        float: right;
-        margin: -8px;
-    }
+.button-position {
+    float: right;
+    margin: -8px;
+}
 
-    td.break {
-        word-wrap: break-word;
-        word-break: break-all;
-        white-space: normal;
-    }
+td.break {
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+}
 
-    th.break {
-        word-wrap: break-word;
-        word-break: break-all;
-        white-space: normal;
-    }
+th.break {
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+}
 </style>
 
 
@@ -60,8 +60,7 @@
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="newFont">ส่วนที่ 2 ตัวชี้วัดตามเกณฑ์การประเมินหน่วยงาน (9 ข้อ) จาก ทมอ. ประจำปี พ.ศ.
-                            <?php echo date("Y") + 543; ?> (รายปี)</h3>
+                        <h3 class="newFont">ส่วนที่ 2 ตัวชี้วัดตามเกณฑ์การประเมินหน่วยงาน (9 ข้อ) จาก ทมอ. (รายปี)</h3>
                         <br>
 
                         <div class="row">
@@ -70,21 +69,21 @@
                                 <form action="{{route('search_year')}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <select id="client_id" type="dropdown-toggle" class="form-control" name="year">
-                                    <optgroup class="newFont">
-                                    <!-- <option value="0">ทุกปี</option> -->
+                                        <optgroup class="newFont">
+                                            <!-- <option value="0">ทุกปี</option> -->
                                             <option value="1" {{ $year == 1 ? 'selected' : '' }}>2564</option>
                                             <option value="2" {{ $year == 2 ? 'selected' : '' }}>2565</option>
-                                              <option {{ $year == 3 ? 'selected' : '' }}>2566</option>
-                                              <option {{ $year == 4 ? 'selected' : '' }}>2567</option>
-                                              <option {{ $year == 5 ? 'selected' : '' }}>2568</option>
-                                              <option {{ $year == 6 ? 'selected' : '' }}>2569</option>
-                                              <option {{ $year == 7 ? 'selected' : '' }}>2570</option>
-                                              <option {{ $year == 8 ? 'selected' : '' }}>2571</option>
-                                              <option {{ $year == 9 ? 'selected' : '' }}>2572</option>
-                                              <option {{ $year == 10 ? 'selected' : '' }}>2573</option>
-                                          </optgroup>
+                                            <option {{ $year == 3 ? 'selected' : '' }}>2566</option>
+                                            <option {{ $year == 4 ? 'selected' : '' }}>2567</option>
+                                            <option {{ $year == 5 ? 'selected' : '' }}>2568</option>
+                                            <option {{ $year == 6 ? 'selected' : '' }}>2569</option>
+                                            <option {{ $year == 7 ? 'selected' : '' }}>2570</option>
+                                            <option {{ $year == 8 ? 'selected' : '' }}>2571</option>
+                                            <option {{ $year == 9 ? 'selected' : '' }}>2572</option>
+                                            <option {{ $year == 10 ? 'selected' : '' }}>2573</option>
+                                        </optgroup>
                                     </select>
-                                    </form>
+                                </form>
                             </div>
 
                         </div>
@@ -129,54 +128,79 @@
                                                         class="form-control" placeholder="ตัวเลข" required> -->
                                             </td>
                                             <td class="col-sm-2 break">{{$value->percent}}
-                                               
+
                                             </td>
                                             <td class="col-sm-1 break">{{$value->score}}
                                             </td>
                                             <td class="col-sm-1 break">
-                                                <button class="btn btn-warning  btn-sm" data-toggle="modal" data-target="#modalAction1{{ $i }}"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
+                                                <button class="btn btn-warning  btn-sm" data-toggle="modal"
+                                                    data-target="#modalAction1{{ $i }}"><i
+                                                        class="mdi mdi-grease-pencil launch-modal"></i></button>
 
 
-                                                <div class="modal fade" id="modalAction1{{ $i }}" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="modalAction1{{ $i }}" tabindex="-1"
+                                                    role="dialog" data-backdrop="static"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
 
                                                     <div class="modal-dialog modal-xl" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-body">
                                                                 <br>
-                                                                <h2 class="modal-title newFont" id="exampleModalLabel">แก้ไข</h2>
+                                                                <h2 class="modal-title newFont" id="exampleModalLabel">
+                                                                    แก้ไข</h2>
                                                                 <!-- -------------------- FROM ------------------------- -->
-                                                                <form method="post" action="{{route('update')}}">
+                                                                <form method="post" action="{{route('updateyear')}}">
                                                                     @csrf
                                                                     <hr><br>
                                                                     <div class="row">
                                                                         <div class="form-group col-md-4 tdleft ">
                                                                             <label class="newFont">หัวข้อ</label>
-                                                                            <input type="text" class="form-control" id="indicator_name" name="indicator_name" value="{{$value->indicator_name}}" readonly>
+                                                                            <input type="text" class="form-control"
+                                                                                id="indicator_name"
+                                                                                name="indicator_name"
+                                                                                value="{{$value->indicator_name}}"
+                                                                                readonly>
                                                                         </div>
                                                                         <div class="form-group col-md-2 tdleft">
                                                                             <label class="newFont">คะแนนเต็ม</label>
-                                                                            <input type="text" class="form-control" id="full_score" name="full_score" value="{{$value->full_score}}" readonly>
+                                                                            <input type="text" class="form-control"
+                                                                                id="full_score" name="full_score"
+                                                                                value="{{$value->full_score}}" readonly>
                                                                         </div>
                                                                         <div class="form-group col-md-2 tdleft">
                                                                             <label class="newFont">ผล</label>
-                                                                            <input type="text" name="result" value="{{$value->result}}" class="form-control" placeholder="ตัวเลข" required>
+                                                                            <input type="text" name="result"
+                                                                                value="{{$value->result}}"
+                                                                                class="form-control"
+                                                                                placeholder="ตัวเลข" required>
                                                                         </div>
                                                                         <div class="form-group col-md-2 tdleft">
-                                                                            <label class="newFont">ร้อยละผลสำเร็จ</label>
-                                                                            <input type="text" name="percent" value="{{$value->percent}}" class="form-control" placeholder="ตัวเลข" required>
-                                                                            <input type="hidden" name="key" value="{{$value->indicator_year_id}}" class="form-control" placeholder="ตัวเลข">
+                                                                            <label
+                                                                                class="newFont">ร้อยละผลสำเร็จ</label>
+                                                                            <input type="text" name="percent"
+                                                                                value="{{$value->percent}}"
+                                                                                class="form-control"
+                                                                                placeholder="ตัวเลข" required>
+                                                                            <input type="hidden" name="key"
+                                                                                value="{{$value->indicator_year_id}}"
+                                                                                class="form-control"
+                                                                                placeholder="ตัวเลข">
                                                                         </div>
                                                                         <div class="form-group col-md-2 tdleft">
                                                                             <label class="newFont">คะแนนที่ได้</label>
-                                                                            <input type="text" name="score" value="{{$value->score}}" class="form-control" readonly>
+                                                                            <input type="text" name="score"
+                                                                                value="{{$value->score}}"
+                                                                                class="form-control" readonly>
                                                                         </div>
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                        <button class="btn btn-secondary" data-dismiss="modal">
+                                                                        <button class="btn btn-secondary"
+                                                                            data-dismiss="modal">
                                                                             <h7 class="newFont">ยกเลิก</ย>
-                                                                        <button type="submit" class="btn btn-primary">
-                                                                        <h7 class="newFont">บันทึก</h7>
-                                                                        </button>
+                                                                                <button type="submit"
+                                                                                    class="btn btn-primary">
+                                                                                    <h7 class="newFont">บันทึก</h7>
+                                                                                </button>
                                                                     </div>
                                                                 </form>
                                                             </div>
@@ -215,13 +239,13 @@
     </div>
 </body>
 <script>
-    // function myfuction($fullscore,$result){
-    //     return $fullscore*$result
-    // }
-    var select = document.getElementById('client_id');
-    select.addEventListener('change', function() {
-        this.form.submit();
-    }, false);
+// function myfuction($fullscore,$result){
+//     return $fullscore*$result
+// }
+var select = document.getElementById('client_id');
+select.addEventListener('change', function() {
+    this.form.submit();
+}, false);
 </script>
 
 

@@ -13,22 +13,22 @@ class ContentPart2YearController extends Controller
     {
         $month = (int)date("m");
         $year = (int)date("Y") + 543;
-       
+
         // dd($indicator_month);
         $indicator_year = DB::table('employee')
             ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
             ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
             ->join('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
-            ->join('year','indicator_year.year_id','=','year.year_id')
+            ->join('year', 'indicator_year.year_id', '=', 'year.year_id')
             ->where('indicator_year.year_id', '=', $year)
-        
+
             ->get();
         // dd($indicator_year,$year);
-        
-        $year = 0;
+
+        // $year = 0;
 
         // dd($indicator_month, $indicator_year, $year, $month);
-        return view('promote.contentPart2Year', compact('indicator_year','year'));
+        return view('promote.contentPart2Year', compact('indicator_year', 'year'));
     }
 
     public function update(Request $request)
@@ -63,15 +63,15 @@ class ContentPart2YearController extends Controller
                 ->join('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
                 ->get();
         } else
-        $indicator_year = DB::table('employee')
-        ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
-            ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
-            ->join('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
-            ->join('year','indicator_year.year_id','=','year.year_id')
-            ->where('indicator_year.year_id', '=', $year)
-        ->get();
-    // dd($indicator_year);
-    
+            $indicator_year = DB::table('employee')
+                ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
+                ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
+                ->join('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
+                ->join('year', 'indicator_year.year_id', '=', 'year.year_id')
+                ->where('indicator_year.year_id', '=', $year)
+                ->get();
+        // dd($indicator_year);
+
 
         return view('promote.contentPart2Year', compact('indicator_year', 'year'));
     }
