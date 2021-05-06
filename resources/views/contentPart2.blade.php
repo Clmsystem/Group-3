@@ -71,7 +71,6 @@ th.break {
                                     @csrf
                                     <select id="client_id" type="dropdown-toggle" class="form-control" name="month">
                                         <optgroup class="newFont">
-
                                             <option value="1" {{ $month == 1 ? 'selected' : '' }}>มกราคม</option>
                                             <option value="2" {{ $month == 2 ? 'selected' : '' }}>กุมภาพันธ์</option>
                                             <option value="3" {{ $month == 3 ? 'selected' : '' }}>มีนาคม</option>
@@ -176,7 +175,7 @@ th.break {
                                                                         </div>
                                                                         <div class="form-group col-md-2 tdleft">
                                                                             <label class="newFont">ผล</label>
-                                                                            <input type="text" name="result"
+                                                                            <input type="text" name="result" id="result"
                                                                                 value="{{$value->result}}"
                                                                                 class="form-control"
                                                                                 placeholder="ตัวเลข" required>
@@ -185,7 +184,7 @@ th.break {
                                                                             <label
                                                                                 class="newFont">ร้อยละผลสำเร็จ</label>
                                                                             <input type="text" name="percent"
-                                                                                value="{{$value->percent}}"
+                                                                                id="percent" value="{{$value->percent}}"
                                                                                 class="form-control"
                                                                                 placeholder="ตัวเลข" required>
                                                                             <input type="hidden" name="key"
@@ -195,19 +194,20 @@ th.break {
                                                                         </div>
                                                                         <div class="form-group col-md-2 tdleft">
                                                                             <label class="newFont">คะแนนที่ได้</label>
-                                                                            <input type="text" name="score"
+                                                                            <input type="text" name="score" id="score"
                                                                                 value="{{$value->score}}"
-                                                                                class="form-control" readonly>
+                                                                                class="form-control"
+                                                                                placeholder="คะแนนทีไ่ด้" required>
                                                                         </div>
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button class="btn btn-secondary"
                                                                             data-dismiss="modal">
-                                                                            <h7 class="newFont">ยกเลิก</ย>
-                                                                                <button type="submit"
-                                                                                    class="btn btn-primary">
-                                                                                    <h7 class="newFont">บันทึก</h7>
-                                                                                </button>
+                                                                            <h7 class="newFont">ยกเลิก</h7>
+                                                                            <button type="submit"
+                                                                                class="btn btn-primary">
+                                                                                <h7 class="newFont">บันทึก</h7>
+                                                                            </button>
                                                                     </div>
                                                                 </form>
                                                             </div>
@@ -220,18 +220,12 @@ th.break {
                                         @endforeach
                                     </tbody>
                                 </table>
-                                <!-- <div class="col-md-1"></div> -->
                             </div>
                         </div>
 
                         <div class="form-group col-md-12"></div>
                         <div class="form-group col-md-8"></div>
-                        <!-- <div class="form-group col-md-12">
-                                <div class="button-position">
-                                    <button type="submit" class="btn btn-gradient-primary mr-2 newFont" >บันทึก</button>
-                                    <button type="submit" class="btn btn-light mr-2 newFont">ยกเลิก</button>
-                            </div>
-                            </div>  -->
+
 
                     </div>
                 </div>
@@ -245,15 +239,10 @@ th.break {
     </div>
     </div>
 </body>
+
 <script>
-// function myfuction($fullscore,$result){
-//     return $fullscore*$result
-// }
 var select = document.getElementById('client_id');
 select.addEventListener('change', function() {
     this.form.submit();
 }, false);
-</script>
-
-
 </script>

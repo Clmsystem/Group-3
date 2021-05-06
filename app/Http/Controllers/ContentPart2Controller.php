@@ -41,10 +41,8 @@ class ContentPart2Controller extends Controller
             ->where('indicator.year_id', '=', $year)
             ->get();
 
-
-
         // dd($indicator_month, $indicator_year, $year, $month);
-        return view('promote.contentPart2', compact('indicator_year', 'indicator_month', 'month'));
+        return view('contentPart2', compact('indicator_year', 'indicator_month', 'month'));
     }
 
     public function update1(Request $request)
@@ -64,11 +62,13 @@ class ContentPart2Controller extends Controller
 
     public function update(Request $request)
     {
+        // $score = $request->result * $request->full_score;
         DB::table('indicator_month')
             ->where('indicator_month_id', $request->key)
             ->update([
                 'result' => $request->result,
-                'percent' => $request->percent
+                'percent' => $request->percent,
+                'score' => $request->score
             ]);
 
         // DB::table('indicator_month')
@@ -78,7 +78,7 @@ class ContentPart2Controller extends Controller
     }
 
 
-    public function search_month1(Request $request)
+    public function search_month(Request $request)
     {
         $month = $request->input('month');
         $month = $request->month;
@@ -115,6 +115,6 @@ class ContentPart2Controller extends Controller
             ->get();
 
         // dd($indicator_month, $indicator_year, $year, $month);
-        return view('promote.contentPart2', compact('indicator_year', 'indicator_month', 'month'));
+        return view('contentPart2', compact('indicator_year', 'indicator_month', 'month'));
     }
 }
