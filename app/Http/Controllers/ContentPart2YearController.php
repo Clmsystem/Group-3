@@ -28,7 +28,7 @@ class ContentPart2YearController extends Controller
         // $year = 0;
 
         // dd($indicator_month, $indicator_year, $year, $month);
-        return view('promote.contentPart2Year', compact('indicator_year', 'year'));
+        return view('contentPart2Year', compact('indicator_year', 'year'));
     }
 
     public function update(Request $request)
@@ -73,6 +73,6 @@ class ContentPart2YearController extends Controller
         // dd($indicator_year);
 
 
-        return view('promote.contentPart2Year', compact('indicator_year', 'year'));
+        return view('contentPart2Year', compact('indicator_year', 'year'));
     }
 }

@@ -42,7 +42,7 @@ class ContentPart2Controller extends Controller
             ->get();
 
         // dd($indicator_month, $indicator_year, $year, $month);
-        return view('promote.contentPart2', compact('indicator_year', 'indicator_month', 'month'));
+        return view('contentPart2', compact('indicator_year', 'indicator_month', 'month'));
     }
 
     public function update1(Request $request)
@@ -115,6 +115,6 @@ class ContentPart2Controller extends Controller
             ->get();
 
         // dd($indicator_month, $indicator_year, $year, $month);
-        return view('promote.contentPart2', compact('indicator_year', 'indicator_month', 'month'));
+        return view('contentPart2', compact('indicator_year', 'indicator_month', 'month'));
     }
 }
