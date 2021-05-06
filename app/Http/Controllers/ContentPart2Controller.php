@@ -64,11 +64,13 @@ class ContentPart2Controller extends Controller
 
     public function update(Request $request)
     {
+        // $score = $request->result * $request->full_score;
         DB::table('indicator_month')
             ->where('indicator_month_id', $request->key)
             ->update([
                 'result' => $request->result,
-                'percent' => $request->percent
+                'percent' => $request->percent,
+                'score' => $request->score
             ]);
 
         // DB::table('indicator_month')
