@@ -71,7 +71,6 @@ th.break {
                                     @csrf
                                     <select id="client_id" type="dropdown-toggle" class="form-control" name="month">
                                         <optgroup class="newFont">
-
                                             <option value="1" {{ $month == 1 ? 'selected' : '' }}>มกราคม</option>
                                             <option value="2" {{ $month == 2 ? 'selected' : '' }}>กุมภาพันธ์</option>
                                             <option value="3" {{ $month == 3 ? 'selected' : '' }}>มีนาคม</option>
@@ -184,8 +183,8 @@ th.break {
                                                                         <div class="form-group col-md-2 tdleft">
                                                                             <label
                                                                                 class="newFont">ร้อยละผลสำเร็จ</label>
-                                                                            <input type="text" name="percent" id="percent"
-                                                                                value="{{$value->percent}}"
+                                                                            <input type="text" name="percent"
+                                                                                id="percent" value="{{$value->percent}}"
                                                                                 class="form-control"
                                                                                 placeholder="ตัวเลข" required>
                                                                             <input type="hidden" name="key"
@@ -197,17 +196,18 @@ th.break {
                                                                             <label class="newFont">คะแนนที่ได้</label>
                                                                             <input type="text" name="score" id="score"
                                                                                 value="{{$value->score}}"
-                                                                                class="form-control" placeholder="คะแนนทีไ่ด้" required>
+                                                                                class="form-control"
+                                                                                placeholder="คะแนนทีไ่ด้" required>
                                                                         </div>
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button class="btn btn-secondary"
                                                                             data-dismiss="modal">
                                                                             <h7 class="newFont">ยกเลิก</h7>
-                                                                                <button  type="submit"
-                                                                                    class="btn btn-primary">
-                                                                                    <h7 class="newFont">บันทึก</h7>
-                                                                                </button>
+                                                                            <button type="submit"
+                                                                                class="btn btn-primary">
+                                                                                <h7 class="newFont">บันทึก</h7>
+                                                                            </button>
                                                                     </div>
                                                                 </form>
                                                             </div>
@@ -225,7 +225,7 @@ th.break {
 
                         <div class="form-group col-md-12"></div>
                         <div class="form-group col-md-8"></div>
-                    
+
 
                     </div>
                 </div>
@@ -240,5 +240,9 @@ th.break {
     </div>
 </body>
 
-
+<script>
+var select = document.getElementById('client_id');
+select.addEventListener('change', function() {
+    this.form.submit();
+}, false);
 </script>

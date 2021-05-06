@@ -41,8 +41,6 @@ class ContentPart2Controller extends Controller
             ->where('indicator.year_id', '=', $year)
             ->get();
 
-
-
         // dd($indicator_month, $indicator_year, $year, $month);
         return view('promote.contentPart2', compact('indicator_year', 'indicator_month', 'month'));
     }
@@ -80,7 +78,7 @@ class ContentPart2Controller extends Controller
     }
 
 
-    public function search_month1(Request $request)
+    public function search_month(Request $request)
     {
         $month = $request->input('month');
         $month = $request->month;
