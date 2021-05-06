@@ -74,17 +74,18 @@
                                       <select class="form-control" id="year" name="year">
                                           <optgroup class="newFont">
                                               <!-- <option>ทุกปี</option> -->
-                                              <option value="0" {{ $year == 0 ? 'selected' : '' }}>ทุกปี</option>
-                                              <option value="1" {{ $year == 1 ? 'selected' : '' }}>2564</option>
-                                              <option value="2" {{ $year == 2 ? 'selected' : '' }}>2565</option>
-                                              <option {{ $year == 3 ? 'selected' : '' }}>2566</option>
-                                              <option {{ $year == 4 ? 'selected' : '' }}>2567</option>
-                                              <option {{ $year == 5 ? 'selected' : '' }}>2568</option>
-                                              <option {{ $year == 6 ? 'selected' : '' }}>2569</option>
-                                              <option {{ $year == 7 ? 'selected' : '' }}>2570</option>
-                                              <option {{ $year == 8 ? 'selected' : '' }}>2571</option>
-                                              <option {{ $year == 9 ? 'selected' : '' }}>2572</option>
-                                              <option {{ $year == 10 ? 'selected' : '' }}>2573</option>
+                                              <option value="1" {{ $year == 1 ? 'selected' : '' }}>2562</option>
+                                              <option value="2" {{ $year == 2 ? 'selected' : '' }}>2563</option>
+                                              <option value="3" {{ $year == 3 ? 'selected' : '' }}>2564</option>
+                                              <option value="4" {{ $year == 4 ? 'selected' : '' }}>2565</option>
+                                              <option {{ $year == 5 ? 'selected' : '' }}>2566</option>
+                                              <option {{ $year == 6 ? 'selected' : '' }}>2567</option>
+                                              <option {{ $year == 7 ? 'selected' : '' }}>2568</option>
+                                              <option {{ $year == 8 ? 'selected' : '' }}>2569</option>
+                                              <option {{ $year == 9 ? 'selected' : '' }}>2570</option>
+                                              <option {{ $year == 10 ? 'selected' : '' }}>2571</option>
+                                              <option {{ $year == 11 ? 'selected' : '' }}>2572</option>
+                                              <option {{ $year == 12 ? 'selected' : '' }}>2573</option>
                                           </optgroup>
                                       </select>
                                   </div>
@@ -94,7 +95,7 @@
                                       <select class="form-control" id="month" name="month">
                                           <optgroup class="newFont">
                                               <!-- <option>ทุกเดือน</option> -->
-                                              <option value="0" {{ $month == 0 ? 'selected' : '' }}>ทุกเดือน</option>
+                                             
                                               <option value="1" {{ $month == 1 ? 'selected' : '' }}>มกราคม</option>
                                               <option value="2" {{ $month == 2 ? 'selected' : '' }}>กุมภาพันธ์</option>
                                               <option value="3" {{ $month == 3 ? 'selected' : '' }}>มีนาคม</option>
@@ -184,7 +185,66 @@
                       </div>
                   </div>
               </div>
+              <div class="col-12 grid-margin stretch-card">
+                  <div class="card">
+                      <div class="card-body">
+                          <div class="form-group col-md-12">
 
+                          </div>
+                          <div class="form-group col-md-12">
+                              <h3 class="newFont">ตัวชี้วัดปัจจุบัน (รายปี)</h3><br>
+
+                              <div class="button-position">
+                                  <button type="button" class="btn btn-inverse-primary btns2 ">ดาวน์โหลด</button>
+                              </div>
+                              <br>
+                          </div>
+
+                          <div class="row">
+                              <div class="form-group col-md-12"></div>
+                              <div class="col-md-12">
+                                  <table class="table table-bordered newFont">
+                                      <thead>
+                                          <tr class="d-flex">
+                                              <th class="col-sm-6" scope="col">
+                                                  <h7 class="newFont">ตัวชี้วัด</h7>
+                                              </th>
+                                              <th class="col-sm-1" scope="col">
+                                                  <h7 class="newFont">คะแนนเต็ม</h7>
+                                              </th>
+                                              <th class="col-sm-1" scope="col">
+                                                  <h7 class="newFont">คะแนนที่ได้</h7>
+                                              </th>
+                                              <th class="col-sm-2" scope="col">
+                                                  <h7 class="newFont">ผู้รับผิดชอบ</h7>
+                                              </th>
+                                              <th class="col-sm-2" scope="col">
+                                              </th>
+                                          </tr>
+                                      </thead>
+                                
+                                      <tbody>
+                                          @foreach($showyear as $i => $value)
+                                          <tr class="d-flex">
+                                              <td class="col-sm-6 tdleft break">{{$value->indicator_name}}</td>
+                                              <td class="col-sm-1 break">{{$value->full_score}}</td>
+                                              <td class="col-sm-1 break">{{$value->score}}</td>
+                                              <td class="col-sm-2 tdleft break"> {{$value->name_employee}}</td>
+                                              <th class="col-sm-2 break" scope="col">
+                                                  <button type="button" class="btn btn-inverse-primary btns2"><i class="mdi mdi-chart-bar"></i></button>
+                                              </th>
+                                          </tr>
+                                          @endforeach
+                                      </tbody>
+                                  </table>
+                                  <!-- <div class="col-md-1"></div> -->
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+         
+            
               <!--------------------------------------------  แสดงตัวชี้วัด end   --------------------------------------------------->
 
 
