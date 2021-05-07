@@ -7,14 +7,16 @@ use App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 
 
-
 class CreatePart2Controller extends Controller
 {
     public function index()
     {
+        $year = DB::table('year')->where('flag', 1)->get();
         $shindicator_year = DB::table('employee')
             ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
             ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
+            ->join('year', 'year.year_id', '=', 'indicator.year_id')
+            ->where('flag', 1)
             // ->join('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
             ->select('employee.*', 'assign.*', 'indicator.*')
             ->get();
@@ -22,6 +24,8 @@ class CreatePart2Controller extends Controller
         $shindicator_month = DB::table('employee')
             ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
             ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
+            ->join('year', 'year.year_id', '=', 'indicator.year_id')
+            ->where('flag', 1)
             // ->join('indicator_month', 'indicator.indicator_id', '=', 'indicator_month.indicator_id')
             ->select('employee.*', 'assign.*', 'indicator.*')
             ->get();
@@ -35,16 +39,15 @@ class CreatePart2Controller extends Controller
             ->where('id_department', '!=', 1)
             ->where('id_department', '!=', 2)
             ->get();
-        return view('createPart2', compact('shindicator_year', 'shindicator_month', 'getEmployee'));
+        return view('createPart2', compact('shindicator_year', 'shindicator_month', 'getEmployee', 'year'));
     }
     public function insert_indicator(Request $request)
     {
 
         $checktype =  $request->input('type');
-
         $data = array();
         $data["indicator_name"] = $request->indtcator_name;
-        $data["year_id"] = 3;
+        $data["year_id"] = $request->year;
         $data["indicator_type"] = $request->type;
         $data["full_score"] = $request->fullscore;
         DB::table('indicator')->insert($data);
@@ -65,7 +68,7 @@ class CreatePart2Controller extends Controller
                 $data["score"] = 0;
                 $data["percent"] = null;
                 $data["indicator_id"] = $max;
-                $data["year_id"] = 3;
+                $data["year_id"] = $request->year;
                 $data["month"] = $i;
                 $data["status"] = 0;
                 // $data["id_employee"] = $request->input('employ');
@@ -75,7 +78,7 @@ class CreatePart2Controller extends Controller
             $data = array();
             $max = DB::table('indicator')->max('indicator_id');
             $data["indicator_id"] = $max;
-            $data["year_id"] = 3;
+            $data["year_id"] = $request->year;
             $data["result"] = null;
             // $data["fullscore"] = $request->fullscore;
             $data["score"] = 0;
@@ -87,7 +90,7 @@ class CreatePart2Controller extends Controller
         }
         return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
     }
-    
+
     public function updateCreate(Request $request)
     {
 
@@ -104,6 +107,5 @@ class CreatePart2Controller extends Controller
                 'full_score' => $request->edit_fullscore,
             ]);
         return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
-
     }
 }
