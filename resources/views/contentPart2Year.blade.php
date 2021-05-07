@@ -192,7 +192,7 @@ th.break {
                                                                             <label class="newFont">คะแนนที่ได้</label>
                                                                             <input type="text" name="score"
                                                                                 value="{{$value->score}}"
-                                                                                class="form-control" readonly>
+                                                                                class="form-control"  placeholder="คะแนนที่ได้">
                                                                         </div>
                                                                     </div>
                                                                     <div class="modal-footer">

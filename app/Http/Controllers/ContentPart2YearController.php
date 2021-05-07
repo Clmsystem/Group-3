@@ -37,7 +37,8 @@ class ContentPart2YearController extends Controller
             ->where('indicator_year_id', $request->key)
             ->update([
                 'result' => $request->result,
-                'percent' => $request->percent
+                'percent' => $request->percent,
+                'score' => $request->score
             ]);
 
         // DB::table('indicator_month')
