@@ -231,7 +231,7 @@
                                             <td class="col-sm-1 break">{{$value->score}}</td>
                                             <td class="col-sm-2 tdleft break"> {{$value->name_employee}}</td>
                                             <th class="col-sm-2 break" scope="col">
-                                                <button type="submit" class="btn btn-inverse-primary btns2"><i class="mdi mdi-chart-bar"></i></button>
+                                                <button type="button" class="btn btn-inverse-primary btns2"><i class="mdi mdi-chart-bar"></i></button>
                                             </th>
                                         </tr>
                                         @endforeach
