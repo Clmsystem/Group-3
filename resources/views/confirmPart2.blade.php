@@ -130,9 +130,9 @@ th.break {
                                           <tr class="d-flex">
                                               <td class="col-sm-5 tdleft break"> {{$item->indicator_name}} </td>
                                               <td class="col-sm-1"> {{$item->full_score}} </td>
-                                              <td class="col-sm-1 break">{{$item->score}}</td>
+                                              <td class="col-sm-1 break">{{$item->result}}</td>
                                               <td class="col-sm-2"> {{$item->percent}} </td>
-                                              <td class="col-sm-1"></td>
+                                              <td class="col-sm-1"> {{$item->score}}</td>
                                               <td class="col-sm-2 tdleft"> {{$item->name_employee}} </td>
 
                                           </tr>
