@@ -74,18 +74,18 @@ th.break {
                                     @foreach($year as $year )
                                     <input type="hidden" name="year" value="{{$year->year_id}}">
                                     @endforeach
-                                    <input type="text" name="indtcator_name" id="indtcator_name" class="form-control"
-                                        placeholder="หัวข้อตัวขี้วัด" required>
+                                    <input type="text" name="indtcator_name" id="indtcator_name"
+                                        class="form-control newFont" placeholder="หัวข้อตัวขี้วัด" required>
                                 </div>
 
                                 <div class="form-group col-md-2">
                                     <label class="newFont">คะแนนเต็ม</label>
-                                    <input type="textnumber" name="fullscore" id="fullscore" class="form-control"
-                                        placeholder="ตัวเลข" value="" required>
+                                    <input type="textnumber" name="fullscore" id="fullscore"
+                                        class="form-control newFont" placeholder="ตัวเลข" value="" required>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label class="newFont" name="month">ประเภทการกรอก</label>
-                                    <select class="form-control" name="type" id="type">
+                                    <select class="form-control newFont" name="type" id="type">
                                         <optgroup class="newFont" label="เลือกประเภทการกรอก">
                                             <option disabled selected hidden>เลือกประเภทการกรอก</option>
                                             <option value="1">รายเดือน</option>
@@ -96,10 +96,10 @@ th.break {
 
                                 <div class="form-group col-md-3">
                                     <label class="newFont">ผู้รับผิดชอบ</label>
-                                    <select class="form-control" name="employ" id="employ">
+                                    <select class="form-control newFont" name="employ" id="employ">
 
                                         <optgroup class="newFont" label="เลือกผู้รับผิดชอบ">
-                                            <option disabled selected hidden>เลือกประเภทการกรอก</option>
+                                            <option disabled selected hidden>เลือกผู้รับผิดชอบ</option>
                                             @foreach($getEmployee as $i => $value)
                                             <option class="newFont" value="{{$value->id_employee}}">
                                                 {{$value->name_employee}}
@@ -205,9 +205,10 @@ th.break {
                                                                     <!-- @method('PUT') -->
                                                                     <hr><br>
                                                                     <div class="row">
-                                                                        <div class="form-group col-md-5 tdleft ">
+                                                                        <div class="form-group col-md-7 tdleft ">
                                                                             <label class="newFont">หัวข้อ</label>
-                                                                            <input type="text" class="form-control"
+                                                                            <input type="text"
+                                                                                class="form-control newFont"
                                                                                 id="edit_indicator_name"
                                                                                 name="edit_indicator_name"
                                                                                 value="{{$value->indicator_name}}"
@@ -219,12 +220,13 @@ th.break {
                                                                         </div>
                                                                         <div class="form-group col-md-2 tdleft">
                                                                             <label class="newFont">คะแนนเต็ม</label>
-                                                                            <input type="text" class="form-control"
+                                                                            <input type="text"
+                                                                                class="form-control newFont"
                                                                                 id="edit_fullscore"
                                                                                 name="edit_fullscore"
                                                                                 value="{{$value->full_score}}" required>
                                                                         </div>
-                                                                        <div class="form-group col-md-2 tdleft">
+                                                                        <!-- <div class="form-group col-md-2 tdleft">
                                                                             <label class="newFont">ประเภทการกรอก</label>
                                                                             <select name="edit_indicator_type"
                                                                                 id="edit_indicator_type"
@@ -232,7 +234,7 @@ th.break {
                                                                                 value="{{$value->indicator_type}}"
                                                                                 style="color:black">
 
-                                                                                <optgroup class="newFont"
+                                                                                <optgroup class="newFont" readonly
                                                                                     label="เลือกประเภทการกรอก">
                                                                                     <option
                                                                                         value="{{$value->indicator_type}}">
@@ -247,7 +249,7 @@ th.break {
                                                                                     <option value="0">รายปี</option>
                                                                                 </optgroup>
                                                                             </select>
-                                                                        </div>
+                                                                        </div> -->
                                                                         <div class="form-group col-md-3 tdleft ">
                                                                             <label class="newFont">ผู้รับผิดชอบ</label>
                                                                             <select name="edit_employ" id="edit_employ"
