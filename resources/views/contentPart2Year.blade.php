@@ -63,7 +63,7 @@ th.break {
                         <h3 class="newFont">ส่วนที่ 2 ตัวชี้วัดตามเกณฑ์การประเมินหน่วยงาน (9 ข้อ) จาก ทมอ. (รายปี)</h3>
                         <br>
 
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="form-group col-md-4">
                                 <label class="newFont">ปี</label>
                                 <form action="{{route('search_year')}}" method="post" enctype="multipart/form-data">
@@ -79,9 +79,9 @@ th.break {
                                 </form>
                             </div>
 
-                        </div>
+                        </div> -->
 
-                        <hr>
+                        <!-- <hr> -->
                         <!-- <p class="card-description"> Basic form elements </p> -->
 
                         <div class="row">
