@@ -64,29 +64,9 @@ th.break {
                 <div class="card">
                     <div class="card-body">
                         <h3 class="newFont">ยืนยันข้อมูล ประจำปีงบประมาณ พ.ศ.
-                            <?php echo date("Y") + 543; ?></h3>
-                        <div class="row">
-                            <div class="form-group col-md-3">
-                                <!-- <label class="newFont">เดือน</label> -->
-                                <form action="{{route('confirm_year')}}" method="post" enctype="multipart/form-data">
-                                    @csrf
-                                    <select id="client_id" type="dropdown-toggle" class="form-control newFont "
-                                        name="year">
-                                         <optgroup class="newFont">
-                                            @foreach ($years as $i => $value)
-                                            <option value="{{ $value->year_id }}">{{ $value->year }}</option>
-                                            @endforeach
-                                        </optgroup> 
-                                    </select>
-                            </div>
-                            <div class="form-group col-md-3">
-                                <div>
-                                    <button type="submit" data-toggle="modal"
-                                        class="btn btn-gradient-primary mr-4 newFont">ค้นหา</button>
-                                </div>
-                            </div>
-
-                            <hr>
+                            <?php echo $YearShow; ?></h3>
+                       
+                            <!-- <hr> -->
 
                             <div class="col-md-12">
                                 <hr>
