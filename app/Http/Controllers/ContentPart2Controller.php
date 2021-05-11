@@ -25,7 +25,6 @@ class ContentPart2Controller extends Controller
        ->get();
 
    $YearShow = $YearShow[0]->year;
-
    $year = $year[0]->year_id;
 
         $indicator_month = DB::table('employee')
@@ -37,12 +36,8 @@ class ContentPart2Controller extends Controller
             ->where('year.year_id', '=', $year)
             ->where('indicator_month.month', '=', $month)
             ->get();
-        // dd($indicator_month);
-       
 
-
-        // dd($indicator_month, $indicator_year, $year, $month);
-        return view('contentPart2', compact('indicator_month', 'month','year'));
+        return view('contentPart2', compact('indicator_month', 'month','year','YearShow'));
     }
 
     public function update1(Request $request)
@@ -54,9 +49,6 @@ class ContentPart2Controller extends Controller
                 'percent' => $request->percent
             ]);
 
-        // DB::table('indicator_month')
-        //     ->where('indicator_month_id', $request->key)
-        //     ->update(['percent' => $request->percent]);
         return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
     }
 
@@ -71,9 +63,7 @@ class ContentPart2Controller extends Controller
                 'score' => $request->score
             ]);
 
-        // DB::table('indicator_month')
-        //     ->where('indicator_month_id', $request->key)
-        //     ->update(['percent' => $request->percent]);
+       
         return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
     }
 
@@ -121,9 +111,6 @@ class ContentPart2Controller extends Controller
                 ->where('indicator_month.month', '=', $month)
                 ->get();
 
-        
-
-        // dd($indicator_month, $indicator_year, $year, $month);
         return view('contentPart2', compact('indicator_month', 'month','year','YearShow'));
     }
 }

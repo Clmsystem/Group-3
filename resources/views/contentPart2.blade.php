@@ -62,7 +62,7 @@ th.break {
                     <div class="card-body">
                         <h3 class="newFont">ส่วนที่ 2 ตัวชี้วัดตามเกณฑ์การประเมินหน่วยงาน (9 ข้อ) จาก ทมอ.
                             ประจำปี
-                            <?php echo date("Y") + 543; ?> </h3>
+                            <?php echo $YearShow; ?> </h3>
                         <br>
 
                         <div class="row">
