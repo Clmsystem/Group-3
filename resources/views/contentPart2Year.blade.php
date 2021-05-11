@@ -71,20 +71,10 @@ th.break {
                                     <select id="client_id" type="dropdown-toggle" class="form-control newFont "
                                         name="year">
                                         <optgroup class="newFont">
-                                            <!-- <option value="0">ทุกปี</option> -->
-                                            <option value="1" {{ $year == 1 ? 'selected' : '' }}>2562</option>
-                                            <option value="2" {{ $year == 2 ? 'selected' : '' }}>2563</option>
-                                            <option value="3" {{ $year == 3 ? 'selected' : '' }}>2564</option>
-                                            <option value="4" {{ $year == 4 ? 'selected' : '' }}>2565</option>
-                                            <option {{ $year == 5 ? 'selected' : '' }}>2566</option>
-                                            <option {{ $year == 6 ? 'selected' : '' }}>2567</option>
-                                            <option {{ $year == 7 ? 'selected' : '' }}>2568</option>
-                                            <option {{ $year == 8 ? 'selected' : '' }}>2569</option>
-                                            <option {{ $year == 9 ? 'selected' : '' }}>2570</option>
-                                            <option {{ $year == 10 ? 'selected' : '' }}>2571</option>
-                                            <option {{ $year == 11 ? 'selected' : '' }}>2572</option>
-                                            <option {{ $year == 12 ? 'selected' : '' }}>2573</option>
-                                        </optgroup>
+                                            @foreach ($years as $i => $value)
+                                            <option value="{{ $value->year_id }}">{{ $value->year }}</option>
+                                            @endforeach
+                                        </optgroup> 
                                     </select>
                                 </form>
                             </div>

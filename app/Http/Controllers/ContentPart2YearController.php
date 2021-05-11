@@ -14,6 +14,9 @@ class ContentPart2YearController extends Controller
         $month = (int)date("m");
         $year = (int)date("Y") + 543;
 
+        $years = DB::table('year')
+        ->get();
+
         // dd($indicator_month);
         $indicator_year = DB::table('employee')
         ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
@@ -25,10 +28,10 @@ class ContentPart2YearController extends Controller
             ->get();
         // dd($indicator_year,$year);
 
-        $year = 3;
+        //$year = 3;
 
         // dd($indicator_month, $indicator_year, $year, $month);
-        return view('contentPart2Year', compact('indicator_year', 'year'));
+        return view('contentPart2Year', compact('indicator_year', 'year','years'));
     }
 
     public function update(Request $request)
@@ -52,10 +55,13 @@ class ContentPart2YearController extends Controller
     public function search_year(Request $request)
     {
         $year = $request->input('year');
+        $years = $request->year;
         $year = $request->year;
 
         // $year = (int)date("Y") + 543;
         // dd($request->year);
+        $years = DB::table('year')
+        ->get();
 
         if ($request->year == 0) {
             $indicator_year = DB::table('employee')
@@ -75,6 +81,6 @@ class ContentPart2YearController extends Controller
         // dd($indicator_year);
 
 
-        return view('contentPart2Year', compact('indicator_year', 'year'));
+        return view('contentPart2Year', compact('indicator_year', 'year','years'));
     }
 }

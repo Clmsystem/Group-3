@@ -37,11 +37,15 @@ class SearchPart2Controller extends Controller
         // ->where('indicator_year.year_id', '=', $yeared )
         ->get();
 
+        $years = DB::table('year')
+        ->get();
 
-        $year=3;
+
+
+        // $year=3;
         // $month=10;
        //dd( $showindicator,$year, $month,$showyear );
-        return view('searchPart2',compact('showindicator','month','year','showyear'));
+        return view('searchPart2',compact('showindicator','month','year','showyear','years'));
       
                
     } 
@@ -53,9 +57,15 @@ class SearchPart2Controller extends Controller
 
         $month= $request->month;
         $year= $request->year;
+        $years= $request->year;
+        
+
         // $yeared= $request->year;
         
       // dd($request->year, $request->month);
+        $years = DB::table('year')
+        ->get();
+
         
           $showindicator = DB::table('employee')
           ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
@@ -78,7 +88,7 @@ class SearchPart2Controller extends Controller
         ->get();
     
         
-        return view('searchPart2',compact('showindicator','month','year','showyear'));
+        return view('searchPart2',compact('showindicator','month','year','showyear','years'));
 
     }
 }

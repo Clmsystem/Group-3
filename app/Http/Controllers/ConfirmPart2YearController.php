@@ -16,6 +16,9 @@ class ConfirmPart2YearController extends Controller
         
         
         // dd($indicator_month);
+        $years = DB::table('year')
+        ->get();
+
         $indicator_year = DB::table('employee')
         ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
         ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
@@ -24,9 +27,9 @@ class ConfirmPart2YearController extends Controller
         ->where('year.year', '=', $year)
         ->get();
 
-        $year=3;
+        // $year=3;
         // dd( $indicator_year, $year);
-         return view('confirmPart2Year', compact('indicator_year','year'));
+         return view('confirmPart2Year', compact('indicator_year','year','years'));
 
 
         $year = DB::table('employee')
@@ -41,10 +44,13 @@ class ConfirmPart2YearController extends Controller
     public function confirm_year(Request $request)
     {
         $year = $request->input('year');
+        $years = $request->year;
         $year = $request->year;
 
         // $year = (int)date("Y") + 543;
         // dd($request->year);
+        $years = DB::table('year')
+        ->get();
 
         if ($request->year == 0) {
             $indicator_year = DB::table('employee')
@@ -62,6 +68,6 @@ class ConfirmPart2YearController extends Controller
             ->where('indicator_year.year_id', '=', $year)
             ->get();
         // dd($indicator_year);
-        return view('confirmPart2Year', compact('indicator_year', 'year'));
+        return view('confirmPart2Year', compact('indicator_year', 'year','years'));
     }
 }
