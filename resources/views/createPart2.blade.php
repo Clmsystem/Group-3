@@ -169,7 +169,7 @@ th.break {
                                             <!-- <td class="col-sm-1 break"><button class="btn btn-warning  btn-sm" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                                     </td> -->
                                             <td class="col-sm-1 break">
-                                                <button class="btn btn-warning  btn-sm" data-toggle="modal"
+                                                <button class="btn btn-gradient-warning  btn-sm" data-toggle="modal"
                                                     data-target="#modalAction1{{$i}}"><i
                                                         class="mdi mdi-grease-pencil launch-modal"></i></button>
                                                 <div class="modal fade" id="modalAction1{{ $i }}" tabindex="-1"
@@ -212,7 +212,7 @@ th.break {
                                                                                 value="{{$value->full_score}}" required>
                                                                         </div>
                                                                         <div class="form-group col-md-2 tdleft">
-                                                                            <label class="newFont" >ประเภทการกรอก</label>
+                                                                            <label class="newFont">ประเภทการกรอก</label>
                                                                             <select name="edit_indicator_type"
                                                                                 id="edit_indicator_type"
                                                                                 class="form-control newFont "
@@ -233,8 +233,10 @@ th.break {
                                                                                         ==1 )
                                                                                         รายเดือน
                                                                                         @endif</option>
-                                                                                    <option value="1" disabled>รายเดือน</option>
-                                                                                    <option value="0" disabled>รายปี</option>
+                                                                                    <option value="1" disabled>รายเดือน
+                                                                                    </option>
+                                                                                    <option value="0" disabled>รายปี
+                                                                                    </option>
                                                                                 </optgroup>
                                                                             </select>
                                                                         </div>
@@ -261,12 +263,14 @@ th.break {
                                                                         </div>
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                        <button type="submit" class="btn btn-secondary"
+                                                                        <button type="submit"
+                                                                            class="btn btn-gradient-danger newFont  "
                                                                             data-dismiss="modal">
                                                                             <h7 class="newFont">
                                                                                 ยกเลิก</ย>
                                                                         </button>
-                                                                        <button type="submit" class="btn btn-primary">
+                                                                        <button type="submit"
+                                                                            class="btn btn-gradient-primary newFont ">
                                                                             <h7 class="newFont">บันทึก</h7>
                                                                         </button>
                                                                     </div>
