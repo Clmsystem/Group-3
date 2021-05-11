@@ -60,7 +60,8 @@ th.break {
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="newFont">ส่วนที่ 2 ตัวชี้วัดตามเกณฑ์การประเมินหน่วยงาน (9 ข้อ) จาก ทมอ. ประจำปี พ.ศ.
+                        <h3 class="newFont">ส่วนที่ 2 ตัวชี้วัดตามเกณฑ์การประเมินหน่วยงาน (9 ข้อ) จาก ทมอ.
+                            ประจำปี
                             <?php echo date("Y") + 543; ?> </h3>
                         <br>
 
@@ -69,7 +70,8 @@ th.break {
                                 <label class="newFont">เดือน</label>
                                 <form action="{{route('search_month')}}" method="post" enctype="multipart/form-data">
                                     @csrf
-                                    <select id="client_id" type="dropdown-toggle" class="form-control" name="month">
+                                    <select id="client_id" type="dropdown-toggle" class="form-control newFont"
+                                        name="month">
                                         <optgroup class="newFont">
                                             <option value="1" {{ $month == 1 ? 'selected' : '' }}>มกราคม</option>
                                             <option value="2" {{ $month == 2 ? 'selected' : '' }}>กุมภาพันธ์</option>
@@ -108,7 +110,6 @@ th.break {
                                             </th>
                                             <th class="col-sm-2 break" scope="col">
                                                 <h7 class="newFont">ผล</h7><br><br>
-                                                <h9 class="newFont" style="color:red">*กรอกผลที่คำนวณแล้ว</h9>
                                             </th>
                                             <th class="col-sm-2 break" scope="col">
                                                 <h7 class="newFont">ร้อยละผลสำเร็จ</h7>
@@ -161,7 +162,8 @@ th.break {
                                                                     <div class="row">
                                                                         <div class="form-group col-md-4 tdleft ">
                                                                             <label class="newFont">หัวข้อ</label>
-                                                                            <input type="text" class="form-control"
+                                                                            <input type="text"
+                                                                                class="form-control newFont"
                                                                                 id="indicator_name"
                                                                                 name="indicator_name"
                                                                                 value="{{$value->indicator_name}}"
@@ -169,7 +171,8 @@ th.break {
                                                                         </div>
                                                                         <div class="form-group col-md-2 tdleft">
                                                                             <label class="newFont">คะแนนเต็ม</label>
-                                                                            <input type="text" class="form-control"
+                                                                            <input type="text"
+                                                                                class="form-control newFont "
                                                                                 id="full_score" name="full_score"
                                                                                 value="{{$value->full_score}}" readonly>
                                                                         </div>
@@ -177,7 +180,7 @@ th.break {
                                                                             <label class="newFont">ผล</label>
                                                                             <input type="text" name="result" id="result"
                                                                                 value="{{$value->result}}"
-                                                                                class="form-control"
+                                                                                class="form-control newFont"
                                                                                 placeholder="ตัวเลข" required>
                                                                         </div>
                                                                         <div class="form-group col-md-2 tdleft">
@@ -185,18 +188,18 @@ th.break {
                                                                                 class="newFont">ร้อยละผลสำเร็จ</label>
                                                                             <input type="text" name="percent"
                                                                                 id="percent" value="{{$value->percent}}"
-                                                                                class="form-control"
+                                                                                class="form-control newFont"
                                                                                 placeholder="ตัวเลข" required>
                                                                             <input type="hidden" name="key"
                                                                                 value="{{$value->indicator_month_id}}"
-                                                                                class="form-control"
+                                                                                class="form-control newFont"
                                                                                 placeholder="ตัวเลข">
                                                                         </div>
                                                                         <div class="form-group col-md-2 tdleft">
                                                                             <label class="newFont">คะแนนที่ได้</label>
                                                                             <input type="text" name="score" id="score"
                                                                                 value="{{$value->score}}"
-                                                                                class="form-control"
+                                                                                class="form-control newFont"
                                                                                 placeholder="คะแนนทีไ่ด้" required>
                                                                         </div>
                                                                     </div>
