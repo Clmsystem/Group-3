@@ -72,18 +72,18 @@ th.break {
                             <div class="row">
                                 <div class="form-group col-md-4">
                                     <label class="newFont">ปี</label>
-                                    <select class="form-control" id="year" name="year">
-                                         <optgroup class="newFont">
+                                    <select class="form-control newFont" id="year" name="year">
+                                        <optgroup class="newFont">
                                             @foreach ($years as $i => $value)
                                             <option value="{{ $value->year_id }}">{{ $value->year }}</option>
                                             @endforeach
-                                        </optgroup> 
+                                        </optgroup>
                                     </select>
                                 </div>
 
                                 <div class="form-group col-md-4">
                                     <label class="newFont">เดือน</label>
-                                    <select class="form-control" id="month" name="month">
+                                    <select class="form-control newFont" id="month" name="month">
                                         <optgroup class="newFont">
                                             <!-- <option>ทุกเดือน</option> -->
 
