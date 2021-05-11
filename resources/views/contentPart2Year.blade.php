@@ -60,26 +60,9 @@ th.break {
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="newFont">ส่วนที่ 2 ตัวชี้วัดตามเกณฑ์การประเมินหน่วยงาน (9 ข้อ) จาก ทมอ. (รายปี)</h3>
+                        <h3 class="newFont">ส่วนที่ 2 ตัวชี้วัดตามเกณฑ์การประเมินหน่วยงาน (9 ข้อ) จาก ทมอ. (รายปี) ประจำปี
+                            <?php echo $YearShow; ?> </h3>
                         <br>
-
-                        <!-- <div class="row">
-                            <div class="form-group col-md-4">
-                                <label class="newFont">ปี</label>
-                                <form action="{{route('search_year')}}" method="post" enctype="multipart/form-data">
-                                    @csrf
-                                    <select id="client_id" type="dropdown-toggle" class="form-control newFont "
-                                        name="year">
-                                        <optgroup class="newFont">
-                                            @foreach ($years as $i => $value)
-                                            <option value="{{ $value->year_id }}">{{ $value->year }}</option>
-                                            @endforeach
-                                        </optgroup> 
-                                    </select>
-                                </form>
-                            </div>
-
-                        </div> -->
 
                         <!-- <hr> -->
                         <!-- <p class="card-description"> Basic form elements </p> -->
