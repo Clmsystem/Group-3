@@ -212,12 +212,12 @@ th.break {
                                                                                 value="{{$value->full_score}}" required>
                                                                         </div>
                                                                         <div class="form-group col-md-2 tdleft">
-                                                                            <label class="newFont">ประเภทการกรอก</label>
+                                                                            <label class="newFont" >ประเภทการกรอก</label>
                                                                             <select name="edit_indicator_type"
                                                                                 id="edit_indicator_type"
                                                                                 class="form-control newFont "
                                                                                 value="{{$value->indicator_type}}"
-                                                                                style="color:black">
+                                                                                style="color:black" readonly>
 
 
 
@@ -233,8 +233,8 @@ th.break {
                                                                                         ==1 )
                                                                                         รายเดือน
                                                                                         @endif</option>
-                                                                                    <option value="1">รายเดือน</option>
-                                                                                    <option value="0">รายปี</option>
+                                                                                    <option value="1" disabled>รายเดือน</option>
+                                                                                    <option value="0" disabled>รายปี</option>
                                                                                 </optgroup>
                                                                             </select>
                                                                         </div>
