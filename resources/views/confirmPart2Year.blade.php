@@ -60,7 +60,6 @@ th.break {
             </div>
 
             <!-- ------------------------------------------  ค้นหาตัวชี้วัด Start-  --------------------------------------------->
-
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
@@ -69,23 +68,24 @@ th.break {
                         <div class="row">
                             <div class="form-group col-md-3">
                                 <!-- <label class="newFont">เดือน</label> -->
-                                <form action="{{route('confirm_month')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('confirm_year')}}" method="post" enctype="multipart/form-data">
                                     @csrf
-                                    <select id="client_id" type="dropdown-toggle" class="form-control" name="month">
+                                    <select id="client_id" type="dropdown-toggle" class="form-control newFont "
+                                        name="year">
                                         <optgroup class="newFont">
-                                            <option disabled selected hidden>เลือกเดือน</option>
-                                            <option value="10" {{ $month == 10 ? 'selected' : '' }}>ตุลาคม</option>
-                                            <option value="11" {{ $month == 11 ? 'selected' : '' }}>พฤศจิกายน</option>
-                                            <option value="12" {{ $month == 12 ? 'selected' : '' }}>ธันวาคม</option>
-                                            <option value="1" {{ $month == 1 ? 'selected' : '' }}>มกราคม</option>
-                                            <option value="2" {{ $month == 2 ? 'selected' : '' }}>กุมภาพันธ์</option>
-                                            <option value="3" {{ $month == 3 ? 'selected' : '' }}>มีนาคม</option>
-                                            <option value="4" {{ $month == 4 ? 'selected' : '' }}>เมษายน</option>
-                                            <option value="5" {{ $month == 5 ? 'selected' : '' }}>พฤษภาคม</option>
-                                            <option value="6" {{ $month == 6 ? 'selected' : '' }}>มิถุนายน</option>
-                                            <option value="7" {{ $month == 7 ? 'selected' : '' }}>กรกฎาคม</option>
-                                            <option value="8" {{ $month == 8 ? 'selected' : '' }}>สิงหาคม</option>
-                                            <option value="9" {{ $month == 9 ? 'selected' : '' }}>กันยายน</option>
+                                            <!-- <option value="0">ทุกปี</option> -->
+                                            <option value="1" {{ $year == 1 ? 'selected' : '' }}>2562</option>
+                                            <option value="2" {{ $year == 2 ? 'selected' : '' }}>2563</option>
+                                            <option value="3" {{ $year == 3 ? 'selected' : '' }}>2564</option>
+                                            <option value="4" {{ $year == 4 ? 'selected' : '' }}>2565</option>
+                                            <option {{ $year == 5 ? 'selected' : '' }}>2566</option>
+                                            <option {{ $year == 6 ? 'selected' : '' }}>2567</option>
+                                            <option {{ $year == 7 ? 'selected' : '' }}>2568</option>
+                                            <option {{ $year == 8 ? 'selected' : '' }}>2569</option>
+                                            <option {{ $year == 9 ? 'selected' : '' }}>2570</option>
+                                            <option {{ $year == 10 ? 'selected' : '' }}>2571</option>
+                                            <option {{ $year == 11 ? 'selected' : '' }}>2572</option>
+                                            <option {{ $year == 12 ? 'selected' : '' }}>2573</option>
                                         </optgroup>
                                     </select>
                             </div>
@@ -126,7 +126,7 @@ th.break {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($indicator_month as $i => $item)
+                                        @foreach($indicator_year as $i => $item)
                                         <tr class="d-flex">
                                             <td class="col-sm-5 tdleft break"> {{$item->indicator_name}} </td>
                                             <td class="col-sm-1"> {{$item->full_score}} </td>
@@ -137,7 +137,16 @@ th.break {
 
                                         </tr>
                                         @endforeach
-
+                                        <!-- @foreach($indicator_year as $i => $item)
+                                        <tr class="d-flex">
+                                            <td class="col-sm-5 tdleft break"> {{$item->indicator_name}} </td>
+                                            <td class="col-sm-1"> {{$item->full_score}} </td>
+                                            <td class="col-sm-1 break">{{$item->score}}</td>
+                                            <td class="col-sm-2"> {{$item->percent}} </td>
+                                            <td class="col-sm-1"></td>
+                                            <td class="col-sm-2 tdleft"> {{$item->name_employee}} </td>
+                                        </tr>
+                                        @endforeach -->
                                     </tbody>
                                 </table>
                                 <!-- <div class="col-md-1"></div> -->
