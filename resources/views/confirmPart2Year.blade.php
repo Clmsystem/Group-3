@@ -65,11 +65,11 @@ th.break {
                     <div class="card-body">
                         <h3 class="newFont">ยืนยันข้อมูล (ตัวชี้วัดรายปี) ประจำปีงบประมาณ พ.ศ.
                             <?php echo $YearShow; ?></h3>
-
+                        <hr>
                         <!-- <hr> -->
 
                         <div class="col-md-12">
-                            <hr>
+
                             <table class="table table-bordered newFont">
                                 <thead>
                                     <tr class="d-flex">
