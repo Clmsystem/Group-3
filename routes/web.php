@@ -58,10 +58,13 @@ Route::post('/contentPart2Year', [ContentPart2YearController::class, 'search_yea
 
 Route::get('/confirmPart2', [ConfirmPart2Controller::class, 'index']);
 Route::post('/confirmPart2', [ConfirmPart2Controller::class, 'confirm_month'])->name('confirm_month');
+Route::post('/logconfirmPart2', [ConfirmPart2Controller::class, 'logPart2'])->name('logPart2');
+Route::post('/unlogconfirmPart2', [ConfirmPart2Controller::class, 'unlogPart2'])->name('unlogPart2');
 
 Route::get('/confirmPart2Year', [ConfirmPart2YearController::class, 'index']);
 Route::post('/confirmPart2Year', [ConfirmPart2YearController::class, 'confirm_year'])->name('confirm_year');
-
+Route::post('/logconfirmPart2Year', [ConfirmPart2YearController::class, 'logPart2Year'])->name('logPart2Year');
+Route::post('/unlogconfirmPart2Year', [ConfirmPart2YearController::class, 'unlogPart2Year'])->name('unlogPart2Year');
 
 
 
