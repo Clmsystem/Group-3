@@ -11,7 +11,7 @@ use App\Http\Controllers\ConfirmPart2Controller;
 use App\Http\Controllers\ConfirmPart2YearController;
 use App\Http\Controllers\GraphPart2Controller;
 
-/*A
+/*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -44,7 +44,6 @@ Route::post('/createPart2/update', [CreatePart2Controller::class, 'updateCreate'
 
 Route::get('/searchPart2', [SearchPart2Controller::class, 'index']);
 Route::post('/searchPart2', [SearchPart2Controller::class, 'search',])->name('search');
-
 //join table indicator
 Route::get('/contentPart2', [ContentPart2Controller::class, 'index']);
 //update
@@ -59,13 +58,12 @@ Route::post('/contentPart2Year', [ContentPart2YearController::class, 'search_yea
 
 Route::get('/confirmPart2', [ConfirmPart2Controller::class, 'index']);
 Route::post('/confirmPart2', [ConfirmPart2Controller::class, 'confirm_month'])->name('confirm_month');
-Route::post('/logconfirmPart2', [ConfirmPart2Controller::class, 'logPart2'])->name('logPart2');
-Route::post('/unlogconfirmPart2', [ConfirmPart2Controller::class, 'unlogPart2'])->name('unlogPart2');
 
 Route::get('/confirmPart2Year', [ConfirmPart2YearController::class, 'index']);
 Route::post('/confirmPart2Year', [ConfirmPart2YearController::class, 'confirm_year'])->name('confirm_year');
-Route::post('/logconfirmPart2Year', [ConfirmPart2YearController::class, 'logPart2Year'])->name('logPart2Year');
-Route::post('/unlogconfirmPart2Year', [ConfirmPart2YearController::class, 'unlogPart2Year'])->name('unlogPart2Year');
+
+
+
 
 // Route::post('/createPart2/insert_indicator',[CreatePart2Controller::class,'insert_indicator'])->name('insert_indicator');
 Route::post('/createPart2/insert_indicator', [CreatePart2Controller::class, 'insert_indicator'])->name('insert_indicator');
