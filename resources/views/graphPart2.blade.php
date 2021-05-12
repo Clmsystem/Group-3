@@ -53,31 +53,72 @@
                     <h4 class="newFont"> {{$value->indicator_name}}</h4>
                     <h4 class="newFont"> ผู้รับผิดชอบ  : {{$value->name_employee}}</h4>
                   </div>
-                  @endforeach 
+                  @endforeach                  
                   <div class="row">
                     <div class="col">
-                      <div id="chart-month">
+                      <div id="chart-year">
                       </div>
                     </div>
-                  </div>
-                </div>
-                
-          </div>
-          
-      </div>
-      
+            
+        </div>
+        @include('partials.footer')
     </div>
-</body>
+  </body>
 <!-- chart-year -->
-
-
-<!-- chart-quarter -->
-<!-- <script>
-    var optionsQuarter = {
+<script>
+    $('select').selectpicker();
+    var optionsYear = {
           series: [{
-          name: 'Net Profit',
-          data: [30, 55, 67]
-        },],
+          name: 'คะแนนเต็ม',
+          data: [30,40]
+        },
+        {
+          name: 'คะแนนที่ได้',
+          data: [54,85]
+        }],
+          chart: {
+          type: 'bar',
+          height: 350
+        },
+        plotOptions: {
+          bar: {
+            horizontal: false,
+            columnWidth: '10%',
+            endingShape: 'rounded'
+          },
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          show: true,
+          width: 2,
+          colors: ['transparent']
+        },
+        xaxis: {
+          categories: ['Oct','Nov','Dec','Jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+        },
+        fill: {
+          opacity: 1
+        },
+        tooltip: {
+          y: {
+            formatter: function (val) {
+              return val
+            }
+          }
+        }
+        };
+        var chart = new ApexCharts(document.querySelector("#chart-year"), optionsYear);
+        chart.render();
+</script>
+<!-- chart-quarter -->
+<script>
+    var optionsQuarter = {
+        //   series: [{
+        //   name: 'Net Profit',
+        //   data: [30, 55, 67]
+        // },],
           chart: {
           type: 'bar',
           height: 350
@@ -98,7 +139,7 @@
           colors: ['transparent']
         },
         xaxis: {
-          categories: ['Q1'],
+          categories: ['Q1','Q2'],
         },
         fill: {
           opacity: 1
@@ -106,13 +147,13 @@
     };
         var chartQuarter = new ApexCharts(document.querySelector("#chart-quarter"), optionsQuarter);
         chartQuarter.render();
-</script> -->
-<!-- chart-month -->
-<script>
+</script>
+ <!-- chart-month -->
+ <!-- <script>
     var optionsMonth = {
           series: [{
-          name: 'คะแนนที่ได้',
-          data: [1, 1, 0.5, 0.75, 1, 1, 1, 1, 0.9,0.25,1,1]
+          name: 'Value',
+          data: [44, 55, 57, 56, 61, 58, 63, 60, 66,47,58,62]
         },],
           chart: {
           type: 'bar',
@@ -142,4 +183,4 @@
     };
         var chartQuarter = new ApexCharts(document.querySelector("#chart-month"), optionsMonth);
         chartQuarter.render();
-</script>
+</script> -->
