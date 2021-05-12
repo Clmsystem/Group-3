@@ -48,12 +48,10 @@
           <div class="col-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                  @foreach($showindicator as $i => $value)
                   <div class="page-header">
-                    <h4 class="newFont"> {{$value->indicator_name}}</h4>
-                    <h4 class="newFont"> ผู้รับผิดชอบ  : {{$value->name_employee}}</h4>
+                    <h4 class="newFont"> <?= $indicator_name ?> </h4>
+                    <h4 class="newFont"> ผู้รับผิดชอบ  : <?= $name_employee ?></h4>
                   </div>
-                  @endforeach                  
                   <div class="row">
         <div class="col">
           <div id="chart-month">
