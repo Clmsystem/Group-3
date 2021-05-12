@@ -14,16 +14,16 @@ class ContentPart2YearController extends Controller
         $month = (int)date("m");
 
         $year = DB::table('year')
-         ->where('flag', 1)
-       ->select('year_id')
-       ->get();
+            ->where('flag', 1)
+            ->select('year_id')
+            ->get();
         $YearShow = DB::table('year')
-       ->where('flag', 1)
-       ->select('year')
-       ->get();
+            ->where('flag', 1)
+            ->select('year')
+            ->get();
 
-       $YearShow = $YearShow[0]->year;
-       $year = $year[0]->year_id;
+        $YearShow = $YearShow[0]->year;
+        $year = $year[0]->year_id;
         // $year = (int)date("Y") + 543;
 
         // $years = DB::table('year')
@@ -31,18 +31,26 @@ class ContentPart2YearController extends Controller
 
         // dd($indicator_month);
         $indicator_year = DB::table('employee')
-        ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
-        ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
-        ->leftJoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
-        ->join('year','indicator_year.year_id','=','year.year_id')
-        ->where('year.year_id', '=', $year)
-        ->get();
+            ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
+            ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
+            ->leftJoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
+            ->join('year', 'indicator_year.year_id', '=', 'year.year_id')
+            ->where('year.year_id', '=', $year)
+            ->get();
         // dd($indicator_year,$year);
+        $status_year = DB::table('employee')
+            ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
+            ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
+            ->leftJoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
+            ->join('year', 'indicator_year.year_id', '=', 'year.year_id')
+            ->where('year.year_id', '=', $year)
+            ->where('indicator_year.status', '=', 0)
+            ->get();
 
         //$year = 3;
 
         // dd($indicator_month, $indicator_year, $year, $month);
-        return view('contentPart2Year', compact('indicator_year', 'year','YearShow'));
+        return view('contentPart2Year', compact('indicator_year', 'year', 'YearShow', 'status_year'));
     }
 
     public function update(Request $request)
@@ -70,16 +78,16 @@ class ContentPart2YearController extends Controller
         //$year = $request->year;
 
         $year = DB::table('year')
-        ->where('flag', 1)
-       ->select('year_id')
-       ->get();
+            ->where('flag', 1)
+            ->select('year_id')
+            ->get();
         $YearShow = DB::table('year')
-       ->where('flag', 1)
-       ->select('year')
-       ->get();
+            ->where('flag', 1)
+            ->select('year')
+            ->get();
 
-       $YearShow = $YearShow[0]->year;
-       $year = $year[0]->year_id;
+        $YearShow = $YearShow[0]->year;
+        $year = $year[0]->year_id;
 
         // $year = (int)date("Y") + 543;
         // dd($request->year);
@@ -92,18 +100,28 @@ class ContentPart2YearController extends Controller
                 ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
                 ->join('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
                 ->get();
-        } else
+        } else {
             $indicator_year = DB::table('employee')
+                ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
+                ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
+                ->leftJoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
+                ->join('year', 'indicator_year.year_id', '=', 'year.year_id')
+                //->where('year.year', '=', $year)
+                ->where('indicator_year.year_id', '=', $year)
+                ->get();
+            // dd($indicator_year);
+        }
+
+        $status_year = DB::table('employee')
             ->join('assign', 'employee.id_employee', '=', 'assign.Employee_id_employee')
             ->join('indicator', 'assign.indicator_id', '=', 'indicator.indicator_id')
             ->leftJoin('indicator_year', 'indicator.indicator_id', '=', 'indicator_year.indicator_id')
-            ->join('year','indicator_year.year_id','=','year.year_id')
-            //->where('year.year', '=', $year)
-            ->where('indicator_year.year_id', '=', $year)
+            ->join('year', 'indicator_year.year_id', '=', 'year.year_id')
+            ->where('year.year_id', '=', $year)
+            ->where('indicator_year.status', '=', 0)
             ->get();
-        // dd($indicator_year);
 
 
-        return view('contentPart2Year', compact('indicator_year', 'year','Yearshow'));
+        return view('contentPart2Year', compact('indicator_year', 'year', 'Yearshow', 'status_year'));
     }
 }

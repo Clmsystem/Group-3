@@ -63,84 +63,81 @@ th.break {
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="newFont">ยืนยันข้อมูล ประจำปีงบประมาณ พ.ศ.
+                        <h3 class="newFont">ยืนยันข้อมูล (ตัวชี้วัดรายปี) ประจำปีงบประมาณ พ.ศ.
                             <?php echo $YearShow; ?></h3>
-                       
-                            <!-- <hr> -->
 
-                            <div class="col-md-12">
-                                <hr>
-                                <table class="table table-bordered newFont">
-                                    <thead>
-                                        <tr class="d-flex">
-                                            <th class="col-sm-5 break" scope="col">
-                                                <h7 class="newFont">หัวข้อ</h7>
-                                            </th>
+                        <!-- <hr> -->
 
-                                            <th class="col-sm-1 " scope="col">
-                                                <h7 class="newFont">คะแนนเต็ม</h7>
-                                            </th>
-                                            <th class="col-sm-1 break" scope="col">
-                                                <h7 class="newFont">ผล</h7><br><br>
-                                            </th>
-                                            <th class="col-sm-2 break" scope="col">
-                                                <h7 class="newFont">ร้อยละผลสำเร็จ</h7>
-                                            </th>
-                                            <th class="col-sm-1 " scope="col">
-                                                <h7 class="newFont">คะแนนที่ได้</h7>
-                                            </th>
-                                            <th class="col-sm-2 " scope="col">
-                                                <h7 class="newFont">ผู้รับผิดชอบ</h7>
-                                            </th>
+                        <div class="col-md-12">
+                            <hr>
+                            <table class="table table-bordered newFont">
+                                <thead>
+                                    <tr class="d-flex">
+                                        <th class="col-sm-5 break" scope="col">
+                                            <h7 class="newFont">หัวข้อ</h7>
+                                        </th>
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($indicator_year as $i => $item)
-                                        <tr class="d-flex">
-                                            <td class="col-sm-5 tdleft break"> {{$item->indicator_name}} </td>
-                                            <td class="col-sm-1"> {{$item->full_score}} </td>
-                                            <td class="col-sm-1 break">{{$item->result}}</td>
-                                            <td class="col-sm-2"> {{$item->percent}} </td>
-                                            <td class="col-sm-1"> {{$item->score}}</td>
-                                            <td class="col-sm-2 tdleft"> {{$item->name_employee}} </td>
+                                        <th class="col-sm-1 " scope="col">
+                                            <h7 class="newFont">คะแนนเต็ม</h7>
+                                        </th>
+                                        <th class="col-sm-1 break" scope="col">
+                                            <h7 class="newFont">ผล</h7><br><br>
+                                        </th>
+                                        <th class="col-sm-2 break" scope="col">
+                                            <h7 class="newFont">ร้อยละผลสำเร็จ</h7>
+                                        </th>
+                                        <th class="col-sm-1 " scope="col">
+                                            <h7 class="newFont">คะแนนที่ได้</h7>
+                                        </th>
+                                        <th class="col-sm-2 " scope="col">
+                                            <h7 class="newFont">ผู้รับผิดชอบ</h7>
+                                        </th>
 
-                                        </tr>
-                                        @endforeach
-                                        <!-- @foreach($indicator_year as $i => $item)
-                                        <tr class="d-flex">
-                                            <td class="col-sm-5 tdleft break"> {{$item->indicator_name}} </td>
-                                            <td class="col-sm-1"> {{$item->full_score}} </td>
-                                            <td class="col-sm-1 break">{{$item->score}}</td>
-                                            <td class="col-sm-2"> {{$item->percent}} </td>
-                                            <td class="col-sm-1"></td>
-                                            <td class="col-sm-2 tdleft"> {{$item->name_employee}} </td>
-                                        </tr>
-                                        @endforeach -->
-                                    </tbody>
-                                </table>
-                                <!-- <div class="col-md-1"></div> -->
-                            </div>
-                            <div class="form-group col-md-12"></div>
-                            <div class="form-group col-md-12">
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($indicator_year as $i => $item)
+                                    <tr class="d-flex">
+                                        <td class="col-sm-5 tdleft break"> {{$item->indicator_name}} </td>
+                                        <td class="col-sm-1"> {{$item->full_score}} </td>
+                                        <td class="col-sm-1 break">{{$item->result}}</td>
+                                        <td class="col-sm-2"> {{$item->percent}} </td>
+                                        <td class="col-sm-1"> {{$item->score}}</td>
+                                        <td class="col-sm-2 tdleft"> {{$item->name_employee}} </td>
+
+                                    </tr>
+                                    @endforeach
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="form-group col-md-12"></div>
+                        <div class="form-group col-md-12">
+                            <form action="{{route('unlogPart2Year')}}" method="POST" enctype="multipart/form-data">
+                                @csrf
                                 <div class="button-position">
+                                    <input type="hidden" value="{{$year}}" name="yearselect" id="yearselect">
                                     <button type="submit" data-toggle="modal"
-                                        class="btn btn-secondary mr-4 newFont">ยกเลิก</button>
+                                        class="btn btn-gradient-danger mr-4 newFont">ยกเลิก</button>
                                 </div>
+                            </form>
+                            <form action="{{route('logPart2Year')}}" method="POST" enctype="multipart/form-data">
+                                @csrf
                                 <div class="button-position">
+                                    <input type="hidden" value="{{$year}}" name="yearselect" id="yearselect">
                                     <button type="submit" data-toggle="modal"
                                         class="btn btn-gradient-primary mr-4 newFont">ยืนยันข้อมูล</button>
                                 </div>
-                            </div>
                             </form>
-
                         </div>
                     </div>
                 </div>
             </div>
-            @include('partials.footer')
         </div>
-        <!-- Div nav & side -->
+        @include('partials.footer')
+    </div>
+    <!-- Div nav & side -->
     </div>
     </div>
     </div>

@@ -140,9 +140,14 @@ th.break {
                                             <td class="col-sm-1 break">{{$value->score}}
                                             </td>
                                             <td class="col-sm-1 break">
-                                                <button class="btn btn-warning  btn-sm" data-toggle="modal"
-                                                    data-target="#modalAction1{{ $i }}"><i
-                                                        class="mdi mdi-grease-pencil launch-modal"></i></button>
+                                                @if (count($status_month)>0)
+                                                <button class="btn btn-gradient-warning  btn-sm" data-toggle="modal"
+                                                    data-target="#modalAction1{{ $i }}">
+                                                    <i class="mdi mdi-grease-pencil launch-modal"></i></button>
+                                                @else
+                                                <button class="btn btn-gradient-danger  btn-sm"><i
+                                                        class="mdi mdi-lock"></i></button>
+                                                @endif
 
 
                                                 <div class="modal fade" id="modalAction1{{ $i }}" tabindex="-1"

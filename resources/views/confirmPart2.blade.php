@@ -64,14 +64,15 @@ th.break {
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="newFont">ยืนยันข้อมูล ประจำปีงบประมาณ พ.ศ.
-                            <?php echo date("Y") + 543; ?></h3>
+                        <h3 class="newFont">ยืนยันข้อมูล (ตัวชี้วัดรายเดือน) ประจำปี พ.ศ. {{$YearShow}}</h3>
                         <div class="row">
                             <div class="form-group col-md-3">
                                 <!-- <label class="newFont">เดือน</label> -->
+                                <label class="newFont">เดือน</label>
                                 <form action="{{route('confirm_month')}}" method="post" enctype="multipart/form-data">
                                     @csrf
-                                    <select id="client_id" type="dropdown-toggle" class="form-control" name="month">
+                                    <select id="client_id" type="dropdown-toggle" class="form-control newFont"
+                                        name="month">
                                         <optgroup class="newFont">
                                             <option disabled selected hidden>เลือกเดือน</option>
                                             <option value="10" {{ $month == 10 ? 'selected' : '' }}>ตุลาคม</option>
@@ -89,13 +90,7 @@ th.break {
                                         </optgroup>
                                     </select>
                             </div>
-                            <div class="form-group col-md-3">
-                                <div>
-                                    <button type="submit" data-toggle="modal"
-                                        class="btn btn-gradient-primary mr-4 newFont">ค้นหา</button>
-                                </div>
-                            </div>
-
+                            </form>
                             <hr>
 
                             <div class="col-md-12">
@@ -144,17 +139,23 @@ th.break {
                             </div>
                             <div class="form-group col-md-12"></div>
                             <div class="form-group col-md-12">
-                                <div class="button-position">
-                                    <button type="submit" data-toggle="modal"
-                                        class="btn btn-secondary mr-4 newFont">ยกเลิก</button>
-                                </div>
-                                <div class="button-position">
-                                    <button type="submit" data-toggle="modal"
-                                        class="btn btn-gradient-primary mr-4 newFont">ยืนยันข้อมูล</button>
-                                </div>
+                                <form action="{{route('unlogPart2')}}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="button-position">
+                                        <input type="hidden" value="{{$month}}" name="monthselect" id="monthselect">
+                                        <button type="submit" data-toggle="modal"
+                                            class="btn btn-gradient-danger mr-4 newFont">ยกเลิก</button>
+                                    </div>
+                                </form>
+                                <form action="{{route('logPart2')}}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="button-position">
+                                        <input type="hidden" value="{{$month}}" name="monthselect" id="monthselect">
+                                        <button type="submit" data-toggle="modal"
+                                            class="btn btn-gradient-primary mr-4 newFont">ยืนยันข้อมูล</button>
+                                    </div>
+                                </form>
                             </div>
-                            </form>
-
                         </div>
                     </div>
                 </div>
@@ -167,3 +168,9 @@ th.break {
     </div>
 
 </body>
+<script>
+var select = document.getElementById('client_id');
+select.addEventListener('change', function() {
+    this.form.submit();
+}, false);
+</script>
