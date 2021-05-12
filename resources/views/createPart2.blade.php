@@ -45,27 +45,24 @@ th.break {
 }
 </style>
 
-
 <body>
     <!-- ------------------------------------------  include  --------------------------------------------->
-
     @include('partials.navbar')
     @include('partials.sidebar')
-
     <!-- ------------------------------------------  include  --------------------------------------------->
     <div class="main-panel">
         <div class="content-wrapper">
             <div class="page-header">
                 <h3 class="newFont"> ส่วนที่ 2 ตัวชี้วัดตามเกณฑ์การประเมินหน่วยงาน (9 ข้อ) จาก ทมอ. </h3>
             </div>
-
             <!-- ------------------------------------------  สร้างตัวชี้วัด Start-  --------------------------------------------->
-
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="newFont">สร้างตัวชี้วัด</h3><br>
-                        <hr><br>
+                        <h3 class="newFont">สร้างตัวชี้วัด</h3>
+                        <br>
+                        <hr>
+                        <br>
                         <form method="post" action="{{route('insert_indicator')}}">
                             @csrf
                             <div class="row">
@@ -77,7 +74,6 @@ th.break {
                                     <input type="text" name="indtcator_name" id="indtcator_name"
                                         class="form-control newFont" placeholder="หัวข้อตัวขี้วัด" required>
                                 </div>
-
                                 <div class="form-group col-md-2">
                                     <label class="newFont">คะแนนเต็ม</label>
                                     <input type="textnumber" name="fullscore" id="fullscore"
@@ -93,11 +89,9 @@ th.break {
                                         </optgroup>
                                     </select>
                                 </div>
-
                                 <div class="form-group col-md-3">
                                     <label class="newFont">ผู้รับผิดชอบ</label>
                                     <select class="form-control newFont" name="employ" id="employ">
-
                                         <optgroup class="newFont" label="เลือกผู้รับผิดชอบ">
                                             <option disabled selected hidden>เลือกผู้รับผิดชอบ</option>
                                             @foreach($getEmployee as $i => $value)
@@ -105,16 +99,15 @@ th.break {
                                                 {{$value->name_employee}}
                                             </option>
                                             <!-- <option value="1">พัชรินทร์  ภาวิกานนท์ </option>
-                                            <option value="5">เกษมาพร  ตัญบุญยกิจ</option>
-                                            <option value="">จารุพันธุ์ พรุเพ็ชรแก้ว</option>
-                                            <option value="">ธวัชชัย  ประดู่</option>
-                                            <option value="">ชัชวาล  นาคพันธุ์</option>
-                                            <option value="">ธันฐภัทร์  ดวงจันทร์</option>
-                                            <option value="">อมราพร ชุมชนะ</option>
-                                            <option value="">อาภรณ์ ไชยสุวรรณ</option> -->
+                                    <option value="5">เกษมาพร  ตัญบุญยกิจ</option>
+                                    <option value="">จารุพันธุ์ พรุเพ็ชรแก้ว</option>
+                                    <option value="">ธวัชชัย  ประดู่</option>
+                                    <option value="">ชัชวาล  นาคพันธุ์</option>
+                                    <option value="">ธันฐภัทร์  ดวงจันทร์</option>
+                                    <option value="">อมราพร ชุมชนะ</option>
+                                    <option value="">อาภรณ์ ไชยสุวรรณ</option> -->
                                             @endforeach
                                         </optgroup>
-
                                     </select>
                                 </div>
                                 <div class="form-group col-md-9"></div>
@@ -129,27 +122,24 @@ th.break {
                     </div>
                 </div>
             </div>
-
             <!-- ------------------------------------------  สร้างตัวชี้วัด end-  --------------------------------------------->
-
             <!-- ------------------------------------------  แสดงตัวชี้วัด end-  --------------------------------------------->
-
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="newFont">ตัวชี้วัดปัจจุบัน</h3><br>
-                        <hr><br>
+                        <h3 class="newFont">ตัวชี้วัดปัจจุบัน</h3>
+                        <br>
+                        <hr>
+                        <br>
                         <div class="row">
                             <!-- <div class="col-md-1"></div> -->
                             <div class="col-md-12">
                                 <table class="table table-bordered newFont break ">
                                     <thead>
                                         <tr class="d-flex">
-
                                             <th class="col-sm-5 break" scope="col">
                                                 <h7 class="newFont">ตัวชี้วัด</h7>
                                             </th>
-
                                             <th class="col-sm-2 break" scope="col">
                                                 <h7 class="newFont">คะแนนเต็ม</h7>
                                             </th>
@@ -162,18 +152,14 @@ th.break {
                                             <th class="col-sm-1 break" scope="col"></th>
                                         </tr>
                                     </thead>
-
                                     <!-- ---------------------------------------------------------------------------------------------------------------------
-                                    --------------------------------------------- เดือน ------------------------------------------------------------------
-                                    --------------------------------------------------------------------------------------------------------------------- -->
-
+                              --------------------------------------------- เดือน ------------------------------------------------------------------
+                              --------------------------------------------------------------------------------------------------------------------- -->
                                     <tbody>
                                         @foreach($shindicator_month as $i => $value)
                                         <tr class="d-flex">
-
                                             <td class="col-sm-5 tdleft break"> {{$value->indicator_name}} </td>
                                             <td class="col-sm-2 break"> {{$value->full_score}} </td>
-
                                             @if ($value->indicator_type == 0)
                                             <td class="col-sm-2 break">รายปี</td>
                                             @elseif ($value->indicator_type ==1 )
@@ -181,31 +167,30 @@ th.break {
                                             @endif
                                             <td class="col-sm-2 tdleft break"> {{$value->name_employee}} </td>
                                             <!-- <td class="col-sm-1 break"><button class="btn btn-warning  btn-sm" data-toggle="modal" data-target="#modalAction"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
-                                            </td> -->
+                                    </td> -->
                                             <td class="col-sm-1 break">
-                                                <button class="btn btn-warning  btn-sm" data-toggle="modal"
+                                                <button class="btn btn-gradient-warning  btn-sm" data-toggle="modal"
                                                     data-target="#modalAction1{{$i}}"><i
                                                         class="mdi mdi-grease-pencil launch-modal"></i></button>
-
-
                                                 <div class="modal fade" id="modalAction1{{ $i }}" tabindex="-1"
                                                     role="dialog" data-backdrop="static"
                                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
-
                                                     <div class="modal-dialog modal-xl" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-body">
                                                                 <br>
                                                                 <h2 class="modal-title newFont" id="exampleModalLabel">
-                                                                    แก้ไขตัวชี้วัด</h2>
+                                                                    แก้ไขตัวชี้วัด
+                                                                </h2>
                                                                 <!-- -------------------- FROM ------------------------- -->
                                                                 <form action="{{ route('updateCreate') }}"
                                                                     method="post">
                                                                     @csrf
                                                                     <!-- @method('PUT') -->
-                                                                    <hr><br>
+                                                                    <hr>
+                                                                    <br>
                                                                     <div class="row">
-                                                                        <div class="form-group col-md-7 tdleft ">
+                                                                        <div class="form-group col-md-5 tdleft ">
                                                                             <label class="newFont">หัวข้อ</label>
                                                                             <input type="text"
                                                                                 class="form-control newFont"
@@ -226,13 +211,16 @@ th.break {
                                                                                 name="edit_fullscore"
                                                                                 value="{{$value->full_score}}" required>
                                                                         </div>
-                                                                        <!-- <div class="form-group col-md-2 tdleft">
+                                                                        <div class="form-group col-md-2 tdleft">
                                                                             <label class="newFont">ประเภทการกรอก</label>
                                                                             <select name="edit_indicator_type"
                                                                                 id="edit_indicator_type"
                                                                                 class="form-control newFont "
                                                                                 value="{{$value->indicator_type}}"
-                                                                                style="color:black">
+                                                                                style="color:black" readonly>
+
+
+
 
                                                                                 <optgroup class="newFont" readonly
                                                                                     label="เลือกประเภทการกรอก">
@@ -245,11 +233,13 @@ th.break {
                                                                                         ==1 )
                                                                                         รายเดือน
                                                                                         @endif</option>
-                                                                                    <option value="1">รายเดือน</option>
-                                                                                    <option value="0">รายปี</option>
+                                                                                    <option value="1" disabled>รายเดือน
+                                                                                    </option>
+                                                                                    <option value="0" disabled>รายปี
+                                                                                    </option>
                                                                                 </optgroup>
                                                                             </select>
-                                                                        </div> -->
+                                                                        </div>
                                                                         <div class="form-group col-md-3 tdleft ">
                                                                             <label class="newFont">ผู้รับผิดชอบ</label>
                                                                             <select name="edit_employ" id="edit_employ"
@@ -267,26 +257,20 @@ th.break {
                                                                                         value="{{$value->id_employee}}">
                                                                                         {{$value->name_employee}}
                                                                                     </option>
-                                                                                    <!-- <input type="hidden" name="edit_employid" id="edit_employid" value="{{$value->id_employee}}"> -->
-                                                                                    <!-- <option value="1">พัชรินทร์ ภาวิกานนท์ </option>
-                                                                                    <option value="2">จารุพันธุ์ พรุเพ็ชรแก้ว</option>
-                                                                                    <option value="3">ธวัชชัย ประดู่</option>
-                                                                                    <option value="4">ชัชวาล นาคพันธุ์</option>
-                                                                                    <option value="5">เกษมาพร ตัญบุญยกิจ</option>
-                                                                                    <option value="6">ธันฐภัทร์ ดวงจันทร์</option>
-                                                                                    <option value="8">อมราพร ชุมชนะ</option>
-                                                                                    <option value="9">อาภรณ์ ไชยสุวรรณ</option> -->
                                                                                     @endforeach
                                                                                 </optgroup>
                                                                             </select>
                                                                         </div>
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                        <button type="submit" class="btn btn-secondary"
+                                                                        <button type="submit"
+                                                                            class="btn btn-gradient-danger newFont  "
                                                                             data-dismiss="modal">
-                                                                            <h7 class="newFont">ยกเลิก</ย>
+                                                                            <h7 class="newFont">
+                                                                                ยกเลิก</ย>
                                                                         </button>
-                                                                        <button type="submit" class="btn btn-primary">
+                                                                        <button type="submit"
+                                                                            class="btn btn-gradient-primary newFont ">
                                                                             <h7 class="newFont">บันทึก</h7>
                                                                         </button>
                                                                     </div>
@@ -295,13 +279,9 @@ th.break {
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </td>
-
                                         </tr>
-
                                         @endforeach
-
                                     </tbody>
                                 </table>
                                 <!-- <div class="col-md-1"></div> -->
@@ -310,26 +290,10 @@ th.break {
                     </div>
                 </div>
             </div>
-
             <!--------------------------------------------  แสดงตัวชี้วัด end   --------------------------------------------------->
-
             <!--------------------------------------------  แก้ไขตัวชี้วัด Start ---------------------------------------------------->
-
         </div>
     </div>
     </div>
     </div>
-
 </body>
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About

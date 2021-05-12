@@ -60,43 +60,13 @@ th.break {
             </div>
 
             <!-- ------------------------------------------  ค้นหาตัวชี้วัด Start-  --------------------------------------------->
-
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
                         <h3 class="newFont">ยืนยันข้อมูล ประจำปีงบประมาณ พ.ศ.
-                            <?php echo date("Y") + 543; ?></h3>
-                        <div class="row">
-                            <div class="form-group col-md-3">
-                                <!-- <label class="newFont">เดือน</label> -->
-                                <form action="{{route('confirm_month')}}" method="post" enctype="multipart/form-data">
-                                    @csrf
-                                    <select id="client_id" type="dropdown-toggle" class="form-control" name="month">
-                                        <optgroup class="newFont">
-                                            <option disabled selected hidden>เลือกเดือน</option>
-                                            <option value="10" {{ $month == 10 ? 'selected' : '' }}>ตุลาคม</option>
-                                            <option value="11" {{ $month == 11 ? 'selected' : '' }}>พฤศจิกายน</option>
-                                            <option value="12" {{ $month == 12 ? 'selected' : '' }}>ธันวาคม</option>
-                                            <option value="1" {{ $month == 1 ? 'selected' : '' }}>มกราคม</option>
-                                            <option value="2" {{ $month == 2 ? 'selected' : '' }}>กุมภาพันธ์</option>
-                                            <option value="3" {{ $month == 3 ? 'selected' : '' }}>มีนาคม</option>
-                                            <option value="4" {{ $month == 4 ? 'selected' : '' }}>เมษายน</option>
-                                            <option value="5" {{ $month == 5 ? 'selected' : '' }}>พฤษภาคม</option>
-                                            <option value="6" {{ $month == 6 ? 'selected' : '' }}>มิถุนายน</option>
-                                            <option value="7" {{ $month == 7 ? 'selected' : '' }}>กรกฎาคม</option>
-                                            <option value="8" {{ $month == 8 ? 'selected' : '' }}>สิงหาคม</option>
-                                            <option value="9" {{ $month == 9 ? 'selected' : '' }}>กันยายน</option>
-                                        </optgroup>
-                                    </select>
-                            </div>
-                            <div class="form-group col-md-3">
-                                <div>
-                                    <button type="submit" data-toggle="modal"
-                                        class="btn btn-gradient-primary mr-4 newFont">ค้นหา</button>
-                                </div>
-                            </div>
-
-                            <hr>
+                            <?php echo $YearShow; ?></h3>
+                       
+                            <!-- <hr> -->
 
                             <div class="col-md-12">
                                 <hr>
@@ -126,7 +96,7 @@ th.break {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($indicator_month as $i => $item)
+                                        @foreach($indicator_year as $i => $item)
                                         <tr class="d-flex">
                                             <td class="col-sm-5 tdleft break"> {{$item->indicator_name}} </td>
                                             <td class="col-sm-1"> {{$item->full_score}} </td>
@@ -137,7 +107,16 @@ th.break {
 
                                         </tr>
                                         @endforeach
-
+                                        <!-- @foreach($indicator_year as $i => $item)
+                                        <tr class="d-flex">
+                                            <td class="col-sm-5 tdleft break"> {{$item->indicator_name}} </td>
+                                            <td class="col-sm-1"> {{$item->full_score}} </td>
+                                            <td class="col-sm-1 break">{{$item->score}}</td>
+                                            <td class="col-sm-2"> {{$item->percent}} </td>
+                                            <td class="col-sm-1"></td>
+                                            <td class="col-sm-2 tdleft"> {{$item->name_employee}} </td>
+                                        </tr>
+                                        @endforeach -->
                                     </tbody>
                                 </table>
                                 <!-- <div class="col-md-1"></div> -->

@@ -1,48 +1,48 @@
 @include('header.menu')
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
 
-    /* adjust font this page */
-    .newFont {
-        font-family: 'Mitr', sans-serif;
-    }
+/* adjust font this page */
+.newFont {
+    font-family: 'Mitr', sans-serif;
+}
 
-    /* adjust btn position */
-    .button-position {
-        float: right;
-        margin: -8px;
-    }
+/* adjust btn position */
+.button-position {
+    float: right;
+    margin: -8px;
+}
 
-    /* adjust btn size */
-    .btns {
-        padding: 0.9rem 2em;
-        font-size: 0.875rem;
-    }
+/* adjust btn size */
+.btns {
+    padding: 0.9rem 2em;
+    font-size: 0.875rem;
+}
 
-    /* adjust text position */
-    td {
-        text-align: center;
-    }
+/* adjust text position */
+td {
+    text-align: center;
+}
 
-    .tdleft {
-        text-align: left;
-    }
+.tdleft {
+    text-align: left;
+}
 
-    th {
-        text-align: center;
-    }
+th {
+    text-align: center;
+}
 
-    td.break {
-        word-wrap: break-word;
-        word-break: break-all;
-        white-space: normal;
-    }
+td.break {
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+}
 
-    th.break {
-        word-wrap: break-word;
-        word-break: break-all;
-        white-space: normal;
-    }
+th.break {
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+}
 </style>
 
 
@@ -66,36 +66,27 @@
                     <div class="card-body">
                         <h3 class="newFont">ค้นหาข้อมูล</h3><br>
                         <hr><br>
-                        <form class="forms-sample" action="{{route('search')}}" method="post" enctype="multipart/form-data">
+                        <form class="forms-sample" action="{{route('search')}}" method="post"
+                            enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="form-group col-md-4">
                                     <label class="newFont">ปี</label>
-                                    <select class="form-control" id="year" name="year">
+                                    <select class="form-control newFont" id="year" name="year">
                                         <optgroup class="newFont">
-                                            <!-- <option>ทุกปี</option> -->
-                                            <option value="1" {{ $year == 1 ? 'selected' : '' }}>2562</option>
-                                            <option value="2" {{ $year == 2 ? 'selected' : '' }}>2563</option>
-                                            <option value="3" {{ $year == 3 ? 'selected' : '' }}>2564</option>
-                                            <option value="4" {{ $year == 4 ? 'selected' : '' }}>2565</option>
-                                            <option {{ $year == 5 ? 'selected' : '' }}>2566</option>
-                                            <option {{ $year == 6 ? 'selected' : '' }}>2567</option>
-                                            <option {{ $year == 7 ? 'selected' : '' }}>2568</option>
-                                            <option {{ $year == 8 ? 'selected' : '' }}>2569</option>
-                                            <option {{ $year == 9 ? 'selected' : '' }}>2570</option>
-                                            <option {{ $year == 10 ? 'selected' : '' }}>2571</option>
-                                            <option {{ $year == 11 ? 'selected' : '' }}>2572</option>
-                                            <option {{ $year == 12 ? 'selected' : '' }}>2573</option>
+                                            @foreach ($years as $i => $value)
+                                            <option value="{{ $value->year_id }}">{{ $value->year }}</option>
+                                            @endforeach
                                         </optgroup>
                                     </select>
                                 </div>
-                                
+
                                 <div class="form-group col-md-4">
                                     <label class="newFont">เดือน</label>
-                                    <select class="form-control" id="month" name="month">
+                                    <select class="form-control newFont" id="month" name="month">
                                         <optgroup class="newFont">
                                             <!-- <option>ทุกเดือน</option> -->
-                                            
+
                                             <option value="1" {{ $month == 1 ? 'selected' : '' }}>มกราคม</option>
                                             <option value="2" {{ $month == 2 ? 'selected' : '' }}>กุมภาพันธ์</option>
                                             <option value="3" {{ $month == 3 ? 'selected' : '' }}>มีนาคม</option>
@@ -114,7 +105,8 @@
 
                                 <div class="form-group col-md-12">
                                     <div class="button-position">
-                                        <button type="submit" class="btn btn-inverse-primary btns ">ค้นหา</button>
+                                        <button type="submit"
+                                            class="btn btn-gradient-primary mr-2 newFont">ค้นหา</button>
                                     </div>
                                 </div>
 
@@ -137,7 +129,7 @@
                             <h3 class="newFont">ตัวชี้วัดปัจจุบัน</h3><br>
 
                             <div class="button-position">
-                                <button type="button" class="btn btn-inverse-primary btns2 ">ดาวน์โหลด</button>
+                                <button type="button" class="btn btn-gradient-primary mr-2 newFont">ดาวน์โหลด</button>
                             </div>
                             <br>
                         </div>
@@ -164,7 +156,7 @@
                                             </th>
                                         </tr>
                                     </thead>
-                            
+
                                     <tbody>
                                         @foreach($showindicator as $i => $value)
                                         <tr class="d-flex">
@@ -173,7 +165,8 @@
                                             <td class="col-sm-1 break">{{$value->score}}</td>
                                             <td class="col-sm-2 tdleft break"> {{$value->name_employee}}</td>
                                             <th class="col-sm-2 break" scope="col">
-                                                <button type="button" class="btn btn-inverse-primary btns2"><i class="mdi mdi-chart-bar"></i></button>
+                                                <button type="button" class="btn btn-gradient-warning mr-2 newFont"><i
+                                                        class="mdi mdi-chart-bar"></i></button>
                                             </th>
                                         </tr>
                                         @endforeach
@@ -195,7 +188,7 @@
                             <h3 class="newFont">ตัวชี้วัดปัจจุบัน (รายปี)</h3><br>
 
                             <div class="button-position">
-                                <button type="button" class="btn btn-inverse-primary btns2 ">ดาวน์โหลด</button>
+                                <button type="button" class="btn btn-gradient-primary mr-2 newFont">ดาวน์โหลด</button>
                             </div>
                             <br>
                         </div>
@@ -222,7 +215,7 @@
                                             </th>
                                         </tr>
                                     </thead>
-                            
+
                                     <tbody>
                                         @foreach($showyear as $i => $value)
                                         <tr class="d-flex">
@@ -231,7 +224,8 @@
                                             <td class="col-sm-1 break">{{$value->score}}</td>
                                             <td class="col-sm-2 tdleft break"> {{$value->name_employee}}</td>
                                             <th class="col-sm-2 break" scope="col">
-                                                <button type="button" class="btn btn-inverse-primary btns2"><i class="mdi mdi-chart-bar"></i></button>
+                                                <button type="button" class="btn btn-gradient-warning mr-2 newFont"><i
+                                                        class="mdi mdi-chart-bar"></i></button>
                                             </th>
                                         </tr>
                                         @endforeach
@@ -243,8 +237,8 @@
                     </div>
                 </div>
             </div>
-        
-        
+
+
             <!--------------------------------------------  แสดงตัวชี้วัด end   --------------------------------------------------->
 
 
@@ -259,15 +253,3 @@
 
 
 </body>
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About

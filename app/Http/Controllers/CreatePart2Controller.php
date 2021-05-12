@@ -65,7 +65,7 @@ class CreatePart2Controller extends Controller
             for ($i = 1; $i <= 12; $i++) {
                 $data["result"] = null;
                 // $data["fullscore"] = $request->fullscore;
-                $data["score"] = 0;
+                $data["score"] = null;
                 $data["percent"] = null;
                 $data["indicator_id"] = $max;
                 $data["year_id"] = $request->year;
@@ -81,7 +81,7 @@ class CreatePart2Controller extends Controller
             $data["year_id"] = $request->year;
             $data["result"] = null;
             // $data["fullscore"] = $request->fullscore;
-            $data["score"] = 0;
+            $data["score"] = null;
             $data["percent"] = null;
             $data["status"] = 0;
             // $data["id_employee"] = $request->input('employ');
