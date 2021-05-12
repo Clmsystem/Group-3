@@ -163,9 +163,7 @@
                                             <td class="col-sm-1 break">{{$value->full_score}}</td>
                                             <td class="col-sm-1 break">{{$value->score}}</td>
                                             <td class="col-sm-2 tdleft break"> {{$value->name_employee}}</td>
-                                            <th class="col-sm-2 break" scope="col">
-                                                <button type="button" class="btn btn-gradient-warning mr-2 newFont"><i class="mdi mdi-chart-bar"></i></button>
-                                            </th>
+                                            <td class="col-sm-2"><a target='_blank' href="graphPart2?id={{$value->indicator_id}}&years={{$year}}"><button type="button" class="btn btn-gradient-warning mr-2 newFont"><i class="mdi mdi-chart-bar"></i></button></a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -221,9 +219,7 @@
                                             <td class="col-sm-1 break">{{$value->full_score}}</td>
                                             <td class="col-sm-1 break">{{$value->score}}</td>
                                             <td class="col-sm-2 tdleft break"> {{$value->name_employee}}</td>
-                                            <th class="col-sm-2 break" scope="col">
-                                                <button type="button" class="btn btn-gradient-warning mr-2 newFont"><i class="mdi mdi-chart-bar"></i></button>
-                                            </th>
+                                            <td class="col-sm-2"><a target='_blank' href="graphPart2?id={{$value->indicator_id}}&years={{$year}}"><button type="button" class="btn btn-gradient-warning mr-2 newFont"><i class="mdi mdi-chart-bar"></i></button></a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>
