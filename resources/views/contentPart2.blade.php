@@ -73,6 +73,9 @@ th.break {
                                     <select id="client_id" type="dropdown-toggle" class="form-control newFont"
                                         name="month">
                                         <optgroup class="newFont">
+                                            <option value="10" {{ $month == 10 ? 'selected' : '' }}>ตุลาคม</option>
+                                            <option value="11" {{ $month == 11 ? 'selected' : '' }}>พฤศจิกายน</option>
+                                            <option value="12" {{ $month == 12 ? 'selected' : '' }}>ธันวาคม</option>
                                             <option value="1" {{ $month == 1 ? 'selected' : '' }}>มกราคม</option>
                                             <option value="2" {{ $month == 2 ? 'selected' : '' }}>กุมภาพันธ์</option>
                                             <option value="3" {{ $month == 3 ? 'selected' : '' }}>มีนาคม</option>
@@ -82,9 +85,6 @@ th.break {
                                             <option value="7" {{ $month == 7 ? 'selected' : '' }}>กรกฎาคม</option>
                                             <option value="8" {{ $month == 8 ? 'selected' : '' }}>สิงหาคม</option>
                                             <option value="9" {{ $month == 9 ? 'selected' : '' }}>กันยายน</option>
-                                            <option value="10" {{ $month == 10 ? 'selected' : '' }}>ตุลาคม</option>
-                                            <option value="11" {{ $month == 11 ? 'selected' : '' }}>พฤศจิกายน</option>
-                                            <option value="12" {{ $month == 12 ? 'selected' : '' }}>ธันวาคม</option>
                                         </optgroup>
                                     </select>
                                 </form>
