@@ -66,12 +66,12 @@
                     <div class="card-body">
                         <h3 class="newFont">ค้นหาข้อมูล</h3><br>
                         <hr><br>
-                        <form class="forms-sample" action="{{route('search')}}" method="post" enctype="multipart/form-data">
+                        <form class="forms-sample" action="/searchPart2" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="form-group col-md-4">
                                     <label class="newFont">ปี</label>
-                                    <select class="form-control newFont" id="year" name="year">
+                                    <select class="form-control newFont" id="yearSelect" name="year" onchange="getSelectValue()">
                                         <optgroup class="newFont">
                                             @foreach ($years as $i => $value)
                                             <option value="{{ $value->year_id }}" >{{ $value->year }}</option>
@@ -128,7 +128,8 @@
 
                             <div class="button-position">
                                 <button type="submit" name="download" value="download" class="btn btn-gradient-primary mr-2 newFont">ดาวน์โหลด</button>
-                                </form>
+                            
+                                
                             </div>
                             <br>
                         </div>
@@ -176,6 +177,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
@@ -184,13 +186,14 @@
                         </div>
                         <div class="form-group col-md-12">
                             <h3 class="newFont">ตัวชี้วัดปัจจุบัน (รายปี)</h3><br>
-
                             <div class="button-position">
-                                <button type="button" class="btn btn-gradient-primary mr-2 newFont">ดาวน์โหลด</button>
+                                <button type="submit" name="download2" value="download2" class="btn btn-gradient-primary mr-2 newFont">ดาวน์โหลด</button>
+                                
                             </div>
+                            
                             <br>
                         </div>
-
+                        </form>
                         <div class="row">
                             <div class="form-group col-md-12"></div>
                             <div class="col-md-12">
@@ -250,3 +253,19 @@
 
 
 </body>
+<script type="text/javascript">
+    
+     const yearsOfSearch = "<?php echo $year; ?>";
+    $('#yearSelect').find('option').each((i, e) => {
+        if ($(e).val() == yearsOfSearch) {
+            $('#yearSelect').prop('selectedIndex', i);
+        }
+    });
+
+    function getSelectValue() {
+        var getText = $("#yearSelect option:selected").text();
+        $("#showyear").text(getText);
+        console.log(getText);
+    };
+    getSelectValue();
+</script>
