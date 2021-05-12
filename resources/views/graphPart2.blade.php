@@ -42,31 +42,18 @@
     <div class="main-panel">
       <div class="content-wrapper">
           <div class="page-header">
-                <h3 class="newFont"> ร้อยละผลสำเร็จการใช้งานระบบ DOMS (เริ่มตั้งแต่ มค.64) ปี 2564</h3>
+                <h3 class="newFont">ส่วนที่ 2 กราฟตัวชี้วัดตามเกณฑ์การประเมินหน่วยงาน (9 ข้อ) จาก ทมอ.</h3>
           </div>
-
+          
           <div class="col-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-
+                  @foreach($showindicator as $i => $value)
                   <div class="page-header">
-                      <h4 class="newFont"> ผู้รับผิดชอบ  : พัชรินทร์ ภาวิกานนท์</h4>
+                    <h4 class="newFont"> {{$value->indicator_name}}</h4>
+                    <h4 class="newFont"> ผู้รับผิดชอบ  : {{$value->name_employee}}</h4>
                   </div>
-                  <!-- chart-year -->
-                  <div class="row">
-                    <div class="col">
-                      <div id="chart-year">
-                      </div>
-                    </div>
-                  </div>
-                  <!-- chart-quarter -->
-                  <!-- <div class="row">
-                    <div class="col">
-                      <div id="chart-quarter">
-                      </div>
-                    </div>
-                  </div> -->
-                  <!-- chart-month -->
+                  @endforeach 
                   <div class="row">
                     <div class="col">
                       <div id="chart-month">
@@ -74,61 +61,18 @@
                     </div>
                   </div>
                 </div>
+                
           </div>
+          
       </div>
+      
     </div>
 </body>
 <!-- chart-year -->
-<script>
-    $('select').selectpicker();
-    var optionsYear = {
-          series: [{
-          name: 'คะแนนที่ได้',
-          data: [0.75,1,0.5]
-        }],
-          chart: {
-          type: 'bar',
-          height: 350
-        },
-        plotOptions: {
-          bar: {
-            horizontal: false,
-            columnWidth: '55%',
-            endingShape: 'rounded'
-          },
-        },
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          show: true,
-          width: 2,
-          colors: ['transparent']
-        },
-        xaxis: {
-          categories: ['ไตรมาส 1','ไตรมาส 2','ไตรมาส 3'],
-        },
-        // yaxis: {
-        //   title: {
-        //     text: '$ (thousands)'
-        //   }
-        // },
-        fill: {
-          opacity: 1
-        },
-        tooltip: {
-          y: {
-            formatter: function (val) {
-              return val
-            }
-          }
-        }
-        };
-        var chart = new ApexCharts(document.querySelector("#chart-year"), optionsYear);
-        chart.render();
-</script>
+
+
 <!-- chart-quarter -->
-<script>
+<!-- <script>
     var optionsQuarter = {
           series: [{
           name: 'Net Profit',
@@ -162,7 +106,7 @@
     };
         var chartQuarter = new ApexCharts(document.querySelector("#chart-quarter"), optionsQuarter);
         chartQuarter.render();
-</script>
+</script> -->
 <!-- chart-month -->
 <script>
     var optionsMonth = {
