@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers;
+use Hamcrest\Core\HasToString;
 use Illuminate\Support\Facades\DB;
 
 
@@ -28,30 +29,21 @@ class GraphPart2YearController extends Controller
         $temp = [];
         $score = [];
         $full_score = [];
-
+        $years = $data[0]->year;
         for ($i = 0; $i < count($data); $i++) {
-            $temp[$i] = $data[$i]->indicator_name;
+            $temp[$i] = "'".$data[$i]->indicator_name."'";
+
             $score[$i] = $data[$i]->score;
             $full_score[$i] = $data[$i]->full_score;
         }
-
-        // dd($temp,  $score,  $full_score);
-        // $year = $data[0]->year;
-
-        // $m0 = $data[0]->full_score;
-
-        // $s0 = $data[0]->score;
-
-        // for ($i = 0; $i < count($data); $i++) {
-        //     # code...$name =
-        //     $data[$i]->indicator_name;
-        //     $year[$i] = $data[$i]->year;
-        //     $m[$i] = $data[$i]->full_score;
-        //     $s[$i] = $data[$i]->score;
-        //     dd($data[$i]);
-        // }
+        $string = implode(",",$temp);
+        $stringscore = implode(",",$score);
+        $stringfull_score = implode(",",$full_score);
 
 
-        return view('graphPart2Year', compact('temp', 'year', 'temp', 'score', 'full_score'));
+        // dd($data,$stringscore,$years) ;
+
+
+        return view('graphPart2Year', compact('temp', 'string' ,'years', 'stringscore', 'stringfull_score'));
     }
 };

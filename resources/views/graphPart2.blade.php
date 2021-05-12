@@ -60,6 +60,7 @@ td.break {
         </div>
         @include('partials.footer')
     </div>
+  
 </body>
 <!-- chart-year -->
 <script>
